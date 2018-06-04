@@ -1,0 +1,31 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'StaffMen' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+	pod 'TransitionButton'
+	pod 'IQKeyboardManagerSwift'
+  	pod 'Alamofire'
+  	pod 'SwiftyJSON'
+  	pod 'MaterialControls'
+  	pod 'ObjectMapper'
+  	pod 'MaterialKit', :git => 'https://github.com/theMeatloaf/MaterialKit.git'
+  	pod 'NBMaterialDialogIOS', :git => 'https://github.com/balitax/NBMaterialDialogIOS.git'
+  	pod 'ImagePicker'
+  	pod 'ReachabilitySwift', '~> 3'
+  	pod 'Kingfisher'
+  	pod 'Firebase/Core'
+  	pod 'Firebase/Messaging'
+  	pod 'MaterialControls'
+	pod "MotionAnimation", :git => 'https://github.com/LondonAppWorks/MotionAnimation.git'
+
+  # Pods for 
+
+  #Pod for googleMap
+
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
+
+end

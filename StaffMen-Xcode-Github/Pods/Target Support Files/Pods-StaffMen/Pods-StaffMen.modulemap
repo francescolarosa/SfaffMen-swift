@@ -1,0 +1,6 @@
+framework module Pods_StaffMen {
+  umbrella header "Pods-StaffMen-umbrella.h"
+
+  export *
+  module * { export * }
+}
