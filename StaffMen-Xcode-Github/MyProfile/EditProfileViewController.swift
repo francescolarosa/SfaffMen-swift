@@ -23,16 +23,6 @@ class EditProfileViewController: UIViewController {
     }
     
     //x present
-    func PhysicalViewController(from storyboardID: String) -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let PhysicalViewController = storyboard.instantiateViewController(withIdentifier: storyboardID)
-        return PhysicalViewController
-    }
-    
-  
-    @IBAction func didEditPhysicalButton(_ sender: Any) {
-        let editPhysicalViewController = PhysicalViewController(from: "EditPhysicalViewController")
-        present(editPhysicalViewController, animated: true)
-    }
+
     
 }
