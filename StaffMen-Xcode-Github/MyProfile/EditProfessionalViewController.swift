@@ -19,23 +19,33 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
         pickerView2.delegate = self
         pickerView2.dataSource = self
         
+        pickerView3.delegate = self
+        pickerView3.dataSource = self
+        
         provincieTextFied.inputView = pickerView1
         provincieTextFied.textAlignment = .center
         provincieTextFied.placeholder = "Select your city"
         
         workTextField.inputView = pickerView2
         workTextField.textAlignment = .center
-        workTextField.placeholder = "Select your city"
+        workTextField.placeholder = "Select your work"
+        
+        experienceTextLabel.inputView = pickerView3
+        experienceTextLabel.textAlignment = .center
+        experienceTextLabel.placeholder = "Do you have any experience?"
     }
     
     @IBOutlet weak var provincieTextFied: UITextField!
     @IBOutlet weak var workTextField: UITextField!
+    @IBOutlet weak var experienceTextLabel: UITextField!
     
     let citys = ["Milano", "Cinisello", "Bucinasco","Rozzano"]
     let works = ["Steward", "Promoter", "Modello","Driver"]
+    let experience = ["Senza esperienza", "Poca esperienza", "Molta esperienza"]
     
     var pickerView1 = UIPickerView()
     var pickerView2 = UIPickerView()
+    var pickerView3 = UIPickerView()
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -46,6 +56,8 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
             return citys.count
         }else if pickerView == pickerView2{
             return works.count
+        }else if pickerView == pickerView3{
+            return experience.count
         }
         return 1
     }
@@ -56,6 +68,8 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
             return citys[row]
         } else if pickerView == pickerView2{
             return works[row]
+        }else if pickerView == pickerView3{
+            return experience[row]
         }
         return ""
     }
@@ -67,6 +81,9 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
         }else if pickerView == pickerView2{
             workTextField.text = works[row]
             workTextField.resignFirstResponder()
+        }else if pickerView == pickerView3{
+            experienceTextLabel.text = experience[row]
+            experienceTextLabel.resignFirstResponder()
         }
     }
     
