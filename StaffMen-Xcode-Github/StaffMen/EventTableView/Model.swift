@@ -15,6 +15,8 @@ struct NewInfo {
     var displayTitle: String?
     var location: String?
     var accettati: String?
+    var startEvent: String?
+    var endEvent: String?
     var description: String?
     var src = ""
 }

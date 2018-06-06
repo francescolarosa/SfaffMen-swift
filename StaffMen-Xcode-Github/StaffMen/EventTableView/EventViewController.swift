@@ -88,9 +88,13 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
                                     {
                                         myNews.description = myDescription
                                     }
-                                    if let myAccettati = value["num_members_confirmed"] as? String
+                                    if let myStartEvent = value["time_start"] as? String
                                     {
-                                        myNews.accettati = myAccettati
+                                        myNews.startEvent = myStartEvent
+                                    }
+                                    if let myEndEvent = value["time_end"] as? String
+                                    {
+                                        myNews.endEvent = myEndEvent
                                     }
                                     if let myId = value["id"] as? Int
                                     {
@@ -163,7 +167,6 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
             let vc = segue.destination
             vc.transitioningDelegate = transition
             vc.modalPresentationStyle = .custom
-            
         }
         //menu
         if let vc = segue.destination as? MenuViewController{
@@ -233,8 +236,6 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
                             {
                                 if (jsonData["data"] as? [[String : Any]]) != nil
                                 {
-                                    
-                                    
                                     
                                     self.myTableViewDataSource.remove(at : indexPath.item)
                                     self.myTableView.deleteRows(at: [indexPath], with: .automatic)
