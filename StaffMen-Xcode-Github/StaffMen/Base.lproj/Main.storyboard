@@ -1008,6 +1008,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="containerView" destination="m39-nQ-hJZ" id="xDr-Pn-Qxd"/>
+                        <outlet property="imageView" destination="Cz2-lP-1f0" id="vpy-9r-f1a"/>
                         <outlet property="segmentedControl" destination="oau-gj-X3I" id="Qga-Fd-pTW"/>
                         <segue destination="Kqa-fp-Wjf" kind="showDetail" identifier="menu" id="isA-5z-Y5y"/>
                     </connections>
@@ -1249,6 +1250,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateField" destination="nw2-ha-iWC" id="J0b-jM-QdQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IS-w1-oRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1618,6 +1622,6 @@
         <segue reference="Jgz-ki-XjU"/>
         <segue reference="lx1-hZ-ap3"/>
         <segue reference="cFC-3G-8cm"/>
-        <segue reference="jJi-ix-u64"/>
+        <segue reference="isA-5z-Y5y"/>
     </inferredMetricsTieBreakers>
 </document>

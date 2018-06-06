@@ -88,15 +88,4 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
     }
     
     
-    //x present
-//    func viewController(from storyboardID: String) -> UIViewController {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = storyboard.instantiateViewController(withIdentifier: storyboardID)
-//        return viewController
-//    }
-//    @IBAction func didBackBtn(_ sender: Any) {
-//    
-//        let editProfileViewController = viewController(from: "EditProfileViewController")
-//        present(editProfileViewController, animated: true)
-//    }
 }

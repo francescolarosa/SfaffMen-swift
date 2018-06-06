@@ -8,9 +8,10 @@
 import Foundation
 import UIKit
 
-class MyProfileViewController: UIViewController {
+class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var containerView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
     
     //xmenu
     @objc var transition = ElasticTransition()
@@ -23,6 +24,8 @@ class MyProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //image picker
+        imageView.backgroundColor = UIColor.lightGray
         // MENU Core
         // customization
         transition.sticky = true
@@ -114,5 +117,25 @@ class MyProfileViewController: UIViewController {
     @IBAction func didEditButton(_ sender: Any) {
         let editViewController = viewController(from: "EditProfileViewController")
         present(editViewController, animated: true)        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFill
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        let controller = UIImagePickerController()
+        controller.delegate = self
+        controller.sourceType = .photoLibrary
+        present(controller, animated: true, completion: nil)
     }
 }
