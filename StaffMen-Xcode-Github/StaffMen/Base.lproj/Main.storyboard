@@ -386,7 +386,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMb-86-PzA">
+                                                <imageView userInteractionEnabled="NO" tag="11" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="restaurant2" translatesAutoresizingMaskIntoConstraints="NO" id="fMb-86-PzA">
                                                     <rect key="frame" x="15" y="11" width="128" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -1660,15 +1660,17 @@
         <image name="clock_time_5025" width="512" height="512"/>
         <image name="concertBG" width="326" height="573"/>
         <image name="location" width="872" height="1090"/>
+        <image name="restaurant2" width="550" height="367"/>
         <image name="restaurant3" width="825" height="510"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="tmE-s5-Aar"/>
         <segue reference="ZSr-go-dHI"/>
         <segue reference="3ct-dp-ye2"/>
         <segue reference="th0-J9-YxY"/>
         <segue reference="Jgz-ki-XjU"/>
         <segue reference="lx1-hZ-ap3"/>
         <segue reference="cFC-3G-8cm"/>
-        <segue reference="isA-5z-Y5y"/>
+        <segue reference="jJi-ix-u64"/>
     </inferredMetricsTieBreakers>
 </document>
