@@ -48,6 +48,7 @@
 		4B92E87920691B4D00AE7BFB /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B92E87820691B4C00AE7BFB /* Contents.json */; };
 		AD169A9320C0958800AF1DA5 /* ProfessionalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD169A9220C0958800AF1DA5 /* ProfessionalData.swift */; };
 		AD169A9520C095EE00AF1DA5 /* ProfessionalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD169A9420C095EE00AF1DA5 /* ProfessionalDataCell.swift */; };
+		AD58FA6D20CD261C00905FC9 /* MyProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58FA6C20CD261C00905FC9 /* MyProfileViewModel.swift */; };
 		AD59BAE220A47A860046E352 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59BAE120A47A860046E352 /* Model.swift */; };
 		AD59BAE420A47AE70046E352 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59BAE320A47AE70046E352 /* EventViewController.swift */; };
 		AD59BAE620A4BB9A0046E352 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59BAE520A4BB9A0046E352 /* EventDetailViewController.swift */; };
@@ -115,6 +116,7 @@
 		9047F217634F023BFD30CF1E /* Pods_StaffMen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StaffMen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD169A9220C0958800AF1DA5 /* ProfessionalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalData.swift; sourceTree = "<group>"; };
 		AD169A9420C095EE00AF1DA5 /* ProfessionalDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalDataCell.swift; sourceTree = "<group>"; };
+		AD58FA6C20CD261C00905FC9 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
 		AD59BAE120A47A860046E352 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AD59BAE320A47AE70046E352 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		AD59BAE520A4BB9A0046E352 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				ADE366C420C184ED00CDD83C /* EditProfileViewController.swift */,
 				ADE366CB20C1BA8000CDD83C /* EditPhysicalViewController.swift */,
 				AD91991720C3FD1300887624 /* EditProfessionalViewController.swift */,
+				AD58FA6C20CD261C00905FC9 /* MyProfileViewModel.swift */,
 			);
 			name = MyProfile;
 			path = ../MyProfile;
@@ -434,6 +437,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-StaffMen/Pods-StaffMen-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/BFPaperButton/BFPaperButton.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -453,6 +457,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BFPaperButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
@@ -503,6 +508,7 @@
 				4B7DBB2A208518AC00E06822 /* EdgePanTransition.swift in Sources */,
 				4B42A67E20591BB800EBCB6B /* CustomTransitionViewController.swift in Sources */,
 				AD5FDDC020A725340084D506 /* CustomMarkerView.swift in Sources */,
+				AD58FA6D20CD261C00905FC9 /* MyProfileViewModel.swift in Sources */,
 				ADE366C520C184ED00CDD83C /* EditProfileViewController.swift in Sources */,
 				1EB2D64720C0577000904FE8 /* PhysicalData.swift in Sources */,
 				4B7DBB2C208518AC00E06822 /* ElasticTransition.swift in Sources */,

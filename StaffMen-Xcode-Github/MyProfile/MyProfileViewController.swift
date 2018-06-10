@@ -7,19 +7,26 @@
 //
 import Foundation
 import UIKit
+import AlamofireImage
 
 class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var containerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var usernameLabel: UILabel!
+    
     //xmenu
     @objc var transition = ElasticTransition()
     @objc let lgr = UIScreenEdgePanGestureRecognizer()
     @objc let rgr = UIScreenEdgePanGestureRecognizer()
     
-    private var physicalDataViewController: UIViewController!
-    private var professionalDataViewController: UIViewController!
+    private var physicalDataViewController: PhysicalDataViewController!
+    private var professionalDataViewController: ProfessionalDataViewController!
+    
+    private var userProfile: Login.UserProfile!
+    
+    private let viewModel = MyProfileViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +51,16 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(didChangeData), for: .valueChanged)
         
-        physicalDataViewController = viewController(from: "PhysicalDataViewController")
-        professionalDataViewController = viewController(from: "ProfessionalDataViewController")
+        physicalDataViewController = viewController(from: "PhysicalDataViewController") as! PhysicalDataViewController
+        professionalDataViewController = viewController(from: "ProfessionalDataViewController") as! ProfessionalDataViewController
         
         add(physicalDataViewController, into: containerView)
+        
+        viewModel.delegate = self
+        viewModel.retrieveProfile()
+        
+        // set default values
+        usernameLabel.text = "-"
     }
 
     //menu slide
@@ -83,9 +96,11 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         if segmentedControl.selectedSegmentIndex == 0 {
             professionalDataViewController.remove()
             add(physicalDataViewController, into: containerView)
+            physicalDataViewController.refresh(with: userProfile)
         } else {
             physicalDataViewController.remove()
             add(professionalDataViewController, into: containerView)
+            professionalDataViewController.refresh(with: userProfile)
         }
     }
     //x present
@@ -115,7 +130,10 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func didEditButton(_ sender: Any) {
-        let editViewController = viewController(from: "EditProfileViewController")
+        let editViewController = viewController(from: "EditProfileViewController") as! UINavigationController
+        
+        let editViewController2 =  editViewController.topViewController as! EditProfileViewController
+        editViewController2.userProfile = userProfile
         present(editViewController, animated: true)        
     }
     
@@ -137,5 +155,40 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         controller.delegate = self
         controller.sourceType = .photoLibrary
         present(controller, animated: true, completion: nil)
+    }
+}
+
+extension MyProfileViewController: MyProfileViewModelDelegate {
+    func didRetrieveComlete(with userProfile: Login.UserProfile) {
+        
+        self.userProfile = userProfile
+        
+        usernameLabel.text = userProfile.name
+        
+        if let url = URL.init(string: "http://127.0.0.1:8000\(userProfile.photo)") {
+            imageView.af_setImage(withURL: url)
+        }
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            physicalDataViewController.refresh(with: userProfile)
+        } else {
+            professionalDataViewController.refresh(with: userProfile)
+        }
+    }
+    
+    func didRetrieveComleteWithError() {
+        print("error")
+    }
+    
+    
+}
+
+extension Int {
+    var sexDescription: String {
+        if self == 1 {
+            return "Maschio"
+        } else {
+            return "Femmina"
+        }
     }
 }

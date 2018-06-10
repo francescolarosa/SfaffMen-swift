@@ -860,6 +860,7 @@
                         <outlet property="containerView" destination="m39-nQ-hJZ" id="xDr-Pn-Qxd"/>
                         <outlet property="imageView" destination="Cz2-lP-1f0" id="vpy-9r-f1a"/>
                         <outlet property="segmentedControl" destination="oau-gj-X3I" id="Qga-Fd-pTW"/>
+                        <outlet property="usernameLabel" destination="Ub3-o7-ytx" id="QBU-xM-LRd"/>
                         <segue destination="Kqa-fp-Wjf" kind="showDetail" identifier="menu" id="isA-5z-Y5y"/>
                     </connections>
                 </viewController>
@@ -1102,6 +1103,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateField" destination="nw2-ha-iWC" id="J0b-jM-QdQ"/>
+                        <outlet property="emailTextField" destination="j1d-M3-WBO" id="NKj-eA-fSp"/>
+                        <outlet property="nameLabel" destination="np5-h1-YXo" id="GYV-st-JLX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IS-w1-oRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1432,7 +1435,7 @@
                         <viewLayoutGuide key="safeArea" id="nxR-hv-rDP"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="OJ2-tb-9eC" id="xxF-Zj-pMr"/>
+                        <outlet property="tableView" destination="OJ2-tb-9eC" id="Rpp-BX-yRR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAn-oW-fue" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1470,10 +1473,10 @@
         <image name="restaurant3" width="825" height="510"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9F2-S0-WTS"/>
+        <segue reference="ZSr-go-dHI"/>
         <segue reference="0iq-3f-t5L"/>
         <segue reference="aaq-w4-GJ9"/>
         <segue reference="cFC-3G-8cm"/>
-        <segue reference="UJW-Tb-Wzn"/>
+        <segue reference="isA-5z-Y5y"/>
     </inferredMetricsTieBreakers>
 </document>

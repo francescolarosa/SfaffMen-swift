@@ -10,8 +10,12 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
 
+    let picker = UIDatePicker()
     
-     let picker = UIDatePicker()
+    @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    var userProfile: Login.UserProfile!
     
     @IBOutlet weak var dateField: UITextField!
     
@@ -19,10 +23,15 @@ class EditProfileViewController: UIViewController {
         super.viewDidLoad()
         
         createDatePicker()
+        
+        nameLabel.text = userProfile.name
+        emailTextField.text = userProfile.email
     }
     
     @IBAction func didSaveButton(_ sender: Any) {
         // fare il salvataggio
+        //invoco l'url con parametri token e salvataggi,
+        
         dismiss(animated: true, completion: nil)
     }
     

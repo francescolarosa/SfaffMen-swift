@@ -11,10 +11,10 @@ import Alamofire
 
 class APIClient {
     
-    func request(_ url: URLConvertible, parameters: Parameters, completion: @escaping (Any?) -> Void) {
-        Alamofire.request(url, method: .post, parameters: parameters).responseJSON { dataResponse in            
-            if let json = dataResponse.result.value {
-                completion(json)
+    func request(_ url: URLConvertible, parameters: Parameters, completion: @escaping (Data?) -> Void) {
+        Alamofire.request(url, method: .post, parameters: parameters).responseData { dataResponse in
+            if let data = dataResponse.result.value {
+                completion(data)
             } else {
                 completion(nil)
             }

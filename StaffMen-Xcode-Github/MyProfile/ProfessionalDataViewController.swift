@@ -11,12 +11,26 @@ import UIKit
 class ProfessionalDataViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
-    let professionalData = ProfessionalData.dummy()
+    var professionalData = ProfessionalData.dummy()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
     }
+    
+    func refresh(with userProfile: Login.UserProfile) {        
+        
+        let professionalData = [
+            ProfessionalData(label2: "Numero", value2: userProfile.phoneNumber),
+            ProfessionalData(label2: "Sesso", value2: userProfile.sex.sexDescription),
+            ProfessionalData(label2: "Email", value2: userProfile.email)
+        ]
+        
+        self.professionalData = professionalData
+        tableView.reloadData()
+    }
+     
 }
 
 extension ProfessionalDataViewController: UITableViewDataSource {

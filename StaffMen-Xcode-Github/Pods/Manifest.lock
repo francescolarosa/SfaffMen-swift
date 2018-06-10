@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.7.0)
+  - AlamofireImage (3.3.1):
+    - Alamofire (~> 4.5)
   - BFPaperButton (2.1.2)
   - Firebase/Core (4.10.1):
     - FirebaseAnalytics (= 4.1.0)
@@ -58,6 +60,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage
   - Firebase/Core
   - Firebase/Messaging
   - GoogleMaps
@@ -96,6 +99,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   BFPaperButton: a25fdd3ff6898bdbd5cc9b1334ca36adb0296b9f
   Firebase: 92c6ba593e32db0defde464a9adc981d5cb49f97
   FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
@@ -120,6 +124,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TransitionButton: 0bf7e5ffe80030f9d10d57983a04acf2f511998a
 
-PODFILE CHECKSUM: e64d314f4ee38648e9debe1c292e4ff844a14526
+PODFILE CHECKSUM: 6f1d5a5c0db821446ba07cd130e62b0f23f2d7cf
 
 COCOAPODS: 1.4.0

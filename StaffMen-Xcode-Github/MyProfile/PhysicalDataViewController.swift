@@ -10,12 +10,22 @@ import UIKit
 class PhysicalDataViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
   
-    let physicalData = PhysicalData.dummy()
+    private var physicalData = [PhysicalData]()
   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+    }
+    
+    func refresh(with userProfile: Login.UserProfile) {
+        
+        let physicalData = [
+            PhysicalData(label: "Età", value: userProfile.age)
+        ]
+        
+        self.physicalData = physicalData
+        tableView.reloadData()
     }
 }
 
