@@ -1102,6 +1102,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="PhoneTextField" destination="ZoZ-hQ-tDN" id="PN9-69-y8h"/>
                         <outlet property="dateField" destination="nw2-ha-iWC" id="J0b-jM-QdQ"/>
                         <outlet property="emailTextField" destination="j1d-M3-WBO" id="NKj-eA-fSp"/>
                         <outlet property="nameLabel" destination="np5-h1-YXo" id="GYV-st-JLX"/>
@@ -1473,7 +1474,6 @@
         <image name="restaurant3" width="825" height="510"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZSr-go-dHI"/>
         <segue reference="0iq-3f-t5L"/>
         <segue reference="aaq-w4-GJ9"/>
         <segue reference="cFC-3G-8cm"/>

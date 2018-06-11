@@ -14,6 +14,7 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var PhoneTextField: UITextField!
     
     var userProfile: Login.UserProfile!
     
@@ -26,6 +27,7 @@ class EditProfileViewController: UIViewController {
         
         nameLabel.text = userProfile.name
         emailTextField.text = userProfile.email
+        PhoneTextField.text = userProfile.phoneNumber
     }
     
     @IBAction func didSaveButton(_ sender: Any) {

@@ -14,16 +14,14 @@ class PhysicalDataViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     func refresh(with userProfile: Login.UserProfile) {
         
         let physicalData = [
-            PhysicalData(label: "Età", value: userProfile.age)
+            PhysicalData(label: "ETA'", value: userProfile.age),
+            PhysicalData(label: "SESSO", value: userProfile.sex.sexDescription)
         ]
-        
         self.physicalData = physicalData
         tableView.reloadData()
     }

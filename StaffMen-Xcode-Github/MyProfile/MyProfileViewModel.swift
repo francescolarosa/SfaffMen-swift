@@ -17,6 +17,7 @@ struct Login : Codable {
         let photo: String
         let sex: Int
         let email: String
+        let prev_job: String
         enum CodingKeys : String, CodingKey {
             case age
             case name
@@ -24,6 +25,7 @@ struct Login : Codable {
             case photo
             case phoneNumber = "phone_number"
             case email
+            case prev_job
         }
     }
     

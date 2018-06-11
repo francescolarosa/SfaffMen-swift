@@ -127,7 +127,7 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
         task.resume()
     }
     
-  
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)->CGFloat {
         return 150
     }
@@ -212,7 +212,7 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete){
 //            print(indexPath.item)
-       // print(myTableViewDataSource[indexPath.item])
+        print(myTableViewDataSource[indexPath.item])
 //            print(myTableViewDataSource[indexPath].id)
             guard let idEvent = (myTableViewDataSource[indexPath.item].idEvent),
                 let urlDestroy = URL(string: "http://127.0.0.1:8000/events/appdestroy/\(idEvent)") else {
@@ -236,10 +236,9 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
                             {
                                 if (jsonData["data"] as? [[String : Any]]) != nil
                                 {
-                                    
+                                    print(jsonData)
                                     self.myTableViewDataSource.remove(at : indexPath.item)
                                     self.myTableView.deleteRows(at: [indexPath], with: .automatic)
-                                    
                                 }
                             }
                         }

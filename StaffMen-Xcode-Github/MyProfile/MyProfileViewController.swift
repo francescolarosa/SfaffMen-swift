@@ -82,7 +82,6 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         }
     }
     //endmenuslide
-    
     //x menu
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? MenuViewController{
@@ -91,7 +90,6 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
             //endmenu
         }
     }
-    
     @objc func didChangeData() {
         if segmentedControl.selectedSegmentIndex == 0 {
             professionalDataViewController.remove()
@@ -124,6 +122,7 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
             //self.UsernameLabel.text = pref.value(forKey: "name") as? String
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -163,7 +162,7 @@ extension MyProfileViewController: MyProfileViewModelDelegate {
         
         self.userProfile = userProfile
         
-        usernameLabel.text = userProfile.name
+       usernameLabel.text = userProfile.name
         
         if let url = URL.init(string: "http://127.0.0.1:8000\(userProfile.photo)") {
             imageView.af_setImage(withURL: url)
@@ -179,16 +178,14 @@ extension MyProfileViewController: MyProfileViewModelDelegate {
     func didRetrieveComleteWithError() {
         print("error")
     }
-    
-    
 }
 
 extension Int {
     var sexDescription: String {
         if self == 1 {
-            return "Maschio"
+            return "Uomo"
         } else {
-            return "Femmina"
+            return "Donna"
         }
     }
 }

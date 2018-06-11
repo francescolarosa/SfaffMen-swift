@@ -18,20 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StaffLogoBig" translatesAutoresizingMaskIntoConstraints="NO" id="HO7-xV-M8k">
-                                <rect key="frame" x="111" y="114" width="152" height="146"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StaffLogoBig" translatesAutoresizingMaskIntoConstraints="NO" id="HO7-xV-M8k">
+                                <rect key="frame" x="111" y="260" width="152" height="146"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search your works with StaffApp!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jX-XA-Xcd">
-                                <rect key="frame" x="30" y="301" width="314" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.75294117647058822" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.89009666440000001" green="0.89009666440000001" blue="0.89009666440000001" alpha="0.41178831335616439" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="HO7-xV-M8k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="240" id="7hs-fK-CGT"/>
+                            <constraint firstItem="HO7-xV-M8k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="jCD-tk-3ai"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HO7-xV-M8k" secondAttribute="bottom" constant="261" id="wXu-OC-Oil"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HO7-xV-M8k" secondAttribute="trailing" constant="112" id="yPd-1K-eLn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
