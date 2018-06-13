@@ -9,7 +9,7 @@ import UIKit
 import NBMaterialDialogIOS
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
@@ -33,17 +33,33 @@ class LoginViewController: UIViewController {
         //activityIndicator.stopAnimating()
         
     }
+    //    override func viewWillAppear(_ animated: Bool) {
+    //        let email: String = (UserDefaults.standard.object(forKey: "email") as? String)!
+    //
+    //
+    //        let password: String = (UserDefaults.standard.object(forKey: "password") as? String)!
+    //
+    //        print(email)
+    //        print(password)
+    //
+    //        if (email != nil) && (password != nil) {
+    //
+    //            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    //            appDelegate.switchBack()
+    //        }
+    //    }
     
     func resolve(json: JSON) {
         //activityIndicator.stopAnimating()
         indicator.stopAnimating()
         if let data = json.dictionaryObject, let user = data["user"] as? [String: Any] {
-//            AppConfig.apiToken = user["api_token"] as! String
+            //AppConfig.apiToken = user["remember_token"] as! String
             debugPrint(data)
+            // debugPrint(user["remember_token"]!)
             performSegue(withIdentifier: "mainSegue", sender: nil)
         }
         else{
-            NBMaterialToast.showWithText(view, text: "Sorry, Something Went Wrong: Please try again later.", duration: NBLunchDuration.medium)
+            NBMaterialToast.showWithText(view, text: "Ops, Qualcosa è andato storto: Riprova dopo.", duration: NBLunchDuration.medium)
         }
     }
     
@@ -51,19 +67,19 @@ class LoginViewController: UIViewController {
         //activityIndicator.stopAnimating()
         indicator.stopAnimating()
         if let data = json.dictionaryObject, let error = data["msg"] as? String {
-//            self.errorsLabel.alpha = 1
-//            errorsLabel.text = ""
-//
-//            let errors = data["errors"] as! [String: Any]
-//
-//            for (key, error) in errors {
-//                let description = (error as! [String])[0] as String
-//                errorsLabel.text = errorsLabel.text! + description + " "
-//            }
-//
-//            UIView.animate(withDuration: 1.0, delay: 3.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
-//                self.errorsLabel.alpha = 0
-//            }, completion: nil)
+            //            self.errorsLabel.alpha = 1
+            //            errorsLabel.text = ""
+            //
+            //            let errors = data["errors"] as! [String: Any]
+            //
+            //            for (key, error) in errors {
+            //                let description = (error as! [String])[0] as String
+            //                errorsLabel.text = errorsLabel.text! + description + " "
+            //            }
+            //
+            //            UIView.animate(withDuration: 1.0, delay: 3.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            //                self.errorsLabel.alpha = 0
+            //            }, completion: nil)
             NBMaterialToast.showWithText(view, text: error, duration: NBLunchDuration.medium)
         }
         
@@ -73,10 +89,10 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(_ sender: UIButton) {
         
         if emailTextField.isNull {
-            NBMaterialToast.showWithText(view, text: "Please enter Email-Id", duration: NBLunchDuration.long)
+            NBMaterialToast.showWithText(view, text: "Per favore inserisci la email", duration: NBLunchDuration.long)
         }
         else if passwordTextField.isNull {
-            NBMaterialToast.showWithText(view, text: "Please enter Password", duration: NBLunchDuration.long)
+            NBMaterialToast.showWithText(view, text: "Per favore inserisci la password", duration: NBLunchDuration.long)
         }
         else{
             let proxy = Proxy()
@@ -84,18 +100,24 @@ class LoginViewController: UIViewController {
             let params = [
                 "email":emailTextField.text!,
                 "password":passwordTextField.text!,
-            ]
+                ]
+            
+            
+            
+            
+            UserDefaults.standard.set("1", forKey: "userstatus")
+            
             
             //activityIndicator.startAnimating()
             indicator.startAnimating()
             proxy.submit(httpMethod: "POST", route: "/api/login", params: params, resolve: resolve, reject: reject)
             
             //self create profile
-//            let homePVC = RootPageViewController()
-//            self.present(homePVC, animated: true, completion: nil)
+            //            let homePVC = RootPageViewController()
+            //            self.present(homePVC, animated: true, completion: nil)
         }
     }
     
-//    func createProfile(
+    //    func createProfile(
 }
 

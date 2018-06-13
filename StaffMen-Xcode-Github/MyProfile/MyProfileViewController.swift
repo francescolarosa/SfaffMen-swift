@@ -128,6 +128,16 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btn_tap_Logout(_ sender: Any) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.switchViewControllers()
+        UserDefaults.standard.set("0", forKey: "userstatus")
+        
+        let LoginViewController = viewController(from: "LoginViewController")
+        present(LoginViewController, animated: true)
+    }
+    
     @IBAction func didEditButton(_ sender: Any) {
         let editViewController = viewController(from: "EditProfileViewController") as! UINavigationController
         
@@ -164,7 +174,7 @@ extension MyProfileViewController: MyProfileViewModelDelegate {
         
        usernameLabel.text = userProfile.name
         
-        if let url = URL.init(string: "http://127.0.0.1:8000\(userProfile.photo)") {
+        if let url = URL.init(string: "http://www.ns7records.com/staffapp/public/\(userProfile.photo)") {
             imageView.af_setImage(withURL: url)
         }
         

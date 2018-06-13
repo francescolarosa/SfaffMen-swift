@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mw5-IX-QN2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="51o-IK-xuu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -145,7 +145,8 @@
         <!--Login View Controller-->
         <scene sceneID="Mov-QL-duF">
             <objects>
-                <viewController id="51o-IK-xuu" customClass="LoginViewController" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9z-1z-Rgn" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="51o-IK-xuu" customClass="LoginViewController" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mmg-QW-C8E"/>
                         <viewControllerLayoutGuide type="bottom" id="5M0-0B-TFF"/>
@@ -223,6 +224,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="51o-IK-xuu" id="PGR-iK-HKh"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StaffLogoBig" translatesAutoresizingMaskIntoConstraints="NO" id="cxC-yV-FLw">
                                 <rect key="frame" x="141" y="78" width="93" height="81"/>
@@ -255,13 +259,13 @@
                         <segue destination="mw5-IX-QN2" kind="show" identifier="mainSegue" id="0iq-3f-t5L"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b9z-1z-Rgn" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3383.1999999999998" y="-1517.0914542728638"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="n9h-2t-pXI">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GQj-nX-JZz" sceneMemberID="firstResponder"/>
                 <viewController id="67v-5b-FRu" customClass="RegistrationViewController" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bgD-Hl-CcN"/>
@@ -387,7 +391,6 @@
                         <segue destination="tTI-Ak-rah" kind="show" identifier="mainSegue" id="th0-J9-YxY"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GQj-nX-JZz" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3383.1999999999998" y="-2420.2398800599703"/>
         </scene>
@@ -716,22 +719,22 @@
         <!--My Profile-->
         <scene sceneID="iFS-wK-gl5">
             <objects>
-                <viewController id="tTI-Ak-rah" customClass="MyProfileViewController" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tTI-Ak-rah" customClass="MyProfileViewController" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SKf-G7-K4q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="Cz2-lP-1f0">
-                                <rect key="frame" x="0.0" y="64" width="375" height="211"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="211"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Cz2-lP-1f0" secondAttribute="height" multiplier="16:9" id="Me8-bP-OV8"/>
                                 </constraints>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m39-nQ-hJZ">
-                                <rect key="frame" x="34" y="434" width="306" height="229"/>
+                                <rect key="frame" x="34" y="390" width="306" height="273"/>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZH-fk-lks">
-                                <rect key="frame" x="34" y="244" width="306" height="190"/>
+                                <rect key="frame" x="34" y="200" width="306" height="190"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvS-D4-YsP">
                                         <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
@@ -1475,7 +1478,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0iq-3f-t5L"/>
-        <segue reference="aaq-w4-GJ9"/>
+        <segue reference="th0-J9-YxY"/>
         <segue reference="cFC-3G-8cm"/>
         <segue reference="isA-5z-Y5y"/>
     </inferredMetricsTieBreakers>

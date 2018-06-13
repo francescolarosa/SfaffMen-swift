@@ -45,8 +45,8 @@ class MyProfileViewModel {
     
     func retrieveProfile() {
         
-        let parameters = ["email" :"fprova@gmail.com", "password": "123456"]
-        client.request("http://127.0.0.1:8000/api/login", parameters: parameters) { [unowned self] data in
+        let parameters = ["email" :"info@ns7records.com", "password": "andrea"]
+        client.request("http://www.ns7records.com/staffapp/api/login", parameters: parameters) { [unowned self] data in
             
             guard let data = data else {
                 self.delegate?.didRetrieveComleteWithError()

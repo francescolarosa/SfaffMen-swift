@@ -12,12 +12,12 @@ import NBMaterialDialogIOS
 class Proxy {
     
     var lastModified: String = ""
-
+    
     func submit(httpMethod: String, route: String, params: [String: Any], resolve: ((JSON) -> Void )?=nil, reject: ((JSON) -> Void )?=nil) {
         
         // -- Set initial URL
         let urlString: String = AppConfig.proxy_server + route
-
+        
         // -- Set Request
         let request = NSMutableURLRequest(
             url: URL(string: urlString)!,
@@ -28,7 +28,7 @@ class Proxy {
         // -- Set Headers
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
- 
+        
         // -- Set Authentication if token exist
         if (AppConfig.apiToken != nil) {
             request.setValue("Bearer " + AppConfig.apiToken, forHTTPHeaderField: "Authorization")
@@ -38,20 +38,20 @@ class Proxy {
         request.httpMethod = httpMethod
         switch (httpMethod) {
             
-            case "POST", "PUT":
-                
-                // -- Pass parameters in body
-                request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+        case "POST", "PUT":
             
-            case "GET": 
+            // -- Pass parameters in body
+            request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
             
-                // -- Replace URL and append parameters to query string
-                request.url = URL(string: urlString + "?" + joinParams(params: params).addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! )
+        case "GET":
             
-            case "DELETE": break;
-
-
-            default: break;
+            // -- Replace URL and append parameters to query string
+            request.url = URL(string: urlString + "?" + joinParams(params: params).addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)! )
+            
+        case "DELETE": break;
+            
+            
+        default: break;
             
         }
         
@@ -59,7 +59,7 @@ class Proxy {
         let dataTask = session.dataTask(with: request as URLRequest) { data, response, error in
             
             let httpResponse = response as? HTTPURLResponse
-
+            
             if (error != nil) {
                 
                 // -- Server is not responding withing the TimeOutInterval
