@@ -27,6 +27,12 @@ class LoginViewController: UIViewController {
         loginButton.clipsToBounds = true
         loginButton.layer.cornerRadius = 5
         
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail",
+                                                               attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password",
+                                                                  attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        
         indicator.hidesWhenStopped = true
         indicator.stopAnimating()
         //activityIndicator.hidesWhenStopped = true

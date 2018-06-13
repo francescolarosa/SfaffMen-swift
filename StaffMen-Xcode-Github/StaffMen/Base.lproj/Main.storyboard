@@ -145,7 +145,6 @@
         <!--Login View Controller-->
         <scene sceneID="Mov-QL-duF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b9z-1z-Rgn" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="51o-IK-xuu" customClass="LoginViewController" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mmg-QW-C8E"/>
@@ -163,7 +162,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KA8-9f-bxZ">
-                                <rect key="frame" x="82" y="229" width="210" height="30"/>
+                                <rect key="frame" x="81" y="259" width="210" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -218,7 +217,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F5i-bL-CeE">
-                                <rect key="frame" x="82" y="167" width="210" height="30"/>
+                                <rect key="frame" x="81" y="204" width="210" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -259,13 +258,13 @@
                         <segue destination="mw5-IX-QN2" kind="show" identifier="mainSegue" id="0iq-3f-t5L"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9z-1z-Rgn" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3383.1999999999998" y="-1517.0914542728638"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="n9h-2t-pXI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GQj-nX-JZz" sceneMemberID="firstResponder"/>
                 <viewController id="67v-5b-FRu" customClass="RegistrationViewController" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bgD-Hl-CcN"/>
@@ -391,6 +390,7 @@
                         <segue destination="tTI-Ak-rah" kind="show" identifier="mainSegue" id="th0-J9-YxY"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GQj-nX-JZz" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3383.1999999999998" y="-2420.2398800599703"/>
         </scene>
