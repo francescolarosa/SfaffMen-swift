@@ -111,16 +111,12 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         //self.performSegue(withIdentifier: "mainSegue", sender: self)
-        let pref : UserDefaults = UserDefaults.standard
-        let isLoggedIn : Int = pref.integer(forKey: "isLoggedIn") as Int
-        if (isLoggedIn != 1 )
-        {
-            //self.performSegue(withIdentifier: "mainSegue", sender: self)
-        }
-        else
-        {
-            //self.UsernameLabel.text = pref.value(forKey: "name") as? String
-        }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.switchViewControllers()
+        UserDefaults.standard.set("0", forKey: "userstatus")
+        
+        let LoginViewController = viewController(from: "LoginViewController")
+        present(LoginViewController, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
