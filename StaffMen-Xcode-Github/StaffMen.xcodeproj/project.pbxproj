@@ -26,6 +26,7 @@
 		4B42A68120591BB800EBCB6B /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42A67B20591BB800EBCB6B /* FadeTransition.swift */; };
 		4B42A68220591BB800EBCB6B /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42A67C20591BB800EBCB6B /* CGRectExtension.swift */; };
 		4B42A68320591BB800EBCB6B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B42A67D20591BB800EBCB6B /* Info.plist */; };
+		4B758EB620D2EF19009CD0B6 /* AwesomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */; };
 		4B7DBB27208518AC00E06822 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB21208518AC00E06822 /* Util.swift */; };
 		4B7DBB28208518AC00E06822 /* ElasticTransitionPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB22208518AC00E06822 /* ElasticTransitionPresentationController.swift */; };
 		4B7DBB29208518AC00E06822 /* ElasticModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB23208518AC00E06822 /* ElasticModalViewController.swift */; };
@@ -83,6 +84,7 @@
 		4B42A67B20591BB800EBCB6B /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		4B42A67C20591BB800EBCB6B /* CGRectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		4B42A67D20591BB800EBCB6B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeTextField.swift; sourceTree = "<group>"; };
 		4B7DBB21208518AC00E06822 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		4B7DBB22208518AC00E06822 /* ElasticTransitionPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransitionPresentationController.swift; sourceTree = "<group>"; };
 		4B7DBB23208518AC00E06822 /* ElasticModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticModalViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				4B0B9395205844C500474101 /* ViewController.swift */,
 				4B2E5FE72084F7230006089D /* InstagramActivityIndicator.swift */,
 				4B0B93AB2058452600474101 /* MenuViewController.swift */,
+				4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */,
 				AD6D015B20BD77BE00A81B47 /* MyProfile */,
 				AD5FDDBA20A7247A0084D506 /* mapEvents */,
 				AD59BAE020A479420046E352 /* EventTableView */,
@@ -486,6 +489,7 @@
 				ADE366C520C184ED00CDD83C /* EditProfileViewController.swift in Sources */,
 				1EB2D64720C0577000904FE8 /* PhysicalData.swift in Sources */,
 				4B7DBB2C208518AC00E06822 /* ElasticTransition.swift in Sources */,
+				4B758EB620D2EF19009CD0B6 /* AwesomeTextField.swift in Sources */,
 				AD5FDDC420A725F10084D506 /* DetailsVC.swift in Sources */,
 				4B0B9396205844C500474101 /* ViewController.swift in Sources */,
 				4B92E87720691B3D00AE7BFB /* LoginViewController.swift in Sources */,
@@ -649,6 +653,35 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHBQXZSZBW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AlamofireImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BFPaperButton\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ImagePicker\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MaterialControls\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MaterialKit\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MotionAnimation\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/NBMaterialDialogIOS\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TransitionButton\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseMessaging/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlacePicker/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlaces/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
 				INFOPLIST_FILE = StaffMen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -668,6 +701,35 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHBQXZSZBW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AlamofireImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BFPaperButton\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleToolboxForMac\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ImagePicker\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MaterialControls\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MaterialKit\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MotionAnimation\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/NBMaterialDialogIOS\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/TransitionButton\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
+					"\"${PODS_ROOT}/FirebaseMessaging/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlacePicker/Frameworks\"",
+					"\"${PODS_ROOT}/GooglePlaces/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
 				INFOPLIST_FILE = StaffMen/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

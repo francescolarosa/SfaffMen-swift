@@ -7,6 +7,7 @@
 
 import UIKit
 import NBMaterialDialogIOS
+import TransitionButton
 
 class LoginViewController: UIViewController {
     
@@ -17,15 +18,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var indicator: InstagramActivityIndicator!
-    
+    var regVC: RegistrationViewController!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        loginButton.layer.borderWidth = 1
-        loginButton.layer.borderColor = UIColor.white.cgColor
-        loginButton.clipsToBounds = true
-        loginButton.layer.cornerRadius = 5
+        super.viewDidLoad()       
         
         emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail",
                                                                attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
@@ -39,21 +35,6 @@ class LoginViewController: UIViewController {
         //activityIndicator.stopAnimating()
         
     }
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        let email: String = (UserDefaults.standard.object(forKey: "email") as? String)!
-    //
-    //
-    //        let password: String = (UserDefaults.standard.object(forKey: "password") as? String)!
-    //
-    //        print(email)
-    //        print(password)
-    //
-    //        if (email != nil) && (password != nil) {
-    //
-    //            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    //            appDelegate.switchBack()
-    //        }
-    //    }
     
     func resolve(json: JSON) {
         //activityIndicator.stopAnimating()
@@ -65,7 +46,9 @@ class LoginViewController: UIViewController {
             performSegue(withIdentifier: "mainSegue", sender: nil)
         }
         else{
-            NBMaterialToast.showWithText(view, text: "Ops, Qualcosa è andato storto: Riprova dopo.", duration: NBLunchDuration.medium)
+            let alertController = UIAlertController(title: "Errore Server", message: "Impossibile connettersi alle API", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -86,19 +69,25 @@ class LoginViewController: UIViewController {
             //            UIView.animate(withDuration: 1.0, delay: 3.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             //                self.errorsLabel.alpha = 0
             //            }, completion: nil)
-            NBMaterialToast.showWithText(view, text: error, duration: NBLunchDuration.medium)
+            //NBMaterialToast.showWithText(view, text: error, duration: NBLunchDuration.medium)
+            let alertController = UIAlertController(title: "Errore login", message: error, preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.destructive, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
         }
         
     }
     
-    
-    @IBAction func loginButton(_ sender: UIButton) {
-        
+    @IBAction func loginButton(_ sender: TransitionButton) {
+        //loginButton.startAnimation()
         if emailTextField.isNull {
-            NBMaterialToast.showWithText(view, text: "Per favore inserisci la email", duration: NBLunchDuration.long)
+            let alertController = UIAlertController(title: "Inserisci Email", message: "Per favore inserisci una email valida", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
         }
         else if passwordTextField.isNull {
-            NBMaterialToast.showWithText(view, text: "Per favore inserisci la password", duration: NBLunchDuration.long)
+            let alertController = UIAlertController(title: "Inserisci Password", message: "Per favore inserisci una password valida", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
         }
         else{
             let proxy = Proxy()
@@ -108,22 +97,13 @@ class LoginViewController: UIViewController {
                 "password":passwordTextField.text!,
                 ]
             
-            
-            
-            
             UserDefaults.standard.set("1", forKey: "userstatus")
-            
             
             //activityIndicator.startAnimating()
             indicator.startAnimating()
             proxy.submit(httpMethod: "POST", route: "/api/login", params: params, resolve: resolve, reject: reject)
             
-            //self create profile
-            //            let homePVC = RootPageViewController()
-            //            self.present(homePVC, animated: true, completion: nil)
         }
     }
-    
-    //    func createProfile(
 }
 

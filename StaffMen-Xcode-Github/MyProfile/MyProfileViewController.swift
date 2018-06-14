@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 import AlamofireImage
+import TransitionButton
 
-class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MyProfileViewController: CustomTransitionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var containerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
@@ -94,11 +95,11 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
         if segmentedControl.selectedSegmentIndex == 0 {
             professionalDataViewController.remove()
             add(physicalDataViewController, into: containerView)
-            physicalDataViewController.refresh(with: userProfile)
+            //physicalDataViewController.refresh(with: userProfile)
         } else {
             physicalDataViewController.remove()
             add(professionalDataViewController, into: containerView)
-            professionalDataViewController.refresh(with: userProfile)
+            //professionalDataViewController.refresh(with: userProfile)
         }
     }
     //x present
@@ -111,12 +112,6 @@ class MyProfileViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         //self.performSegue(withIdentifier: "mainSegue", sender: self)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.switchViewControllers()
-        UserDefaults.standard.set("0", forKey: "userstatus")
-        
-        let LoginViewController = viewController(from: "LoginViewController")
-        present(LoginViewController, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -170,7 +165,7 @@ extension MyProfileViewController: MyProfileViewModelDelegate {
         
        usernameLabel.text = userProfile.name
         
-        if let url = URL.init(string: "http://www.ns7records.com/staffapp/public/\(userProfile.photo)") {
+        if let url = URL.init(string: "http://www.ns7records.com/staffapp/public/images/\(userProfile.photo)") {
             imageView.af_setImage(withURL: url)
         }
         

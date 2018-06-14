@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /**
-Stop animation style of the `TransitionButton`.
+ Stop animation style of the `TransitionButton`.
  
  - normal: just revert the button to the original state.
  - expand: expand the button and cover all the screen, useful to do transit animation.
@@ -26,7 +26,7 @@ public enum StopAnimationStyle {
 
 
 /// UIButton sublass for loading and transition animation. Useful for network based application or where you need to animate an action button while doing background tasks.
- 
+
 open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, CAAnimationDelegate {
     
     /// the color of the spinner while animating the button
@@ -58,6 +58,7 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
     }()
     
     private var cachedTitle: String?
+    private var cachedTitleColor: UIColor?
     private var cachedImage: UIImage?
     
     private let springGoEase:CAMediaTimingFunction  = CAMediaTimingFunction(controlPoints: 0.45, -0.36, 0.44, 0.92)
@@ -75,6 +76,11 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
         self.setup()
     }
     
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        self.spiner.setToFrame(self.frame)
+    }
+    
     private func setup() {
         self.clipsToBounds  = true
         spiner.spinnerColor = spinnerColor
@@ -87,8 +93,9 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
         self.isUserInteractionEnabled = false // Disable the user interaction during the animation
         self.cachedTitle            = title(for: .normal)  // cache title before animation of spiner
         self.cachedImage            = image(for: .normal)  // cache image before animation of spiner
-        
-        self.setTitle("",  for: .normal)                    // place an empty string as title to display a spiner
+        self.cachedTitleColor        = titleColor(for: .normal)
+        //self.setTitle("",  for: .normal)                    // place an empty string as title to display a spiner
+        self.setTitleColor(UIColor.clear, for: .normal)
         self.setImage(nil, for: .normal)                    // remove the image, if any, before displaying the spinner
         
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
@@ -111,16 +118,18 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
         
         switch animationStyle {
         case .normal:
-            completion?()
+            
             // We return to original state after a delay to give opportunity to custom transition
             DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                 self.setOriginalState()
+                completion?()
             }
         case .shake:
-            completion?()
+            
             // We return to original state after a delay to give opportunity to custom transition
             DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                 self.setOriginalState()
+                completion?()
                 self.shakeAnimation()
             }
         case .expand:
@@ -148,14 +157,15 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
     }
     
     private func setOriginalState() {
+        //self.setTitle(self.cachedTitle, for: .normal)
         self.animateToOriginalWidth()
         self.spiner.stopAnimation()
-        self.setTitle(self.cachedTitle, for: .normal)
+        self.setTitleColor(self.cachedTitleColor, for: .normal)
         self.setImage(self.cachedImage, for: .normal)
         self.isUserInteractionEnabled = true // enable again the user interaction
         self.layer.cornerRadius = self.cornerRadius
     }
- 
+    
     private func animateToOriginalWidth() {
         let shrinkAnim = CABasicAnimation(keyPath: "bounds.size.width")
         shrinkAnim.fromValue = (self.bounds.height)
@@ -218,6 +228,3 @@ public extension UIImage {
         self.init(cgImage: cgImage)
     }
 }
-
-
-

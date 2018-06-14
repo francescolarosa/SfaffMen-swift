@@ -40,9 +40,6 @@
         
         // var userstatus = (UserDefaults.standard.object(forKey: "userstatus") as? String)!
         
-        
-        
-        
         if UserDefaults.standard.object(forKey: "userstatus") != nil
         {
             
