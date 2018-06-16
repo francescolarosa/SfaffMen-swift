@@ -41,10 +41,10 @@
         // var userstatus = (UserDefaults.standard.object(forKey: "userstatus") as? String)!
         
         if UserDefaults.standard.object(forKey: "userstatus") != nil
-        {
-            
+        {            
             userstatus  = (UserDefaults.standard.object(forKey: "userstatus") as? String)!
         }
+        
         if userstatus == "1"
         {
             self.switchBack()
@@ -61,7 +61,7 @@
         // switch back to view controller 1
         //Flag = true
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let nav = storyboard.instantiateViewController(withIdentifier: "MyProfileViewController")
+        let nav = storyboard.instantiateViewController(withIdentifier: "NavigationMyProfileViewController")
         
         self.window?.rootViewController = nav
     }

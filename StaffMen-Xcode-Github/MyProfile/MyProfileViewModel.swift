@@ -9,49 +9,40 @@ import UIKit
 import Foundation
 import Alamofire
 
-struct Login : Codable {
-    struct UserProfile : Codable {
-        let age: String
-        let name: String
-        let phoneNumber: String
-        let photo: String
-        let sex: Int
-        let email: String
-        let prev_job: String
-        enum CodingKeys : String, CodingKey {
-            case age
-            case name
-            case sex
-            case photo
-            case phoneNumber = "phone_number"
-            case email
-            case prev_job
-        }
-    }
+enum Sex: String {
+    case male = "Maschio"
+    case female = "Femmina"
     
-    let user: UserProfile
+    static func from(_ value: Int) -> Sex {
+        if (value == 1) {
+            return .male
+        }
+        return .female
+    }
 }
 
-protocol MyProfileViewModelDelegate: class {
-    func didRetrieveComlete(with userProfile: Login.UserProfile)
-    func didRetrieveComleteWithError()
+enum Role {
+    case steward
+    case organizer
+    
+    static func from(_ value: Int) -> Role {
+        return .steward
+    }
 }
 
 class MyProfileViewModel {
     
     weak var delegate: MyProfileViewModelDelegate?
     
-    let client = APIClient()
-    //let proxy = Proxy()
-    
     func resolve(json: JSON) {
         //activityIndicator.stopAnimating()
-        if let data = json.dictionaryObject, let user = data["user"] as? [String: Any] {
-            //AppConfig.apiToken = user["remember_token"] as! String
-            debugPrint(data)
-            // debugPrint(user["remember_token"]!)
-        }
-        else{
+        if let data = json.dictionaryObject,
+            let user = data["user"] as? [String: Any] {
+            let userProfile = UserProfile(json: user)
+            DataStore.shared.userProfile = userProfile
+            self.delegate?.didRetrieveComleteWithSuccess()
+        } else {
+            self.delegate?.didRetrieveComleteWithError()
         }
     }
     
@@ -73,42 +64,19 @@ class MyProfileViewModel {
             //            }, completion: nil)
             //NBMaterialToast.showWithText(view, text: error, duration: NBLunchDuration.medium)
         }
-        
+        self.delegate?.didRetrieveComleteWithError()
     }
     
     func retrieveProfile() {
+        
         let proxy = Proxy()
         
         let parameters = [
             "email":"info@ns7records.com",
             "password":"andrea",
-            ]
+        ]
 
         proxy.submit(httpMethod: "POST", route: "/api/login", params: parameters, resolve: resolve, reject: reject)
-        //client.request("http://www.ns7records.com/staffapp/", parameters: parameters) { [unowned self] data in
-            
-//        guard let data = data else {
-//                self.delegate?.didRetrieveComleteWithError()
-//                return
-//            }
-//
-//            do {
-//                let decoder = JSONDecoder()
-//                let login = try decoder.decode(Login.self, from: data)
-//                self.delegate?.didRetrieveComlete(with: login.user)
-//            } catch(let e) {
-//                print(e)
-//                self.delegate?.didRetrieveComleteWithError()
-//            }
-        
-//        let params = [
-//            "email":"info@ns7records.com",
-//            "password":"andrea",
-//            ]
-//
-//        UserDefaults.standard.set("1", forKey: "userstatus")
-//
-       
-}
+    }
 }
 

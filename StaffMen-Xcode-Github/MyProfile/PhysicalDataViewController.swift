@@ -16,11 +16,20 @@ class PhysicalDataViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func refresh(with userProfile: Login.UserProfile) {
+    func refresh() {
+        
+        guard let userProfile = DataStore.shared.userProfile else {
+            return
+        }
         
         let physicalData = [
             PhysicalData(label: "ETA'", value: userProfile.age),
-            PhysicalData(label: "SESSO", value: userProfile.sex.sexDescription)
+            PhysicalData(label: "SESSO", value: userProfile.sex.rawValue),
+            PhysicalData(label: "OCCHI", value: userProfile.eyes),
+            PhysicalData(label: "CAPELLI", value: userProfile.hair),
+            PhysicalData(label: "TAGLIA SCARPE", value: userProfile.shoesSize),
+            PhysicalData(label: "TAGLIA MAGLIETTA", value: userProfile.tshirtSize),
+            PhysicalData(label: "ALTEZZA", value: userProfile.height)
         ]
         self.physicalData = physicalData
         tableView.reloadData()

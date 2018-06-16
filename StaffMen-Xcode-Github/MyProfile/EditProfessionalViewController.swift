@@ -12,7 +12,7 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         pickerView1.delegate = self
         pickerView1.dataSource = self
         
@@ -21,6 +21,10 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
         
         pickerView3.delegate = self
         pickerView3.dataSource = self
+        
+        let dataStore = DataStore.shared
+        
+        // popolare i vari elementi prendendoli dal data store
         
         provincieTextFied.inputView = pickerView1
         provincieTextFied.textAlignment = .center
@@ -73,7 +77,10 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
         }
         return ""
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        // salvare sul data store gli elementu selezionati
         
         if pickerView == pickerView1{
             provincieTextFied.text = citys[row]

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EditProfessionalViewControllerDelegate {
+    func didSaveComplete()
+}
+
 class EditProfileViewController: UIViewController {
 
     let picker = UIDatePicker()
@@ -16,25 +20,47 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var PhoneTextField: UITextField!
     
-    var userProfile: Login.UserProfile!
-    
     @IBOutlet weak var dateField: UITextField!
+    
+    var delegate: EditProfessionalViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         createDatePicker()
         
-        nameLabel.text = userProfile.name
-        emailTextField.text = userProfile.email
-        PhoneTextField.text = userProfile.phoneNumber
+        if let userProfile = DataStore.shared.userProfile {
+            nameLabel.text = userProfile.name
+            emailTextField.text = userProfile.email
+            PhoneTextField.text = userProfile.phoneNumber
+        }
     }
     
     @IBAction func didSaveButton(_ sender: Any) {
-        // fare il salvataggio
-        //invoco l'url con parametri token e salvataggi,
         
-        dismiss(animated: true, completion: nil)
+        let dataStore = DataStore.shared
+        
+        dataStore.userProfile?.name = nameLabel.text ?? "-"
+        dataStore.userProfile?.email = emailTextField.text ?? "-"
+        dataStore.userProfile?.phoneNumber = PhoneTextField.text ?? "-"
+        
+        // salvare sul data store anche (vedi sopra)
+        // - data nascita
+        
+        // Invocare il servizio
+        // Chiedere ad Andrea quale route deve essere invocato
+        // let proxy = Proxy()
+        // let parameters = ["name": dataStore.userProfile?.name,etc.]
+        // proxy.submit(httpMethod: "POST", route: "/api/editProfile", params: parameters, resolve: { jsonData in
+            // salvataggio riuscito
+        // }, reject: { dataJson in
+            // salvataggio non riuscito
+        // })
+        
+        dismiss(animated: true) {
+            // Questo metodo viene invocato nel MyProfileViewController
+            self.delegate?.didSaveComplete()
+        }
     }
     
     func createDatePicker() {
@@ -52,6 +78,7 @@ class EditProfileViewController: UIViewController {
         // format picker for date
         picker.datePickerMode = .date
     }
+    
     @objc func donePressed() {
         // format date
         let formatter = DateFormatter()
@@ -62,7 +89,4 @@ class EditProfileViewController: UIViewController {
         dateField.text = "\(dateString)"
         self.view.endEditing(true)
     }
-    
-
-    
 }

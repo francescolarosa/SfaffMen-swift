@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="51o-IK-xuu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mw5-IX-QN2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -826,22 +826,22 @@
         <!--My Profile-->
         <scene sceneID="iFS-wK-gl5">
             <objects>
-                <viewController storyboardIdentifier="MyProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tTI-Ak-rah" customClass="MyProfileViewController" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="tTI-Ak-rah" customClass="MyProfileViewController" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SKf-G7-K4q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="Cz2-lP-1f0">
-                                <rect key="frame" x="0.0" y="20" width="375" height="211"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="211"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Cz2-lP-1f0" secondAttribute="height" multiplier="16:9" id="Me8-bP-OV8"/>
                                 </constraints>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m39-nQ-hJZ">
-                                <rect key="frame" x="34" y="390" width="306" height="273"/>
+                                <rect key="frame" x="34" y="434" width="306" height="229"/>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZH-fk-lks">
-                                <rect key="frame" x="34" y="200" width="306" height="190"/>
+                                <rect key="frame" x="34" y="244" width="306" height="190"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvS-D4-YsP">
                                         <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
@@ -981,7 +981,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Wvr-es-S3S">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="mw5-IX-QN2" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationMyProfileViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="mw5-IX-QN2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QRn-cw-K2Q">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1314,6 +1314,7 @@
                     </view>
                     <connections>
                         <outlet property="capelliTextField" destination="wBq-HL-THM" id="M1f-U7-XE8"/>
+                        <outlet property="heightTextField" destination="BDs-sd-EBC" id="ybZ-Bs-grY"/>
                         <outlet property="occhiTextField" destination="geg-VP-8Qd" id="hHO-Li-Tar"/>
                         <outlet property="scarpeTextField" destination="Lud-qg-GdZ" id="kYd-Js-S5i"/>
                         <outlet property="tshirtTextField" destination="jQM-Pr-5vQ" id="lTS-Xg-JXF"/>
@@ -1556,7 +1557,7 @@
         <!--Navigation Controller-->
         <scene sceneID="JUT-PM-Yxi">
             <objects>
-                <navigationController storyboardIdentifier="EditProfileViewController" automaticallyAdjustsScrollViewInsets="NO" id="REc-5m-Qnz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationEditProfileViewController" automaticallyAdjustsScrollViewInsets="NO" id="REc-5m-Qnz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kRZ-Yh-HZU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1585,7 +1586,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0iq-3f-t5L"/>
-        <segue reference="th0-J9-YxY"/>
+        <segue reference="aaq-w4-GJ9"/>
         <segue reference="cFC-3G-8cm"/>
         <segue reference="isA-5z-Y5y"/>
     </inferredMetricsTieBreakers>

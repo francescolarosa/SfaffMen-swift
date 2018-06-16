@@ -18,7 +18,7 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
 
     var myTableViewDataSource = [NewInfo]()
     
-    let url = URL(string: "http://127.0.0.1:8000/api/events/index")
+    let url = URL(string: AppConfig.proxy_server + "/api/events/index")
     
     override func viewDidLoad() {
         super.viewDidLoad()

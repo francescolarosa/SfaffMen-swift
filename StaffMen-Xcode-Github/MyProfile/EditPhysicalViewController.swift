@@ -10,9 +10,17 @@ import UIKit
 
 class EditPhysicalViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    override func viewDidLoad() {
+    @IBOutlet weak var heightTextField: UITextField!
+    @IBOutlet weak var capelliTextField: UITextField!
+    @IBOutlet weak var tshirtTextField: UITextField!
+    @IBOutlet weak var scarpeTextField: UITextField!
+    @IBOutlet weak var occhiTextField: UITextField!
+    
+     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let userProfile = DataStore.shared.userProfile
+        
         pickerView1.delegate = self
         pickerView1.dataSource = self
         
@@ -27,20 +35,21 @@ class EditPhysicalViewController: UIViewController, UIPickerViewDelegate, UIPick
 
         capelliTextField.inputView = pickerView1
         capelliTextField.textAlignment = .center
-        capelliTextField.placeholder = "Select your Color"
+        capelliTextField.placeholder = userProfile?.hair ?? "Select capelli"
         
         tshirtTextField.inputView = pickerView2
         tshirtTextField.textAlignment = .center
-        tshirtTextField.placeholder = "Select taglia"
+        tshirtTextField.placeholder = userProfile?.tshirtSize ?? "Select taglia"
         
         scarpeTextField.inputView = pickerView3
         scarpeTextField.textAlignment = .center
-        scarpeTextField.placeholder = "Select taglia"
+        scarpeTextField.placeholder = userProfile?.shoesSize ?? "Select taglia"
         
         occhiTextField.inputView = pickerView4
         occhiTextField.textAlignment = .center
-        occhiTextField.placeholder = "Select color eyes"
+        occhiTextField.placeholder = userProfile?.eyes ?? "Select color eyes"
         
+        heightTextField.placeholder = userProfile?.height ?? "Altezza"
     }
     //x present
     func viewController(from storyboardID: String) -> UIViewController {
@@ -48,20 +57,16 @@ class EditPhysicalViewController: UIViewController, UIPickerViewDelegate, UIPick
         let viewController = storyboard.instantiateViewController(withIdentifier: storyboardID)
         return viewController
     }
+    
     @IBAction func didEditPhysicalButton(_ sender: Any) {
         let editProfileViewController = viewController(from: "EditProfileViewController")
         present(editProfileViewController, animated: true)
     }
-
-    @IBOutlet weak var capelliTextField: UITextField!
-    @IBOutlet weak var tshirtTextField: UITextField!
-    @IBOutlet weak var scarpeTextField: UITextField!
-    @IBOutlet weak var occhiTextField: UITextField!
     
     let colors = ["castani", "biondi", "neri","rossi"]
     let tshirts = ["L", "S", "M","XL"]
-    let  shoes = ["40", "41", "42","43","44"]
-    let  eyes = ["neri", "marroni", "verdi","azzurri"]
+    let shoes = ["40", "41", "42","43","44"]
+    let eyes = ["neri", "marroni", "verdi","azzurri"]
     
     var pickerView1 = UIPickerView()
     var pickerView2 = UIPickerView()
@@ -99,17 +104,27 @@ class EditPhysicalViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     
-        if pickerView == pickerView1{
-            capelliTextField.text = colors[row]
+        let dataStore = DataStore.shared
+        
+        if pickerView == pickerView1 {
+            let hairColor = colors[row]
+            dataStore.userProfile?.hair = hairColor
+            capelliTextField.text = hairColor
             capelliTextField.resignFirstResponder()
-        } else if pickerView == pickerView2{
-            tshirtTextField.text = tshirts[row]
+        } else if pickerView == pickerView2 {
+            let tshirt = tshirts[row]
+            dataStore.userProfile?.tshirtSize = tshirt
+            tshirtTextField.text = tshirt
             tshirtTextField.resignFirstResponder()
-        } else if pickerView == pickerView3{
-            scarpeTextField.text = shoes[row]
+        } else if pickerView == pickerView3 {
+            let shoe = shoes[row]
+            dataStore.userProfile?.shoesSize = shoe
+            scarpeTextField.text = shoe
             scarpeTextField.resignFirstResponder()
-        } else if pickerView == pickerView4{
-            occhiTextField.text = eyes[row]
+        } else if pickerView == pickerView4 {
+            let eye = eyes[row]
+            dataStore.userProfile?.eyes = eye
+            occhiTextField.text = eye
             occhiTextField.resignFirstResponder()
         }
     }

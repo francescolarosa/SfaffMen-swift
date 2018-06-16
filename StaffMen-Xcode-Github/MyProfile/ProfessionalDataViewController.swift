@@ -19,10 +19,14 @@ class ProfessionalDataViewController: UIViewController {
         
     }
     
-    func refresh(with userProfile: Login.UserProfile) {        
+    func refresh() {
+        
+        guard let userProfile = DataStore.shared.userProfile else {
+            return
+        }
         
         let professionalData = [
-            ProfessionalData(label2: "POSIZIONE", value2: userProfile.prev_job),
+            ProfessionalData(label2: "POSIZIONE", value2: userProfile.prevJob),
             ProfessionalData(label2: "NUMERO", value2: userProfile.phoneNumber),
             ProfessionalData(label2: "EMAIL", value2: userProfile.email)
         ]

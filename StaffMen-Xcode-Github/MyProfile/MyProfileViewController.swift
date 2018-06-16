@@ -25,7 +25,7 @@ class MyProfileViewController: CustomTransitionViewController, UIImagePickerCont
     private var physicalDataViewController: PhysicalDataViewController!
     private var professionalDataViewController: ProfessionalDataViewController!
     
-    private var userProfile: Login.UserProfile!
+    private var userProfile: UserProfile!
     
     private let viewModel = MyProfileViewModel()
     
@@ -63,7 +63,7 @@ class MyProfileViewController: CustomTransitionViewController, UIImagePickerCont
         // set default values
         usernameLabel.text = "-"
     }
-
+    
     //menu slide
     @objc func handlePan(_ pan:UIPanGestureRecognizer){
         if pan.state == .began{
@@ -95,11 +95,11 @@ class MyProfileViewController: CustomTransitionViewController, UIImagePickerCont
         if segmentedControl.selectedSegmentIndex == 0 {
             professionalDataViewController.remove()
             add(physicalDataViewController, into: containerView)
-            //physicalDataViewController.refresh(with: userProfile)
+            physicalDataViewController.refresh()
         } else {
             physicalDataViewController.remove()
             add(professionalDataViewController, into: containerView)
-            //professionalDataViewController.refresh(with: userProfile)
+            professionalDataViewController.refresh()
         }
     }
     //x present
@@ -130,11 +130,11 @@ class MyProfileViewController: CustomTransitionViewController, UIImagePickerCont
     }
     
     @IBAction func didEditButton(_ sender: Any) {
-        let editViewController = viewController(from: "EditProfileViewController") as! UINavigationController
+        let navigationEditViewController = viewController(from: "NavigationEditProfileViewController") as! UINavigationController
         
-        let editViewController2 =  editViewController.topViewController as! EditProfileViewController
-        editViewController2.userProfile = userProfile
-        present(editViewController, animated: true)        
+        let editViewController = navigationEditViewController.topViewController as! EditProfileViewController
+        editViewController.delegate = self
+        present(navigationEditViewController, animated: true)        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -159,20 +159,22 @@ class MyProfileViewController: CustomTransitionViewController, UIImagePickerCont
 }
 
 extension MyProfileViewController: MyProfileViewModelDelegate {
-    func didRetrieveComlete(with userProfile: Login.UserProfile) {
+    func didRetrieveComleteWithSuccess() {
         
-        self.userProfile = userProfile
+        guard let userProfile = DataStore.shared.userProfile else {
+            return
+        }
         
-       usernameLabel.text = userProfile.name
+        usernameLabel.text = userProfile.name
         
-        if let url = URL.init(string: "http://www.ns7records.com/staffapp/public/images/\(userProfile.photo)") {
+        if let url = URL(string: "\(AppConfig.public_server + userProfile.photo)") {
             imageView.af_setImage(withURL: url)
         }
         
         if segmentedControl.selectedSegmentIndex == 0 {
-            physicalDataViewController.refresh(with: userProfile)
+            physicalDataViewController.refresh()
         } else {
-            professionalDataViewController.refresh(with: userProfile)
+            professionalDataViewController.refresh()
         }
     }
     
@@ -181,12 +183,21 @@ extension MyProfileViewController: MyProfileViewModelDelegate {
     }
 }
 
-extension Int {
-    var sexDescription: String {
-        if self == 1 {
-            return "Uomo"
+extension MyProfileViewController: EditProfessionalViewControllerDelegate {
+    func didSaveComplete() {
+        
+        // Non devi fare nient'altro
+        
+        guard let userProfile = DataStore.shared.userProfile else {
+            return
+        }
+        
+        usernameLabel.text = userProfile.name
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            physicalDataViewController.refresh()
         } else {
-            return "Donna"
+            professionalDataViewController.refresh()
         }
     }
 }

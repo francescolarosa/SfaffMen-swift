@@ -17,12 +17,7 @@ struct ProfessionalData {
             ProfessionalData(label2: "AUTOMUNITO:", value2: "SI"),
             ProfessionalData(label2: "MOTOMUNITO", value2: "NO"),
             ProfessionalData(label2: "MADRE LINGUA", value2: "ITALIANO"),
-            ProfessionalData(label2: "AUTOMUNITO:", value2: "SI"),
-            ProfessionalData(label2: "MOTOMUNITO", value2: "NO"),
-            ProfessionalData(label2: "MADRE LINGUA", value2: "ITALIANO"),
-            ProfessionalData(label2: "AUTOMUNITO:", value2: "SI"),
-            ProfessionalData(label2: "MOTOMUNITO", value2: "NO"),
-            ProfessionalData(label2: "MADRE LINGUA", value2: "ITALIANO")
+         
         ]
     }
 }

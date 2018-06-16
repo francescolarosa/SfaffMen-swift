@@ -16,7 +16,7 @@ class Proxy {
     func submit(httpMethod: String, route: String, params: [String: Any], resolve: ((JSON) -> Void )?=nil, reject: ((JSON) -> Void )?=nil) {
         
         // -- Set initial URL
-        let urlString: String = AppConfig.proxy_server + route
+        let urlString = AppConfig.proxy_server + route
         
         // -- Set Request
         let request = NSMutableURLRequest(
@@ -65,8 +65,12 @@ class Proxy {
                 // -- Server is not responding withing the TimeOutInterval
                 //print("ProxyUrl Error: ", error)
                 //reject(error)
-                if let view = UIApplication.shared.keyWindow?.rootViewController?.view {
-                    NBMaterialToast.showWithText(view, text: error!.localizedDescription, duration: NBLunchDuration.long)
+                
+                // da fare il dispatch sul main anche qui perché sto accedendo alla UI
+                DispatchQueue.main.async {
+                    if let view = UIApplication.shared.keyWindow?.rootViewController?.view {
+                        NBMaterialToast.showWithText(view, text: error!.localizedDescription, duration: NBLunchDuration.long)
+                    }
                 }
                 
             } else {
@@ -86,7 +90,6 @@ class Proxy {
             }
         }
         dataTask.resume()
-        
     }
     
     func joinParams(params: [String: Any] ) -> String {
@@ -97,7 +100,6 @@ class Proxy {
         }
         
         return out.joined(separator: "&")
-        
     }
     
 }
