@@ -1405,7 +1405,7 @@
                     <connections>
                         <outlet property="experienceTextLabel" destination="diz-4i-aBq" id="mul-W8-fuL"/>
                         <outlet property="provincieTextFied" destination="0Ha-sp-HCj" id="xHI-Sm-v7Y"/>
-                        <outlet property="workTextField" destination="JwB-ZM-43j" id="78J-Ej-7xI"/>
+                        <outlet property="workTextField" destination="JwB-ZM-43j" id="SgG-gU-AGo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQR-eT-Hay" userLabel="First Responder" sceneMemberID="firstResponder"/>

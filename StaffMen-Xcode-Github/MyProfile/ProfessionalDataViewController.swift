@@ -29,6 +29,7 @@ class ProfessionalDataViewController: UIViewController {
             ProfessionalData(label2: "POSIZIONE", value2: userProfile.prevJob),
             ProfessionalData(label2: "NUMERO", value2: userProfile.phoneNumber),
             ProfessionalData(label2: "EMAIL", value2: userProfile.email)
+
         ]
         
         self.professionalData = professionalData

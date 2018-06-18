@@ -10,8 +10,16 @@ import UIKit
 
 class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
 
+    @IBOutlet weak var provincieTextFied: UITextField!
+    @IBOutlet weak var workTextField: UITextField!
+    @IBOutlet weak var experienceTextLabel: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //let userProfile = DataStore.shared.userProfile
+          let dataStore = DataStore.shared.userProfile
         
         pickerView1.delegate = self
         pickerView1.dataSource = self
@@ -22,7 +30,6 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
         pickerView3.delegate = self
         pickerView3.dataSource = self
         
-        let dataStore = DataStore.shared
         
         // popolare i vari elementi prendendoli dal data store
         
@@ -32,17 +39,14 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
         
         workTextField.inputView = pickerView2
         workTextField.textAlignment = .center
-        workTextField.placeholder = "Select your work"
+        workTextField.placeholder = dataStore?.prevJob ?? "Select your work"
         
         experienceTextLabel.inputView = pickerView3
         experienceTextLabel.textAlignment = .center
         experienceTextLabel.placeholder = "Do you have any experience?"
     }
     
-    @IBOutlet weak var provincieTextFied: UITextField!
-    @IBOutlet weak var workTextField: UITextField!
-    @IBOutlet weak var experienceTextLabel: UITextField!
-    
+ 
     let citys = ["Milano", "Cinisello", "Bucinasco","Rozzano"]
     let works = ["Steward", "Promoter", "Modello","Driver"]
     let experience = ["Senza esperienza", "Poca esperienza", "Molta esperienza"]
@@ -81,12 +85,15 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         // salvare sul data store gli elementu selezionati
+         let dataStore = DataStore.shared
         
         if pickerView == pickerView1{
             provincieTextFied.text = citys[row]
             provincieTextFied.resignFirstResponder()
         }else if pickerView == pickerView2{
-            workTextField.text = works[row]
+            let work = works[row]
+            dataStore.userProfile?.prevJob = work
+            workTextField.text = work
             workTextField.resignFirstResponder()
         }else if pickerView == pickerView3{
             experienceTextLabel.text = experience[row]
