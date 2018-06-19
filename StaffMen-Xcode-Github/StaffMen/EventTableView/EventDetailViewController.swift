@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class EventDetailViewController: UIViewController {
    
@@ -29,6 +30,7 @@ class EventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backAction))
        
         TitleProva.text = model?.displayTitle
         openingDateLabel.text = model?.location
@@ -38,6 +40,5 @@ class EventDetailViewController: UIViewController {
         descLabel.text = model?.description
         //srcImageStory.image = model?.src
     }
-
     
 }

@@ -73,7 +73,7 @@ class MyProfileViewModel {
         
         let parameters = [
             
-            "user": (UserDefaults.standard.object(forKey: "userstatus") as? String)!,
+            "user_id": (UserDefaults.standard.object(forKey: "userstatus") as? String)!,
 //            "email":"prova@gmail.com",
 //            "password":"123456",
         ]

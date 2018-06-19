@@ -33,6 +33,11 @@
 		4B7DBB2A208518AC00E06822 /* EdgePanTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB24208518AC00E06822 /* EdgePanTransition.swift */; };
 		4B7DBB2B208518AC00E06822 /* ElasticShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB25208518AC00E06822 /* ElasticShapeLayer.swift */; };
 		4B7DBB2C208518AC00E06822 /* ElasticTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB26208518AC00E06822 /* ElasticTransition.swift */; };
+		4B7E475420D97496002D917B /* DGElasticPullToRefreshLoadingViewCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E474F20D97496002D917B /* DGElasticPullToRefreshLoadingViewCircle.swift */; };
+		4B7E475520D97496002D917B /* DGElasticPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E475020D97496002D917B /* DGElasticPullToRefreshView.swift */; };
+		4B7E475620D97496002D917B /* DGElasticPullToRefreshConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E475120D97496002D917B /* DGElasticPullToRefreshConstants.swift */; };
+		4B7E475720D97496002D917B /* DGElasticPullToRefreshExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E475220D97496002D917B /* DGElasticPullToRefreshExtensions.swift */; };
+		4B7E475820D97496002D917B /* DGElasticPullToRefreshLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E475320D97496002D917B /* DGElasticPullToRefreshLoadingView.swift */; };
 		4B9092D620D92FB1008B0646 /* MyeventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9092D520D92FB0008B0646 /* MyeventViewController.swift */; };
 		4B9092DA20D92FC0008B0646 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9092D920D92FC0008B0646 /* SWRevealViewController.m */; };
 		4B92E87120691A9E00AE7BFB /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B92E86E20691A9D00AE7BFB /* Proxy.swift */; };
@@ -94,6 +99,11 @@
 		4B7DBB24208518AC00E06822 /* EdgePanTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgePanTransition.swift; sourceTree = "<group>"; };
 		4B7DBB25208518AC00E06822 /* ElasticShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticShapeLayer.swift; sourceTree = "<group>"; };
 		4B7DBB26208518AC00E06822 /* ElasticTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransition.swift; sourceTree = "<group>"; };
+		4B7E474F20D97496002D917B /* DGElasticPullToRefreshLoadingViewCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshLoadingViewCircle.swift; sourceTree = "<group>"; };
+		4B7E475020D97496002D917B /* DGElasticPullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshView.swift; sourceTree = "<group>"; };
+		4B7E475120D97496002D917B /* DGElasticPullToRefreshConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshConstants.swift; sourceTree = "<group>"; };
+		4B7E475220D97496002D917B /* DGElasticPullToRefreshExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshExtensions.swift; sourceTree = "<group>"; };
+		4B7E475320D97496002D917B /* DGElasticPullToRefreshLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshLoadingView.swift; sourceTree = "<group>"; };
 		4B9092D520D92FB0008B0646 /* MyeventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyeventViewController.swift; sourceTree = "<group>"; };
 		4B9092D820D92FC0008B0646 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		4B9092D920D92FC0008B0646 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -179,6 +189,7 @@
 		4B0B9392205844C500474101 /* StaffMen */ = {
 			isa = PBXGroup;
 			children = (
+				4B7E474E20D97496002D917B /* DGElasticPullToRefresh */,
 				ADE366C620C18D5B00CDD83C /* Networking */,
 				4B7DBB20208518AC00E06822 /* ElasticTransition */,
 				15BCD3042080C24800FE8BF5 /* Extension */,
@@ -242,6 +253,18 @@
 				4B7DBB26208518AC00E06822 /* ElasticTransition.swift */,
 			);
 			path = ElasticTransition;
+			sourceTree = "<group>";
+		};
+		4B7E474E20D97496002D917B /* DGElasticPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				4B7E474F20D97496002D917B /* DGElasticPullToRefreshLoadingViewCircle.swift */,
+				4B7E475020D97496002D917B /* DGElasticPullToRefreshView.swift */,
+				4B7E475120D97496002D917B /* DGElasticPullToRefreshConstants.swift */,
+				4B7E475220D97496002D917B /* DGElasticPullToRefreshExtensions.swift */,
+				4B7E475320D97496002D917B /* DGElasticPullToRefreshLoadingView.swift */,
+			);
+			path = DGElasticPullToRefresh;
 			sourceTree = "<group>";
 		};
 		4B9092D720D92FC0008B0646 /* swreveal */ = {
@@ -487,6 +510,7 @@
 				AD59BAE420A47AE70046E352 /* EventViewController.swift in Sources */,
 				ADE366CA20C18F4000CDD83C /* EventViewModel.swift in Sources */,
 				4B42A68020591BB800EBCB6B /* TransitionButton.swift in Sources */,
+				4B7E475820D97496002D917B /* DGElasticPullToRefreshLoadingView.swift in Sources */,
 				15BCD3062080C28800FE8BF5 /* CustomCategories.swift in Sources */,
 				ADE366CC20C1BA8000CDD83C /* EditPhysicalViewController.swift in Sources */,
 				AD169A9520C095EE00AF1DA5 /* ProfessionalDataCell.swift in Sources */,
@@ -501,6 +525,7 @@
 				4B92E87220691A9E00AE7BFB /* AppConfig.swift in Sources */,
 				AD6D016B20BD7C4F00A81B47 /* ProfessionalDataViewController.swift in Sources */,
 				AD6D016920BD7BEC00A81B47 /* PhysicalDataViewController.swift in Sources */,
+				4B7E475420D97496002D917B /* DGElasticPullToRefreshLoadingViewCircle.swift in Sources */,
 				4B7DBB28208518AC00E06822 /* ElasticTransitionPresentationController.swift in Sources */,
 				AD5FDDC220A725970084D506 /* RestaurantPreviewView.swift in Sources */,
 				4B7DBB2A208518AC00E06822 /* EdgePanTransition.swift in Sources */,
@@ -512,6 +537,7 @@
 				4B7DBB2C208518AC00E06822 /* ElasticTransition.swift in Sources */,
 				4B758EB620D2EF19009CD0B6 /* AwesomeTextField.swift in Sources */,
 				AD5FDDC420A725F10084D506 /* DetailsVC.swift in Sources */,
+				4B7E475520D97496002D917B /* DGElasticPullToRefreshView.swift in Sources */,
 				4B0B9396205844C500474101 /* ViewController.swift in Sources */,
 				4B92E87720691B3D00AE7BFB /* LoginViewController.swift in Sources */,
 				4B0B9394205844C500474101 /* AppDelegate.swift in Sources */,
@@ -525,12 +551,14 @@
 				AD5FDDBE20A724DF0084D506 /* MapViewController.swift in Sources */,
 				AD6D016720BD7B5200A81B47 /* MyProfileViewController.swift in Sources */,
 				4B7DBB2B208518AC00E06822 /* ElasticShapeLayer.swift in Sources */,
+				4B7E475720D97496002D917B /* DGElasticPullToRefreshExtensions.swift in Sources */,
 				B270A3932087456400ED9D26 /* RootPageViewController.swift in Sources */,
 				4B92E87620691B3D00AE7BFB /* RegistrationViewController.swift in Sources */,
 				4B7DBB27208518AC00E06822 /* Util.swift in Sources */,
 				ADFAC60620D51C680069E3E8 /* DataStore.swift in Sources */,
 				AD59BAE220A47A860046E352 /* Model.swift in Sources */,
 				AD91991820C3FD1300887624 /* EditProfessionalViewController.swift in Sources */,
+				4B7E475620D97496002D917B /* DGElasticPullToRefreshConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

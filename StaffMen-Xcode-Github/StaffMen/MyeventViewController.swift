@@ -15,7 +15,11 @@ import GooglePlacePicker
 import MapKit
 import CoreLocation
 import SwiftyJSON
+import GoogleMaps
 
+protocol HandleMapSearch: class {
+    func dropPinZoomIn(_ placemark:MKPlacemark)
+}
 
 class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDelegate,GMSAutocompleteViewControllerDelegate,MKMapViewDelegate ,CLLocationManagerDelegate {
 
@@ -25,11 +29,12 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
     var resultView: UITextView?
     
     var annotation: MKAnnotation!
+    var selectedPin: MKPlacemark?
+    @IBOutlet weak var view_mapContainer: GMSMapView!
 
     var diclatlong : NSMutableDictionary!
     @IBOutlet  var Scrollview: UIScrollView!
     @IBOutlet var txtserch : UITextField!
-    @IBOutlet var objMAP : MKMapView!
     @IBOutlet var txtmembertotal :UITextField!
     @IBOutlet var txtmembers_confirmed :UITextField!
     @IBOutlet var txtevent_date :UITextField!
@@ -53,12 +58,8 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
        // locationmanager.startUpdatingLocation()
        // locationmanager.desiredAccuracy = kCLLocationAccuracyBest
         
-        
-        objMAP.delegate = self
-        objMAP.mapType = .standard
-        objMAP.showsUserLocation = true
-        objMAP.showsScale = true
-        objMAP.showsCompass = true
+        view_mapContainer.isMyLocationEnabled = false
+        view_mapContainer.settings.myLocationButton = true
         
         Scrollview.isScrollEnabled = true
         Scrollview.layer.cornerRadius = 20
@@ -66,8 +67,6 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         Scrollview.contentSize = CGSize(width: Scrollview.contentSize.width, height: 1770)
 
         self.txtserch.delegate = self
-
-        objMAP.showAnnotations(objMAP.annotations, animated: true)
         
         resultsViewController = GMSAutocompleteResultsViewController()
        // resultsViewController?.delegate = self as! GMSAutocompleteResultsViewControllerDelegate
@@ -283,7 +282,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
             "job_id": "1",
             "members_total":txtmembertotal.text!,
             "members_confirmed":txtmembers_confirmed.text!,
-            "local":"local",
+            "local":txtserch.text!,
             "event_date":txtevent_date.text!,
             "time_start":txttime_start.text!,
             "time_end":txttime_end.text!,
@@ -317,8 +316,38 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
                 
             case .failure(let error):
                 print(error)
+                let alert = UIAlertController(title: "Aia", message: "Impossibile pubblicare evento", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
       }
+    }
+    
+    func searchPlace(txt: String) {
+        
+        view_mapContainer.clear()
+        
+        let mng = CLGeocoder()
+        mng.geocodeAddressString(txt) { (placemarks, error) in
+            
+            DispatchQueue.main.async {
+                
+                guard let places = placemarks, let location = places.first?.location else {
+                    
+                    return
+                }
+                
+                self.view_mapContainer.camera = GMSCameraPosition(target: location.coordinate, zoom: 13, bearing: 0, viewingAngle: 0)
+                
+                let marker = GMSMarker()
+                marker.appearAnimation = GMSMarkerAnimation(rawValue: 1)!
+                marker.position = location.coordinate
+                marker.title = txt
+                marker.snippet = txt
+                marker.map = self.view_mapContainer
+                
+            }
+        }
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
@@ -326,10 +355,20 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         // Do something with the selected place.
        
         print("Nome Luogo: \(place.name)")
-        print("Indirizzo: \(place.formattedAddress ?? "null")")
+        print("Indirizzo: \(String(describing: place.formattedAddress))")
         self.txtserch.text = place.formattedAddress
+        
         print("Attributi Luogo: \(String(describing: place.attributions))")
         print("Coordinate luogo: \(place.coordinate)")
+        //Google Maps marker
+        self.view_mapContainer.camera = GMSCameraPosition(target: place.coordinate, zoom: 16, bearing: 0, viewingAngle: 0)
+        let marker = GMSMarker()
+        marker.appearAnimation = GMSMarkerAnimation(rawValue: 1)!
+        marker.position = place.coordinate
+        marker.title = "Il tuo evento"
+        //marker.snippet = txt
+        marker.map = self.view_mapContainer
+        ///
         self.dismiss(animated: true, completion: nil)
 //        diclatlong.setValue(place.coordinate, forKey: "coordinate")
         
@@ -347,76 +386,77 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         self.dismiss(animated: true, completion: nil)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-//        if !isCurrentLocation {
-//            return
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//
+////        if !isCurrentLocation {
+////            return
+////        }
+////
+////        isCurrentLocation = false
+//
+//        let location = locations.last
+//        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+//        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+//
+//        self.objMAP.setRegion(region, animated: true)
+//
+//        if self.objMAP.annotations.count != 0 {
+//            annotation = self.objMAP.annotations[0]
+//            self.objMAP.removeAnnotation(annotation)
 //        }
 //
-//        isCurrentLocation = false
-        
-        let location = locations.last
-        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        
-        self.objMAP.setRegion(region, animated: true)
-        
-        if self.objMAP.annotations.count != 0 {
-            annotation = self.objMAP.annotations[0]
-            self.objMAP.removeAnnotation(annotation)
-        }
-        
-        let pointAnnotation = MKPointAnnotation()
-        pointAnnotation.coordinate = location!.coordinate
-        pointAnnotation.title = ""
-        objMAP.addAnnotation(pointAnnotation)
-    }
-  
+//        let pointAnnotation = MKPointAnnotation()
+//        pointAnnotation.coordinate = location!.coordinate
+//        pointAnnotation.title = "La tua posizione"
+//        objMAP.addAnnotation(pointAnnotation)
+//    }
+//
+//
+//   func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool)
+//   {
+//    let location = CLLocationCoordinate2D(latitude: 45.465454, longitude: 9.186516)
+//
+//    let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+//
+//    let region = MKCoordinateRegion(center: location, span: span)
+//
+//    self.objMAP.setRegion(region, animated: true)
+//
+//    }
+//
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+//    {
+//        let annotation = MKPointAnnotation()
+//
+//       // annotation.coordinate = diclatlong.value(forKey: "coordinate") as! CLLocationCoordinate2D
+//        annotation.title = "Il tuo evento"
+//
+//        let location1 = CLLocationCoordinate2D(
+//            latitude: 45.465454,
+//            longitude: 9.186516)
+//
+//
+//        let span1 = MKCoordinateSpanMake(2 ,2)
+//
+//        let region1 = MKCoordinateRegion(center: location1, span: span1)
+//        objMAP.setRegion(region1, animated: true)
+//
+//        objMAP.addAnnotation(annotation)
+//
+//        if annotation is MKPointAnnotation {
+//            //return nil so map view draws "blue dot" for standard user location
+//            return nil
+//        }
+//
+//        let reuseId = "pin"
+//        var pinView = objMAP.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+//        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+//        pinView?.pinTintColor = UIColor.orange
+//        pinView?.canShowCallout = true
+//        return pinView
+//    }
     
-   func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool)
-   {
-    let location = CLLocationCoordinate2D(latitude: 45.465454, longitude: 9.186516)
     
-    let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    
-    let region = MKCoordinateRegion(center: location, span: span)
-    
-    self.objMAP.setRegion(region, animated: true)
-    
-    }
-            
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
-    {
-        let annotation = MKPointAnnotation()
-        
-       // annotation.coordinate = diclatlong.value(forKey: "coordinate") as! CLLocationCoordinate2D
-        annotation.title = "IED Milano"
-        annotation.subtitle = "Milano"
-        
-        let location1 = CLLocationCoordinate2D(
-            latitude: 45.465454,
-            longitude: 9.186516)
-        
-        
-        let span1 = MKCoordinateSpanMake(2 ,2)
-        
-        let region1 = MKCoordinateRegion(center: location1, span: span1)
-        objMAP.setRegion(region1, animated: true)
-        
-        objMAP.addAnnotation(annotation)
-        
-        if annotation is MKPointAnnotation {
-            //return nil so map view draws "blue dot" for standard user location
-            return nil
-        }
-        
-        let reuseId = "pin"
-        var pinView = objMAP.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
-        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-        pinView?.pinTintColor = UIColor.orange
-        pinView?.canShowCallout = true
-        return pinView
-    }
     
         
         // Turn the network activity indicator on and off again.

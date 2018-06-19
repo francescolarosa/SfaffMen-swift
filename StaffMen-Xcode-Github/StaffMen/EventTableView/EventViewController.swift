@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
+class EventViewController: UITableViewController {
     
     @objc var transition = ElasticTransition()
     @objc let lgr = UIScreenEdgePanGestureRecognizer()
@@ -39,6 +39,20 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
         rgr.edges = .right
         view.addGestureRecognizer(lgr)
         view.addGestureRecognizer(rgr)
+        
+        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
+        loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
+        tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+                //self?.loadList()
+                self?.viewDidLoad()
+                self?.myTableViewDataSource.removeAll()
+                self?.tableView.reloadData()
+                self?.tableView.dg_stopLoading()
+            })
+            }, loadingView: loadingView)
+        tableView.dg_setPullToRefreshFillColor(UIColor(red: 57/255.0, green: 67/255.0, blue: 89/255.0, alpha: 1.0))
+        tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
     
     }
     
@@ -114,7 +128,7 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
                                 dump(self.myTableViewDataSource)
                                 DispatchQueue.main.async
                                     {
-                                        self.myTableView.reloadData()
+                                        self.tableView.reloadData()
                                 }
                             }
                         }
@@ -127,16 +141,15 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
         task.resume()
     }
     
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)->CGFloat {
-        return 150
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)->CGFloat {
+        return 175.0;
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myTableViewDataSource.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let myCell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath)
         
@@ -151,17 +164,12 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
         
         //ximg//let myURL = myTableViewDataSource[indexPath.row].src
         //x img//loadImage(url: myURL, to: myImageView)
-        
         return myCell
-    }
-    //per passare da un viewcontroller a detailviewcontroller
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowDetail", sender: self)
     }
 //    //per passare da un viewcontroller a detailviewcontroller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? EventDetailViewController {
-            destination.model = myTableViewDataSource[(myTableView.indexPathForSelectedRow?.row)!]
+            destination.model = myTableViewDataSource[(tableView.indexPathForSelectedRow?.row)!]
             
             // Effetto onda
             let vc = segue.destination
@@ -203,13 +211,14 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
     //endmenuslide
     
     /// star to: (x eliminare row e x muove row)
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let movedObjTemp = myTableViewDataSource[sourceIndexPath.item]
         myTableViewDataSource.remove(at: sourceIndexPath.item)
         myTableViewDataSource.insert(movedObjTemp, at:  destinationIndexPath.item)
         
     }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete){
 //            print(indexPath.item)
         print(myTableViewDataSource[indexPath.item])
@@ -238,7 +247,10 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
                                 {
                                     print(jsonData)
                                     self.myTableViewDataSource.remove(at : indexPath.item)
-                                    self.myTableView.deleteRows(at: [indexPath], with: .automatic)
+                                    //self.myTableView.deleteRows(at: [indexPath], with: .automatic)
+                                    let indexPath = IndexPath(item: 0, section: 0)
+                                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                                    self.tableView.reloadData()
                                 }
                             }
                         }
@@ -252,9 +264,20 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
         }
     }
     @IBAction func EditButtonTableView(_ sender: UIBarButtonItem) {
-        self.myTableView.isEditing = !self.myTableView.isEditing
-        sender.title = (self.myTableView.isEditing) ? "Done" : "Edit"
+        self.tableView.isEditing = !self.tableView.isEditing
+        sender.title = (self.tableView.isEditing) ? "Done" : "Edit"
     }
     /// end to: (x eliminare row e x muove row)
+    
+}
+
+// MARK: -
+// MARK: UITableView Delegate
+
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }
