@@ -33,6 +33,8 @@
 		4B7DBB2A208518AC00E06822 /* EdgePanTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB24208518AC00E06822 /* EdgePanTransition.swift */; };
 		4B7DBB2B208518AC00E06822 /* ElasticShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB25208518AC00E06822 /* ElasticShapeLayer.swift */; };
 		4B7DBB2C208518AC00E06822 /* ElasticTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB26208518AC00E06822 /* ElasticTransition.swift */; };
+		4B9092D620D92FB1008B0646 /* MyeventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9092D520D92FB0008B0646 /* MyeventViewController.swift */; };
+		4B9092DA20D92FC0008B0646 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9092D920D92FC0008B0646 /* SWRevealViewController.m */; };
 		4B92E87120691A9E00AE7BFB /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B92E86E20691A9D00AE7BFB /* Proxy.swift */; };
 		4B92E87220691A9E00AE7BFB /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B92E86F20691A9D00AE7BFB /* AppConfig.swift */; };
 		4B92E87320691A9E00AE7BFB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B92E87020691A9E00AE7BFB /* SwiftyJSON.swift */; };
@@ -92,6 +94,9 @@
 		4B7DBB24208518AC00E06822 /* EdgePanTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgePanTransition.swift; sourceTree = "<group>"; };
 		4B7DBB25208518AC00E06822 /* ElasticShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticShapeLayer.swift; sourceTree = "<group>"; };
 		4B7DBB26208518AC00E06822 /* ElasticTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransition.swift; sourceTree = "<group>"; };
+		4B9092D520D92FB0008B0646 /* MyeventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyeventViewController.swift; sourceTree = "<group>"; };
+		4B9092D820D92FC0008B0646 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		4B9092D920D92FC0008B0646 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		4B92E86E20691A9D00AE7BFB /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
 		4B92E86F20691A9D00AE7BFB /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		4B92E87020691A9E00AE7BFB /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -190,6 +195,8 @@
 				4B2E5FE72084F7230006089D /* InstagramActivityIndicator.swift */,
 				4B0B93AB2058452600474101 /* MenuViewController.swift */,
 				4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */,
+				4B9092D520D92FB0008B0646 /* MyeventViewController.swift */,
+				4B9092D720D92FC0008B0646 /* swreveal */,
 				AD6D015B20BD77BE00A81B47 /* MyProfile */,
 				AD5FDDBA20A7247A0084D506 /* mapEvents */,
 				AD59BAE020A479420046E352 /* EventTableView */,
@@ -235,6 +242,15 @@
 				4B7DBB26208518AC00E06822 /* ElasticTransition.swift */,
 			);
 			path = ElasticTransition;
+			sourceTree = "<group>";
+		};
+		4B9092D720D92FC0008B0646 /* swreveal */ = {
+			isa = PBXGroup;
+			children = (
+				4B9092D820D92FC0008B0646 /* SWRevealViewController.h */,
+				4B9092D920D92FC0008B0646 /* SWRevealViewController.m */,
+			);
+			path = swreveal;
 			sourceTree = "<group>";
 		};
 		AD59BAE020A479420046E352 /* EventTableView */ = {
@@ -476,7 +492,9 @@
 				AD169A9520C095EE00AF1DA5 /* ProfessionalDataCell.swift in Sources */,
 				AD59BAE620A4BB9A0046E352 /* EventDetailViewController.swift in Sources */,
 				4B92E87320691A9E00AE7BFB /* SwiftyJSON.swift in Sources */,
+				4B9092D620D92FB1008B0646 /* MyeventViewController.swift in Sources */,
 				4B0B93C520585E8700474101 /* GuillotineMenuTransitionAnimation.swift in Sources */,
+				4B9092DA20D92FC0008B0646 /* SWRevealViewController.m in Sources */,
 				1EB2D64520C0565C00904FE8 /* UIViewController+Extensions.swift in Sources */,
 				AD169A9320C0958800AF1DA5 /* ProfessionalData.swift in Sources */,
 				4B2E5FE82084F7240006089D /* InstagramActivityIndicator.swift in Sources */,

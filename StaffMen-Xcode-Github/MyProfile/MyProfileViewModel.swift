@@ -72,8 +72,10 @@ class MyProfileViewModel {
         let proxy = Proxy()
         
         let parameters = [
-            "email":"prova@gmail.com",
-            "password":"123456",
+            
+            "user": (UserDefaults.standard.object(forKey: "userstatus") as? String)!,
+//            "email":"prova@gmail.com",
+//            "password":"123456",
         ]
 
         proxy.submit(httpMethod: "POST", route: "/api/login", params: parameters, resolve: resolve, reject: reject)

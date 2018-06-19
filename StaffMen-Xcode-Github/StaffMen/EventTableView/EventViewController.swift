@@ -18,7 +18,7 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
 
     var myTableViewDataSource = [NewInfo]()
     
-    let url = URL(string: AppConfig.proxy_server + "/api/events/index")
+    let url = URL(string: AppConfig.proxy_server + "/api/events/json") //event index
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,7 +102,7 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
                                     }
                                     
                                     //                                    //x img
-                                    //                                    if let myMultimedia = value[""] as? [String : Any]
+                                    //                                    if let myMultimedia = value["cover_photo"] as? [String : Any]
                                     //                                    {
                                     //                                        if let mySrc = myMultimedia["src"] as? String
                                     //                                        {
@@ -215,7 +215,7 @@ class EventViewController: UIViewController, UITableViewDataSource,UITableViewDe
         print(myTableViewDataSource[indexPath.item])
 //            print(myTableViewDataSource[indexPath].id)
             guard let idEvent = (myTableViewDataSource[indexPath.item].idEvent),
-                let urlDestroy = URL(string: "http://127.0.0.1:8000/events/appdestroy/\(idEvent)") else {
+                let urlDestroy = URL(string: AppConfig.proxy_server + "/api/deleteevent/\(idEvent)") else {
                 return
             }
             let taskDestroy = URLSession.shared.dataTask(with: urlDestroy) {
