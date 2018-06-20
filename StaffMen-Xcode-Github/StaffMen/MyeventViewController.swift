@@ -17,10 +17,6 @@ import CoreLocation
 import SwiftyJSON
 import GoogleMaps
 
-protocol HandleMapSearch: class {
-    func dropPinZoomIn(_ placemark:MKPlacemark)
-}
-
 class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDelegate,GMSAutocompleteViewControllerDelegate,MKMapViewDelegate ,CLLocationManagerDelegate {
 
     var locationmanager : CLLocationManager!
@@ -296,7 +292,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         print(parameters)
         
         let url =  AppConfig.proxy_server + "/api/createevent"
-        Alamofire.request(url, method:.post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { response in
+        Alamofire.request(url, method:.post, parameters:parameters,encoding: JSONEncoding.default).responseString { response in
             switch response.result {
             case .success:
                 print(response)
@@ -312,6 +308,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
                 let alert = UIAlertController(title: "Yeah!", message: "Evento pubblicato correttamente!", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
                 
                 
             case .failure(let error):
@@ -356,7 +353,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
        
         print("Nome Luogo: \(place.name)")
         print("Indirizzo: \(String(describing: place.formattedAddress))")
-        self.txtserch.text = place.formattedAddress
+        self.txtserch.text = place.name + place.formattedAddress!
         
         print("Attributi Luogo: \(String(describing: place.attributions))")
         print("Coordinate luogo: \(place.coordinate)")

@@ -10,14 +10,15 @@ import Foundation
 
 struct NewInfo {
     var user_id: Int?
-    var idEvent: Int!
+    var id: Int!
     var date: String?
     var displayTitle: String?
     var location: String?
-    var accettati: String?
+    var num_members: String?
+    var num_members_confirmed: String?
     var startEvent: String?
     var endEvent: String?
     var description: String?
-    var cost: Int?
+    var cost: String?
     var src = ""
 }

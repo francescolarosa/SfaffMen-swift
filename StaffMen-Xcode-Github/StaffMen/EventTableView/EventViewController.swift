@@ -14,6 +14,8 @@ class EventViewController: UITableViewController {
     @objc let lgr = UIScreenEdgePanGestureRecognizer()
     @objc let rgr = UIScreenEdgePanGestureRecognizer()
 
+    let rc = UIRefreshControl()
+    
     @IBOutlet weak var myTableView: UITableView!
 
     var myTableViewDataSource = [NewInfo]()
@@ -24,6 +26,22 @@ class EventViewController: UITableViewController {
         super.viewDidLoad()
         
         loadList()
+        
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = rc
+        } else {
+            tableView.addSubview(rc)
+        }
+        
+        // Configure Refresh Control
+        rc.addTarget(self, action: #selector(refreshTableData(_:)), for: .valueChanged)
+        let attributesRefresh = [kCTForegroundColorAttributeName: UIColor.white]
+        rc.attributedTitle = NSAttributedString(string: "Caricamento ...", attributes: attributesRefresh as [NSAttributedStringKey : Any])
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
         
         // MENU Core
         // customization
@@ -39,22 +57,16 @@ class EventViewController: UITableViewController {
         rgr.edges = .right
         view.addGestureRecognizer(lgr)
         view.addGestureRecognizer(rgr)
-        
-        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
-        loadingView.tintColor = UIColor(red: 78/255.0, green: 221/255.0, blue: 200/255.0, alpha: 1.0)
-        tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
-                //self?.loadList()
-                self?.viewDidLoad()
-                self?.myTableViewDataSource.removeAll()
-                self?.tableView.reloadData()
-                self?.tableView.dg_stopLoading()
-            })
-            }, loadingView: loadingView)
-        tableView.dg_setPullToRefreshFillColor(UIColor(red: 57/255.0, green: 67/255.0, blue: 89/255.0, alpha: 1.0))
-        tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
     
     }
+    
+    @objc private func refreshTableData(_ sender: Any) {
+        // Fetch Table Data
+        //myTableViewDataSource.removeAll()
+        tableView.reloadData()
+        loadList()
+    }
+
     
     func loadList(){
         
@@ -110,9 +122,22 @@ class EventViewController: UITableViewController {
                                     {
                                         myNews.endEvent = myEndEvent
                                     }
+                                    if let myCost = value["cost"] as? String
+                                    {
+                                        myNews.cost = myCost
+                                    }
+                                    
+                                    if let myNumMembers = value["num_members"] as? String
+                                    {
+                                        myNews.num_members = myNumMembers
+                                    }
+                                    if let myNumMembers_conf = value["num_members_confirmed"] as? String
+                                    {
+                                        myNews.num_members_confirmed = myNumMembers_conf
+                                    }
                                     if let myId = value["id"] as? Int
                                     {
-                                        myNews.idEvent = myId
+                                        myNews.id = myId
                                     }
                                     
                                     //                                    //x img
@@ -126,9 +151,9 @@ class EventViewController: UITableViewController {
                                     self.myTableViewDataSource.append(myNews)
                                 }//end loop
                                 dump(self.myTableViewDataSource)
-                                DispatchQueue.main.async
-                                    {
-                                        self.tableView.reloadData()
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                    self.rc.endRefreshing()
                                 }
                             }
                         }
@@ -157,10 +182,15 @@ class EventViewController: UITableViewController {
         let myTitleLabel = myCell.viewWithTag(12) as! UILabel
         let myLocation = myCell.viewWithTag(13) as! UILabel
         let DateLabelCell = myCell.viewWithTag(14) as! UILabel
+        let numMembLabel = myCell.viewWithTag(15) as! UILabel
+        let numMembConfLabel = myCell.viewWithTag(16) as! UILabel
         
         myTitleLabel.text = myTableViewDataSource[indexPath.row].displayTitle
         myLocation.text = myTableViewDataSource[indexPath.row].location
         DateLabelCell.text = myTableViewDataSource[indexPath.row].date
+        numMembLabel.text = myTableViewDataSource[indexPath.row].num_members
+        numMembConfLabel.text = myTableViewDataSource[indexPath.row].num_members_confirmed
+        
         
         //ximg//let myURL = myTableViewDataSource[indexPath.row].src
         //x img//loadImage(url: myURL, to: myImageView)
@@ -223,8 +253,8 @@ class EventViewController: UITableViewController {
 //            print(indexPath.item)
         print(myTableViewDataSource[indexPath.item])
 //            print(myTableViewDataSource[indexPath].id)
-            guard let idEvent = (myTableViewDataSource[indexPath.item].idEvent),
-                let urlDestroy = URL(string: AppConfig.proxy_server + "/api/deleteevent/\(idEvent)") else {
+            guard let idEvent = (myTableViewDataSource[indexPath.item].id),
+                let urlDestroy = URL(string: AppConfig.proxy_server + "/api/events/\(idEvent)/delete") else {
                 return
             }
             let taskDestroy = URLSession.shared.dataTask(with: urlDestroy) {
