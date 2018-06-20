@@ -16,6 +16,7 @@ import MapKit
 import CoreLocation
 import SwiftyJSON
 import GoogleMaps
+import Foundation
 
 class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDelegate,GMSAutocompleteViewControllerDelegate,MKMapViewDelegate ,CLLocationManagerDelegate {
 
@@ -54,7 +55,19 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
        // locationmanager.startUpdatingLocation()
        // locationmanager.desiredAccuracy = kCLLocationAccuracyBest
         
-        view_mapContainer.isMyLocationEnabled = false
+        //txt field shadow
+        //To apply corner radius
+        txtserch.layer.cornerRadius = txtserch.frame.size.height / 2
+        
+        //To apply Shadow
+        txtserch.layer.shadowOpacity = 1
+        txtserch.layer.shadowRadius = 3.0
+        txtserch.layer.shadowOffset = CGSize.zero // Use any CGSize
+        txtserch.layer.shadowColor = UIColor.gray.cgColor
+        ////
+        
+        
+        view_mapContainer.isMyLocationEnabled = true
         view_mapContainer.settings.myLocationButton = true
         
         Scrollview.isScrollEnabled = true
@@ -82,6 +95,8 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         
     
         datePicker.datePickerMode = UIDatePickerMode.date
+        let toolBar = UIToolbar().ToolbarPiker(mySelect: #selector(MyeventViewController.dismissPicker))
+        txtevent_date.inputAccessoryView = toolBar
         txtevent_date.inputView = datePicker
     
         datePicker.addTarget(self,action:#selector(datePickerChanged),
@@ -92,6 +107,8 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         timepicker.datePickerMode = UIDatePickerMode.time
         txttime_start.inputView = timepicker
         txttime_end.inputView = tympicker
+        txttime_start.inputAccessoryView = toolBar
+        txttime_end.inputAccessoryView = toolBar
         
         timepicker.addTarget(self,action:#selector(timepickerchanged),
                              for:.valueChanged)
@@ -105,9 +122,25 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         // Do any additional setup after loading the view.
     }
     
+    @objc func dismissPicker() {
+        
+        view.endEditing(true)
+    }
+    
     @IBAction func returnToEvent(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func dismissViewController() {
+        
+        //self.navigationController?.popToRootViewController(animated: true)
+        
+        guard let vc = self.presentingViewController else { return }
+
+        while (vc.presentingViewController != nil) {
+            vc.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc func datePickerChanged(datePicker:UIDatePicker) {
@@ -119,7 +152,6 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
 //
 //        let strDate = dateFormatter.string(from: datePicker.date)
 //
-      
         
         let dateFormatter: DateFormatter = DateFormatter()
         
@@ -131,7 +163,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         let strDate = dateFormatter.string(from: datePicker.date)
         
           txtevent_date.text = strDate
-        datePicker.removeFromSuperview() // if you want to remove time picker
+        //datePicker.removeFromSuperview() // if you want to remove time picker
 
         
     }
@@ -153,7 +185,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
 
         formatter.dateFormat = "HH:mm"
         txttime_start.text = formatter.string(from: datePicker.date)
-        timepicker.removeFromSuperview()
+        //timepicker.removeFromSuperview()
     }
     @objc func tympickervaluechanged(datePicker:UIDatePicker)  {
 
@@ -308,7 +340,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
                 let alert = UIAlertController(title: "Yeah!", message: "Evento pubblicato correttamente!", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                self.dismiss(animated: true, completion: nil)
+                self.dismissViewController()
                 
                 
             case .failure(let error):
@@ -353,7 +385,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
        
         print("Nome Luogo: \(place.name)")
         print("Indirizzo: \(String(describing: place.formattedAddress))")
-        self.txtserch.text = place.name + place.formattedAddress!
+        self.txtserch.text = place.name + "" + place.formattedAddress!
         
         print("Attributi Luogo: \(String(describing: place.attributions))")
         print("Coordinate luogo: \(place.coordinate)")
@@ -482,4 +514,26 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
     }
     */
 
+}
+
+extension UIToolbar {
+    
+    func ToolbarPiker(mySelect : Selector) -> UIToolbar {
+        
+        let toolBar = UIToolbar()
+        
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor.black
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Chiudi", style: UIBarButtonItemStyle.plain, target: self, action: mySelect)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([ spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        return toolBar
+    }
+    
 }

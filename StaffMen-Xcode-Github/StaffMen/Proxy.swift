@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import NBMaterialDialogIOS
 
 class Proxy {
     
@@ -58,7 +57,7 @@ class Proxy {
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest) { data, response, error in
             
-            let httpResponse = response as? HTTPURLResponse
+            _ = response as? HTTPURLResponse
             
             if (error != nil) {
                 
@@ -68,8 +67,11 @@ class Proxy {
                 
                 // da fare il dispatch sul main anche qui perché sto accedendo alla UI
                 DispatchQueue.main.async {
-                    if let view = UIApplication.shared.keyWindow?.rootViewController?.view {
-                        NBMaterialToast.showWithText(view, text: error!.localizedDescription, duration: NBLunchDuration.long)
+                    if (UIApplication.shared.keyWindow?.rootViewController?.view) != nil {
+                        //testo time out connection
+                        let alert = UIAlertController(title: "Server Time Out", message: "La richiesta ha impiegato troppo tempo", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive, handler: nil))
+                        alert.present(alert, animated: true, completion: nil)
                     }
                 }
                 

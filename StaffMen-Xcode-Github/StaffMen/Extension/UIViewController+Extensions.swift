@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 extension UIViewController {
   
@@ -32,3 +33,5 @@ extension UIViewController {
     view.removeFromSuperview()
   }
 }
+
+

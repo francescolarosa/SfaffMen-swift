@@ -7,26 +7,19 @@ target 'StaffMen' do
 	pod 'TransitionButton'
 	pod 'IQKeyboardManagerSwift'
   	pod 'Alamofire'
-    pod 'AlamofireImage'
+    	pod 'AlamofireImage'
   	pod 'SwiftyJSON'
   	pod 'MaterialControls'
-  	pod 'ObjectMapper'
-  	pod 'MaterialKit', :git => 'https://github.com/theMeatloaf/MaterialKit.git'
-  	pod 'NBMaterialDialogIOS', :git => 'https://github.com/balitax/NBMaterialDialogIOS.git'
+	pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git'
   	pod 'ImagePicker'
-  	pod 'ReachabilitySwift', '~> 3'
+  	pod 'ReachabilitySwift'
   	pod 'Kingfisher'
-  	pod 'Firebase/Core'
-  	pod 'Firebase/Messaging'
   	pod 'MaterialControls'
+	pod 'GooglePlaces'
+  	pod 'GooglePlacePicker'
+  	pod 'GoogleMaps'
 	pod "MotionAnimation", :git => 'https://github.com/LondonAppWorks/MotionAnimation.git'
 
-  # Pods for 
-
-  #Pod for googleMap
-
-  pod 'GooglePlaces'
-  pod 'GooglePlacePicker'
-  pod 'GoogleMaps'
+  # Pods for StaffMen
 
 end

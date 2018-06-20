@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import NBMaterialDialogIOS
 
 class RegistrationViewController: UIViewController {
     

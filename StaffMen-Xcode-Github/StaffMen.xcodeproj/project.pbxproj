@@ -8,17 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		15BCD3062080C28800FE8BF5 /* CustomCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BCD3052080C28800FE8BF5 /* CustomCategories.swift */; };
-		1EB2D64520C0565C00904FE8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB2D64420C0565C00904FE8 /* UIViewController+Extensions.swift */; };
 		1EB2D64720C0577000904FE8 /* PhysicalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB2D64620C0577000904FE8 /* PhysicalData.swift */; };
 		1EB2D64920C0592500904FE8 /* PhysicalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB2D64820C0592500904FE8 /* PhysicalDataCell.swift */; };
 		4B0B9394205844C500474101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B9393205844C500474101 /* AppDelegate.swift */; };
-		4B0B9396205844C500474101 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B9395205844C500474101 /* ViewController.swift */; };
 		4B0B9399205844C500474101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0B9397205844C500474101 /* Main.storyboard */; };
 		4B0B939B205844C500474101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B0B939A205844C500474101 /* Assets.xcassets */; };
 		4B0B939E205844C500474101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0B939C205844C500474101 /* LaunchScreen.storyboard */; };
 		4B0B93AC2058452600474101 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B93AB2058452600474101 /* MenuViewController.swift */; };
 		4B0B93C420585E8700474101 /* ic_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0B93C220585E8700474101 /* ic_menu@3x.png */; };
 		4B0B93C520585E8700474101 /* GuillotineMenuTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B93C320585E8700474101 /* GuillotineMenuTransitionAnimation.swift */; };
+		4B138A2620DAFF8600771F47 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B138A2520DAFF8600771F47 /* UIViewController+Extensions.swift */; };
 		4B2E5FE82084F7240006089D /* InstagramActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E5FE72084F7230006089D /* InstagramActivityIndicator.swift */; };
 		4B42A67E20591BB800EBCB6B /* CustomTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42A67820591BB800EBCB6B /* CustomTransitionViewController.swift */; };
 		4B42A67F20591BB800EBCB6B /* SpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42A67920591BB800EBCB6B /* SpinerLayer.swift */; };
@@ -33,11 +32,6 @@
 		4B7DBB2A208518AC00E06822 /* EdgePanTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB24208518AC00E06822 /* EdgePanTransition.swift */; };
 		4B7DBB2B208518AC00E06822 /* ElasticShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB25208518AC00E06822 /* ElasticShapeLayer.swift */; };
 		4B7DBB2C208518AC00E06822 /* ElasticTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB26208518AC00E06822 /* ElasticTransition.swift */; };
-		4B7E475420D97496002D917B /* DGElasticPullToRefreshLoadingViewCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E474F20D97496002D917B /* DGElasticPullToRefreshLoadingViewCircle.swift */; };
-		4B7E475520D97496002D917B /* DGElasticPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E475020D97496002D917B /* DGElasticPullToRefreshView.swift */; };
-		4B7E475620D97496002D917B /* DGElasticPullToRefreshConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E475120D97496002D917B /* DGElasticPullToRefreshConstants.swift */; };
-		4B7E475720D97496002D917B /* DGElasticPullToRefreshExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E475220D97496002D917B /* DGElasticPullToRefreshExtensions.swift */; };
-		4B7E475820D97496002D917B /* DGElasticPullToRefreshLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7E475320D97496002D917B /* DGElasticPullToRefreshLoadingView.swift */; };
 		4B9092D620D92FB1008B0646 /* MyeventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9092D520D92FB0008B0646 /* MyeventViewController.swift */; };
 		4B9092DA20D92FC0008B0646 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9092D920D92FC0008B0646 /* SWRevealViewController.m */; };
 		4B92E87120691A9E00AE7BFB /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B92E86E20691A9D00AE7BFB /* Proxy.swift */; };
@@ -66,18 +60,17 @@
 		ADE366CC20C1BA8000CDD83C /* EditPhysicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE366CB20C1BA8000CDD83C /* EditPhysicalViewController.swift */; };
 		ADFAC60620D51C680069E3E8 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFAC60520D51C680069E3E8 /* DataStore.swift */; };
 		B270A3932087456400ED9D26 /* RootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270A3922087456400ED9D26 /* RootPageViewController.swift */; };
-		B46BA15137E469368C26EFC1 /* Pods_StaffMen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9047F217634F023BFD30CF1E /* Pods_StaffMen.framework */; };
+		E3C79227D4E337336D3EF6F9 /* Pods_StaffMen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A82C2479B13C8AC76633EA /* Pods_StaffMen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BB89AF2878D1874FEA20D3E /* Pods-StaffMen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StaffMen.release.xcconfig"; path = "Pods/Target Support Files/Pods-StaffMen/Pods-StaffMen.release.xcconfig"; sourceTree = "<group>"; };
 		15BCD3052080C28800FE8BF5 /* CustomCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategories.swift; sourceTree = "<group>"; };
-		1EB2D64420C0565C00904FE8 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		1EB2D64620C0577000904FE8 /* PhysicalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalData.swift; sourceTree = "<group>"; };
 		1EB2D64820C0592500904FE8 /* PhysicalDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalDataCell.swift; sourceTree = "<group>"; };
-		28BE31DCFE82CF1FB77BF089 /* Pods-StaffMen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StaffMen.release.xcconfig"; path = "Pods/Target Support Files/Pods-StaffMen/Pods-StaffMen.release.xcconfig"; sourceTree = "<group>"; };
+		41A82C2479B13C8AC76633EA /* Pods_StaffMen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StaffMen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0B9390205844C500474101 /* StaffMen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StaffMen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0B9393205844C500474101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B0B9395205844C500474101 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B0B9398205844C500474101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B0B939A205844C500474101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B0B939D205844C500474101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,6 +78,7 @@
 		4B0B93AB2058452600474101 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4B0B93C220585E8700474101 /* ic_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu@3x.png"; sourceTree = "<group>"; };
 		4B0B93C320585E8700474101 /* GuillotineMenuTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuTransitionAnimation.swift; sourceTree = "<group>"; };
+		4B138A2520DAFF8600771F47 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		4B2E5FE72084F7230006089D /* InstagramActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramActivityIndicator.swift; sourceTree = "<group>"; };
 		4B42A67820591BB800EBCB6B /* CustomTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitionViewController.swift; sourceTree = "<group>"; };
 		4B42A67920591BB800EBCB6B /* SpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinerLayer.swift; sourceTree = "<group>"; };
@@ -99,11 +93,6 @@
 		4B7DBB24208518AC00E06822 /* EdgePanTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgePanTransition.swift; sourceTree = "<group>"; };
 		4B7DBB25208518AC00E06822 /* ElasticShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticShapeLayer.swift; sourceTree = "<group>"; };
 		4B7DBB26208518AC00E06822 /* ElasticTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransition.swift; sourceTree = "<group>"; };
-		4B7E474F20D97496002D917B /* DGElasticPullToRefreshLoadingViewCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshLoadingViewCircle.swift; sourceTree = "<group>"; };
-		4B7E475020D97496002D917B /* DGElasticPullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshView.swift; sourceTree = "<group>"; };
-		4B7E475120D97496002D917B /* DGElasticPullToRefreshConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshConstants.swift; sourceTree = "<group>"; };
-		4B7E475220D97496002D917B /* DGElasticPullToRefreshExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshExtensions.swift; sourceTree = "<group>"; };
-		4B7E475320D97496002D917B /* DGElasticPullToRefreshLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshLoadingView.swift; sourceTree = "<group>"; };
 		4B9092D520D92FB0008B0646 /* MyeventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyeventViewController.swift; sourceTree = "<group>"; };
 		4B9092D820D92FC0008B0646 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		4B9092D920D92FC0008B0646 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -114,8 +103,7 @@
 		4B92E87520691B3D00AE7BFB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4B92E87820691B4C00AE7BFB /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		4BDA50F320591ACD00FA757E /* TransitionButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TransitionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		52E1E084194944B302B9CB80 /* Pods-StaffMen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StaffMen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StaffMen/Pods-StaffMen.debug.xcconfig"; sourceTree = "<group>"; };
-		9047F217634F023BFD30CF1E /* Pods_StaffMen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StaffMen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A78D8C4B457A34AEB6C467A /* Pods-StaffMen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StaffMen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StaffMen/Pods-StaffMen.debug.xcconfig"; sourceTree = "<group>"; };
 		AD169A9220C0958800AF1DA5 /* ProfessionalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalData.swift; sourceTree = "<group>"; };
 		AD169A9420C095EE00AF1DA5 /* ProfessionalDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalDataCell.swift; sourceTree = "<group>"; };
 		AD58FA6C20CD261C00905FC9 /* MyProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewModel.swift; sourceTree = "<group>"; };
@@ -143,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B46BA15137E469368C26EFC1 /* Pods_StaffMen.framework in Frameworks */,
+				E3C79227D4E337336D3EF6F9 /* Pods_StaffMen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +141,7 @@
 		15BCD3042080C24800FE8BF5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				1EB2D64420C0565C00904FE8 /* UIViewController+Extensions.swift */,
+				4B138A2520DAFF8600771F47 /* UIViewController+Extensions.swift */,
 				15BCD3052080C28800FE8BF5 /* CustomCategories.swift */,
 			);
 			path = Extension;
@@ -163,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				4BDA50F320591ACD00FA757E /* TransitionButton.framework */,
-				9047F217634F023BFD30CF1E /* Pods_StaffMen.framework */,
+				41A82C2479B13C8AC76633EA /* Pods_StaffMen.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,7 +162,7 @@
 				4B0B9392205844C500474101 /* StaffMen */,
 				4B0B9391205844C500474101 /* Products */,
 				46C6B57317F16AF8CD421E90 /* Frameworks */,
-				B389DB1BF0CEE4BA6D2F027C /* Pods */,
+				DB2777138CD6F9E4F0C50F8E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,7 +177,7 @@
 		4B0B9392205844C500474101 /* StaffMen */ = {
 			isa = PBXGroup;
 			children = (
-				4B7E474E20D97496002D917B /* DGElasticPullToRefresh */,
+				4B2E5FE72084F7230006089D /* InstagramActivityIndicator.swift */,
 				ADE366C620C18D5B00CDD83C /* Networking */,
 				4B7DBB20208518AC00E06822 /* ElasticTransition */,
 				15BCD3042080C24800FE8BF5 /* Extension */,
@@ -202,8 +190,6 @@
 				4B92E86F20691A9D00AE7BFB /* AppConfig.swift */,
 				4B92E86E20691A9D00AE7BFB /* Proxy.swift */,
 				4B92E87020691A9E00AE7BFB /* SwiftyJSON.swift */,
-				4B0B9395205844C500474101 /* ViewController.swift */,
-				4B2E5FE72084F7230006089D /* InstagramActivityIndicator.swift */,
 				4B0B93AB2058452600474101 /* MenuViewController.swift */,
 				4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */,
 				4B9092D520D92FB0008B0646 /* MyeventViewController.swift */,
@@ -253,18 +239,6 @@
 				4B7DBB26208518AC00E06822 /* ElasticTransition.swift */,
 			);
 			path = ElasticTransition;
-			sourceTree = "<group>";
-		};
-		4B7E474E20D97496002D917B /* DGElasticPullToRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				4B7E474F20D97496002D917B /* DGElasticPullToRefreshLoadingViewCircle.swift */,
-				4B7E475020D97496002D917B /* DGElasticPullToRefreshView.swift */,
-				4B7E475120D97496002D917B /* DGElasticPullToRefreshConstants.swift */,
-				4B7E475220D97496002D917B /* DGElasticPullToRefreshExtensions.swift */,
-				4B7E475320D97496002D917B /* DGElasticPullToRefreshLoadingView.swift */,
-			);
-			path = DGElasticPullToRefresh;
 			sourceTree = "<group>";
 		};
 		4B9092D720D92FC0008B0646 /* swreveal */ = {
@@ -326,11 +300,11 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		B389DB1BF0CEE4BA6D2F027C /* Pods */ = {
+		DB2777138CD6F9E4F0C50F8E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				52E1E084194944B302B9CB80 /* Pods-StaffMen.debug.xcconfig */,
-				28BE31DCFE82CF1FB77BF089 /* Pods-StaffMen.release.xcconfig */,
+				7A78D8C4B457A34AEB6C467A /* Pods-StaffMen.debug.xcconfig */,
+				0BB89AF2878D1874FEA20D3E /* Pods-StaffMen.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -342,12 +316,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B0B93A2205844C500474101 /* Build configuration list for PBXNativeTarget "StaffMen" */;
 			buildPhases = (
-				3D844B5C1AEFEC65B23A9E98 /* [CP] Check Pods Manifest.lock */,
+				51B951753308F429612D5BB7 /* [CP] Check Pods Manifest.lock */,
 				4B0B938C205844C500474101 /* Sources */,
 				4B0B938D205844C500474101 /* Frameworks */,
 				4B0B938E205844C500474101 /* Resources */,
-				C86C847CCA2510E4597722D0 /* [CP] Embed Pods Frameworks */,
-				76DA27E698A0D96B06750C2B /* [CP] Copy Pods Resources */,
+				2702D6889A1C8DF3088FA7CC /* [CP] Embed Pods Frameworks */,
+				FBFEB250BFC3C6D5A068082F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -409,7 +383,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3D844B5C1AEFEC65B23A9E98 /* [CP] Check Pods Manifest.lock */ = {
+		2702D6889A1C8DF3088FA7CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StaffMen/Pods-StaffMen-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialControls/MaterialControls.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimation/MotionAnimation.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialControls.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StaffMen/Pods-StaffMen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51B951753308F429612D5BB7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -427,7 +439,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		76DA27E698A0D96B06750C2B /* [CP] Copy Pods Resources */ = {
+		FBFEB250BFC3C6D5A068082F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -449,56 +461,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StaffMen/Pods-StaffMen-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C86C847CCA2510E4597722D0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-StaffMen/Pods-StaffMen-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/BFPaperButton/BFPaperButton.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialControls/MaterialControls.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialKit/MaterialKit.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionAnimation/MotionAnimation.framework",
-				"${BUILT_PRODUCTS_DIR}/NBMaterialDialogIOS/NBMaterialDialogIOS.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BFPaperButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialControls.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NBMaterialDialogIOS.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StaffMen/Pods-StaffMen-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -510,7 +472,6 @@
 				AD59BAE420A47AE70046E352 /* EventViewController.swift in Sources */,
 				ADE366CA20C18F4000CDD83C /* EventViewModel.swift in Sources */,
 				4B42A68020591BB800EBCB6B /* TransitionButton.swift in Sources */,
-				4B7E475820D97496002D917B /* DGElasticPullToRefreshLoadingView.swift in Sources */,
 				15BCD3062080C28800FE8BF5 /* CustomCategories.swift in Sources */,
 				ADE366CC20C1BA8000CDD83C /* EditPhysicalViewController.swift in Sources */,
 				AD169A9520C095EE00AF1DA5 /* ProfessionalDataCell.swift in Sources */,
@@ -519,13 +480,11 @@
 				4B9092D620D92FB1008B0646 /* MyeventViewController.swift in Sources */,
 				4B0B93C520585E8700474101 /* GuillotineMenuTransitionAnimation.swift in Sources */,
 				4B9092DA20D92FC0008B0646 /* SWRevealViewController.m in Sources */,
-				1EB2D64520C0565C00904FE8 /* UIViewController+Extensions.swift in Sources */,
 				AD169A9320C0958800AF1DA5 /* ProfessionalData.swift in Sources */,
 				4B2E5FE82084F7240006089D /* InstagramActivityIndicator.swift in Sources */,
 				4B92E87220691A9E00AE7BFB /* AppConfig.swift in Sources */,
 				AD6D016B20BD7C4F00A81B47 /* ProfessionalDataViewController.swift in Sources */,
 				AD6D016920BD7BEC00A81B47 /* PhysicalDataViewController.swift in Sources */,
-				4B7E475420D97496002D917B /* DGElasticPullToRefreshLoadingViewCircle.swift in Sources */,
 				4B7DBB28208518AC00E06822 /* ElasticTransitionPresentationController.swift in Sources */,
 				AD5FDDC220A725970084D506 /* RestaurantPreviewView.swift in Sources */,
 				4B7DBB2A208518AC00E06822 /* EdgePanTransition.swift in Sources */,
@@ -537,8 +496,6 @@
 				4B7DBB2C208518AC00E06822 /* ElasticTransition.swift in Sources */,
 				4B758EB620D2EF19009CD0B6 /* AwesomeTextField.swift in Sources */,
 				AD5FDDC420A725F10084D506 /* DetailsVC.swift in Sources */,
-				4B7E475520D97496002D917B /* DGElasticPullToRefreshView.swift in Sources */,
-				4B0B9396205844C500474101 /* ViewController.swift in Sources */,
 				4B92E87720691B3D00AE7BFB /* LoginViewController.swift in Sources */,
 				4B0B9394205844C500474101 /* AppDelegate.swift in Sources */,
 				4B42A68220591BB800EBCB6B /* CGRectExtension.swift in Sources */,
@@ -551,14 +508,13 @@
 				AD5FDDBE20A724DF0084D506 /* MapViewController.swift in Sources */,
 				AD6D016720BD7B5200A81B47 /* MyProfileViewController.swift in Sources */,
 				4B7DBB2B208518AC00E06822 /* ElasticShapeLayer.swift in Sources */,
-				4B7E475720D97496002D917B /* DGElasticPullToRefreshExtensions.swift in Sources */,
 				B270A3932087456400ED9D26 /* RootPageViewController.swift in Sources */,
 				4B92E87620691B3D00AE7BFB /* RegistrationViewController.swift in Sources */,
 				4B7DBB27208518AC00E06822 /* Util.swift in Sources */,
 				ADFAC60620D51C680069E3E8 /* DataStore.swift in Sources */,
+				4B138A2620DAFF8600771F47 /* UIViewController+Extensions.swift in Sources */,
 				AD59BAE220A47A860046E352 /* Model.swift in Sources */,
 				AD91991820C3FD1300887624 /* EditProfessionalViewController.swift in Sources */,
-				4B7E475620D97496002D917B /* DGElasticPullToRefreshConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -697,7 +653,7 @@
 		};
 		4B0B93A3205844C500474101 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52E1E084194944B302B9CB80 /* Pods-StaffMen.debug.xcconfig */;
+			baseConfigurationReference = 7A78D8C4B457A34AEB6C467A /* Pods-StaffMen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -713,19 +669,13 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/ImagePicker\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/MaterialControls\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/MaterialKit\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/MotionAnimation\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/NBMaterialDialogIOS\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/TransitionButton\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
-					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseMessaging/Frameworks\"",
 					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
 					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
 					"\"${PODS_ROOT}/GooglePlacePicker/Frameworks\"",
@@ -745,7 +695,7 @@
 		};
 		4B0B93A4205844C500474101 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28BE31DCFE82CF1FB77BF089 /* Pods-StaffMen.release.xcconfig */;
+			baseConfigurationReference = 0BB89AF2878D1874FEA20D3E /* Pods-StaffMen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -761,19 +711,13 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/ImagePicker\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Kingfisher\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/MaterialControls\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/MaterialKit\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/MotionAnimation\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/NBMaterialDialogIOS\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/TransitionButton\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
-					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseCore/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
-					"\"${PODS_ROOT}/FirebaseMessaging/Frameworks\"",
 					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
 					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
 					"\"${PODS_ROOT}/GooglePlacePicker/Frameworks\"",

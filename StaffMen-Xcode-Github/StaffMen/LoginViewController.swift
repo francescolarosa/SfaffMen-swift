@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import NBMaterialDialogIOS
 import TransitionButton
 
 class LoginViewController: UIViewController {
