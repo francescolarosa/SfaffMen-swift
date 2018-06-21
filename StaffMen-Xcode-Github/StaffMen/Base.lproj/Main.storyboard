@@ -43,7 +43,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Eventi"/>
                                 <connections>
-                                    <segue destination="HtR-Hb-Eeb" kind="show" id="hoy-nH-TkR"/>
+                                    <segue destination="HtR-Hb-Eeb" kind="showDetail" identifier="menu" id="hoy-nH-TkR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIa-Tg-9NZ">
@@ -559,10 +559,6 @@
                                             <color key="textColor" red="0.2009961385" green="0.20298619919999999" blue="0.20298619919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" tag="11" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="restaurant2" translatesAutoresizingMaskIntoConstraints="NO" id="fMb-86-PzA">
-                                            <rect key="frame" x="10" y="17" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVO-w0-rNi">
                                             <rect key="frame" x="306" y="118" width="21" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -570,6 +566,10 @@
                                             <color key="textColor" red="0.2009961385" green="0.20298619919999999" blue="0.20298619919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" tag="11" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="restaurant2" translatesAutoresizingMaskIntoConstraints="NO" id="fMb-86-PzA">
+                                            <rect key="frame" x="10" y="23" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -595,6 +595,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Kqa-fp-Wjf" kind="showDetail" identifier="menu" id="7Fy-gQ-qra"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IIN-CN-hWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -828,16 +831,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="Cz2-lP-1f0">
-                                <rect key="frame" x="0.0" y="20" width="375" height="211"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="211"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Cz2-lP-1f0" secondAttribute="height" multiplier="16:9" id="Me8-bP-OV8"/>
                                 </constraints>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m39-nQ-hJZ">
-                                <rect key="frame" x="34" y="390" width="306" height="273"/>
+                                <rect key="frame" x="34" y="434" width="306" height="229"/>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZH-fk-lks">
-                                <rect key="frame" x="34" y="200" width="306" height="190"/>
+                                <rect key="frame" x="34" y="244" width="306" height="190"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvS-D4-YsP">
                                         <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
@@ -982,7 +985,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftd-aS-Ru4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-786.39999999999998" y="-1517.0914542728638"/>
+            <point key="canvasLocation" x="-823" y="-1517"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wvr-es-S3S">
@@ -1001,7 +1004,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5D-2t-5Uu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1978" y="-1517"/>
+            <point key="canvasLocation" x="-1734" y="-1495"/>
         </scene>
         <!--Modifica Profilo-->
         <scene sceneID="8fO-MJ-L5h">
@@ -1985,7 +1988,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3ct-dp-ye2"/>
-        <segue reference="th0-J9-YxY"/>
+        <segue reference="aaq-w4-GJ9"/>
+        <segue reference="isA-5z-Y5y"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

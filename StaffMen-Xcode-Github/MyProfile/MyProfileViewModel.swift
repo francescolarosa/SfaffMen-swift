@@ -34,6 +34,8 @@ class MyProfileViewModel {
     
     weak var delegate: MyProfileViewModelDelegate?
     
+    
+    
     func resolve(json: JSON) {
         //activityIndicator.stopAnimating()
         if let data = json.dictionaryObject,
@@ -67,18 +69,19 @@ class MyProfileViewModel {
         self.delegate?.didRetrieveComleteWithError()
     }
     
+
+    
     func retrieveProfile() {
-        
+
         let proxy = Proxy()
-        
+
         let parameters = [
-            
-            "user_id": (UserDefaults.standard.object(forKey: "userstatus") as? String)!,
-//            "email":"prova@gmail.com",
-//            "password":"123456",
+            "id": (UserDefaults.standard.object(forKey: "userstatus") as? String)!,
+//            "email":"info@ns7records.com",
+//            "password":"andrex",
         ]
 
-        proxy.submit(httpMethod: "POST", route: "/api/login", params: parameters, resolve: resolve, reject: reject)
+        proxy.submit(httpMethod: "POST", route: "/api/profile", params: parameters, resolve: resolve, reject: reject)
     }
 }
 

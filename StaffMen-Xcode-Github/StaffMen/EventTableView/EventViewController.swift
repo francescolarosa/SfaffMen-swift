@@ -140,14 +140,14 @@ class EventViewController: UITableViewController {
                                         myNews.id = myId
                                     }
                                     
-                                    //                                    //x img
-                                    //                                    if let myMultimedia = value["cover_photo"] as? [String : Any]
-                                    //                                    {
-                                    //                                        if let mySrc = myMultimedia["src"] as? String
-                                    //                                        {
-                                    //                                        myNews.src = mySrc
-                                    //                                        }
-                                    //                                    }
+                                    //x img
+                                     if let myMultimedia = value["cover_photo"] as? [String : Any]
+                                     {
+                                       if let mySrc = myMultimedia["cover_photo"] as? String
+                                        {
+                                     myNews.src = mySrc
+                                   }
+                               }
                                     self.myTableViewDataSource.append(myNews)
                                 }//end loop
                                 dump(self.myTableViewDataSource)
@@ -178,7 +178,7 @@ class EventViewController: UITableViewController {
        
         let myCell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath)
         
-        //x img//let myImageView = myCell.viewWithTag(11) as! UIImageView
+        let myImageView = myCell.viewWithTag(11) as! UIImageView
         let myTitleLabel = myCell.viewWithTag(12) as! UILabel
         let myLocation = myCell.viewWithTag(13) as! UILabel
         let DateLabelCell = myCell.viewWithTag(14) as! UILabel
@@ -191,9 +191,8 @@ class EventViewController: UITableViewController {
         numMembLabel.text = myTableViewDataSource[indexPath.row].num_members
         numMembConfLabel.text = myTableViewDataSource[indexPath.row].num_members_confirmed
         
-        
-        //ximg//let myURL = myTableViewDataSource[indexPath.row].src
-        //x img//loadImage(url: myURL, to: myImageView)
+//        let myURL = myTableViewDataSource[indexPath.row].src
+//        loadImage(url: myURL!, to: myImageView)
         return myCell
     }
 //    //per passare da un viewcontroller a detailviewcontroller
@@ -214,19 +213,20 @@ class EventViewController: UITableViewController {
         }
 }
 //ximg
-//    func loadImage(url: String, to imageView: UIImageView)
-//    {
-//        let url = URL(string: url )
-//        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-//            guard let data = data else
-//            {
-//                return
-//            }
-//            DispatchQueue.main.async {
-//                imageView.image = UIImage(data: data)
-//
-//            }
-//        }.resume()
+   func loadImage(url: String, to imageView: UIImageView)
+   {
+        let url = URL(string: url )
+       URLSession.shared.dataTask(with: url!) { (data, response, error) in
+           guard let data = data else
+           {
+                return
+            }
+            DispatchQueue.main.async {
+                imageView.image = UIImage(data: data)
+
+            }
+    }.resume()
+    }
     
     //menu slide
     @objc func handlePan(_ pan:UIPanGestureRecognizer){
@@ -239,6 +239,14 @@ class EventViewController: UITableViewController {
         }
     }
     //endmenuslide
+    //x menu
+    func prepareMenu(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? MenuViewController{
+            vc.transitioningDelegate = transition
+            vc.modalPresentationStyle = .custom
+            //endmenu
+        }
+    }
     
     /// star to: (x eliminare row e x muove row)
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
