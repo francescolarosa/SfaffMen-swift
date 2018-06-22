@@ -192,7 +192,6 @@
 				4B92E87020691A9E00AE7BFB /* SwiftyJSON.swift */,
 				4B0B93AB2058452600474101 /* MenuViewController.swift */,
 				4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */,
-				4B9092D520D92FB0008B0646 /* MyeventViewController.swift */,
 				4B9092D720D92FC0008B0646 /* swreveal */,
 				AD6D015B20BD77BE00A81B47 /* MyProfile */,
 				AD5FDDBA20A7247A0084D506 /* mapEvents */,
@@ -253,6 +252,7 @@
 		AD59BAE020A479420046E352 /* EventTableView */ = {
 			isa = PBXGroup;
 			children = (
+				4B9092D520D92FB0008B0646 /* MyeventViewController.swift */,
 				AD59BAE120A47A860046E352 /* Model.swift */,
 				AD59BAE320A47AE70046E352 /* EventViewController.swift */,
 				AD59BAE520A4BB9A0046E352 /* EventDetailViewController.swift */,

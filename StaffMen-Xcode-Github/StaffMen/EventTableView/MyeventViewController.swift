@@ -60,10 +60,16 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         txtserch.layer.cornerRadius = txtserch.frame.size.height / 2
         
         //To apply Shadow
+        //Text field map
         txtserch.layer.shadowOpacity = 1
         txtserch.layer.shadowRadius = 3.0
         txtserch.layer.shadowOffset = CGSize.zero // Use any CGSize
         txtserch.layer.shadowColor = UIColor.gray.cgColor
+        //Text field descrizione
+        txtdescription.layer.shadowOpacity = 1
+        txtdescription.layer.shadowRadius = 3.0
+        txtdescription.layer.shadowOffset = CGSize.zero // Use any CGSize
+        txtdescription.layer.shadowColor = UIColor.gray.cgColor
         ////
         
         
@@ -193,7 +199,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         txttime_end.text = formatter.string(from: datePicker.date)
-        tympicker.removeFromSuperview()
+        //tympicker.removeFromSuperview()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
