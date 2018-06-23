@@ -19,6 +19,15 @@ enum Sex: String {
         }
         return .female
     }
+    
+    func toValue() -> Int {
+        switch self {
+        case .male:
+            return 1
+        default:
+            return 2
+        }
+    }
 }
 
 enum Role {
@@ -39,10 +48,10 @@ class MyProfileViewModel {
     func resolve(json: JSON) {
         //activityIndicator.stopAnimating()
         if let data = json.dictionaryObject,
-            let user = data["user"] as? [String: Any] {
-            let userProfile = UserProfile(json: user)
-            DataStore.shared.userProfile = userProfile
-            self.delegate?.didRetrieveComleteWithSuccess()
+            let user = data["data"] as? [String: Any] {
+                let userProfile = UserProfile(json: user)
+                DataStore.shared.userProfile = userProfile
+                self.delegate?.didRetrieveComleteWithSuccess()
         } else {
             self.delegate?.didRetrieveComleteWithError()
         }
@@ -69,19 +78,31 @@ class MyProfileViewModel {
         self.delegate?.didRetrieveComleteWithError()
     }
     
-
-    
     func retrieveProfile() {
 
+        guard let userStatus = UserDefaults.standard.object(forKey: "userstatus") as? String else {
+            return
+        }
+        
         let proxy = Proxy()
-
+        
         let parameters = [
-            "id": (UserDefaults.standard.object(forKey: "userstatus") as? String)!,
-//            "email":"info@ns7records.com",
-//            "password":"andrex",
+            "id": userStatus
+            //            "email":"info@ns7records.com",
+            //            "password":"andrex",
         ]
-
+        
         proxy.submit(httpMethod: "POST", route: "/api/profile", params: parameters, resolve: resolve, reject: reject)
+//
+//        let proxy = Proxy()
+//
+//        let parameters = [
+//            "id": (UserDefaults.standard.object(forKey: "userstatus") as? String)!,
+////            "email":"info@ns7records.com",
+////            "password":"andrex",
+//        ]
+//
+//        proxy.submit(httpMethod: "POST", route: "/api/profile", params: parameters, resolve: resolve, reject: reject)
     }
 }
 

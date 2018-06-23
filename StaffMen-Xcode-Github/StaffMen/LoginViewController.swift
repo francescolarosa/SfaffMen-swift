@@ -38,7 +38,13 @@ class LoginViewController: UIViewController {
     func resolve(json: JSON) {
         //activityIndicator.stopAnimating()
         indicator.stopAnimating()
-        if let data = json.dictionaryObject, let user = data["user"] as? [String: Any] {
+        if let data = json.dictionaryObject,
+            let user = data["user"] as? [String: Any] {
+            
+            if let id = user["id"] as? Int {
+                UserDefaults.standard.set("\(id)", forKey: "userstatus")
+            }
+            
             //AppConfig.apiToken = user["remember_token"] as! String
             debugPrint(data)
             // debugPrint(user["remember_token"]!)
@@ -94,9 +100,7 @@ class LoginViewController: UIViewController {
             let params = [
                 "email":emailTextField.text!,
                 "password":passwordTextField.text!,
-                ]
-            
-            UserDefaults.standard.set("1", forKey: "userstatus")
+            ]
             
             //activityIndicator.startAnimating()
             indicator.startAnimating()

@@ -40,19 +40,25 @@
         
         // var userstatus = (UserDefaults.standard.object(forKey: "userstatus") as? String)!
         
-        if UserDefaults.standard.object(forKey: "userstatus") != nil
-        {            
-            userstatus  = (UserDefaults.standard.object(forKey: "userstatus") as? String)!
-        }
-        
-        if userstatus == "1"
-        {
+        if let _ = UserDefaults.standard.object(forKey: "userstatus") as? String {
             self.switchBack()
-        }
-        else
-        {
-            self.switchViewControllers()
-        }
+        } else {
+           self.switchViewControllers()
+        }        
+        
+//        if UserDefaults.standard.object(forKey: "userstatus") != nil
+//        {
+//            userstatus  = (UserDefaults.standard.object(forKey: "userstatus") as? String)!
+//        }
+//
+//        if userstatus == "1"
+//        {
+//            self.switchBack()
+//        }
+//        else
+//        {
+//            self.switchViewControllers()
+//        }
         
         return true
     }

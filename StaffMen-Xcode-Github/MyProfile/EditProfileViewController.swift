@@ -36,6 +36,24 @@ class EditProfileViewController: UIViewController {
         }
     }
     
+    func resolve(json: JSON) {
+        //activityIndicator.stopAnimating()
+        if let data = json.dictionaryObject,
+            let status = data["status"] as? Bool, status {
+            
+            dismiss(animated: true) {
+                self.delegate?.didSaveComplete()
+            }
+            
+        } else {
+            print("status is false on profile edit")
+        }
+    }
+    
+    func reject(json: JSON) {
+        print("error on profile edit")
+    }
+    
     @IBAction func didSaveButton(_ sender: Any) {
         
         let dataStore = DataStore.shared
@@ -57,10 +75,27 @@ class EditProfileViewController: UIViewController {
             // salvataggio non riuscito
         // })
         
-        dismiss(animated: true) {
-            // Questo metodo viene invocato nel MyProfileViewController
-            self.delegate?.didSaveComplete()
+        guard let userStatus = UserDefaults.standard.object(forKey: "userstatus") as? String else {
+            return
         }
+        
+        let parameters: [String: Any] = [
+            "user_id": userStatus,
+            "name": DataStore.shared.userProfile?.name ?? "-",
+            "eyes": DataStore.shared.userProfile?.eyes ?? "-",
+            "age": Int((DataStore.shared.userProfile?.age)!) ?? 0,
+            "phone": DataStore.shared.userProfile?.phoneNumber ?? "-",
+            "sex": DataStore.shared.userProfile?.sex.toValue() ?? 1,
+            "descr": DataStore.shared.userProfile?.descr ?? "-",
+            "job": DataStore.shared.userProfile?.prevJob ?? "-",
+            "tshirt_size": DataStore.shared.userProfile?.tshirtSize ?? "-",
+            "height": DataStore.shared.userProfile?.height ?? "-",
+            "hair": DataStore.shared.userProfile?.hair ?? "-",
+            "shoes_size": DataStore.shared.userProfile?.shoesSize ?? "-"
+        ]
+        
+        let proxy = Proxy()
+        proxy.submit(httpMethod: "POST", route: "/api/profileupdate", params: parameters, resolve: resolve, reject: reject)
     }
     
     func createDatePicker() {

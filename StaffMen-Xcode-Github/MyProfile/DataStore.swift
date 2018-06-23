@@ -23,6 +23,7 @@ struct UserProfile {
     var role: Role
     var tshirtSize: String
     var height: String
+    var descr: String
 }
 
 extension UserProfile {
@@ -41,6 +42,7 @@ extension UserProfile {
         role = Role.from(json["role"] as? Int ?? 0)
         prevJob = json["prev_job"] as? String ?? "-"
         height = json["height"] as? String ?? "-"
+        descr = json["descr"] as? String ?? "-"
     }
 }
 
