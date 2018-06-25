@@ -19,6 +19,9 @@ PODS:
   - MotionAnimation (0.1.2)
   - ObjectMapper (3.2.0)
   - ReachabilitySwift (4.1.0)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
   - SwiftyJSON (4.0.0)
   - TransitionButton (0.3.0)
 
@@ -35,6 +38,7 @@ DEPENDENCIES:
   - MotionAnimation (from `https://github.com/LondonAppWorks/MotionAnimation.git`)
   - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`)
   - ReachabilitySwift
+  - SDWebImage
   - SwiftyJSON
   - TransitionButton
 
@@ -65,9 +69,10 @@ SPEC CHECKSUMS:
   MotionAnimation: 0257eb90f766f6d58c70524f956faf8d56c5e7bf
   ObjectMapper: 5cccd2de6f253eda859df8116a5a554d9769e859
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TransitionButton: 0bf7e5ffe80030f9d10d57983a04acf2f511998a
 
-PODFILE CHECKSUM: c319ab7033477efb7f43da683bb12df336197262
+PODFILE CHECKSUM: a55cd433f9c4a1352954f84d88013f6be672d064
 
 COCOAPODS: 1.4.0

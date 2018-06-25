@@ -19,6 +19,7 @@ target 'StaffMen' do
   	pod 'GooglePlacePicker'
   	pod 'GoogleMaps'
 	pod "MotionAnimation", :git => 'https://github.com/LondonAppWorks/MotionAnimation.git'
+	pod 'SDWebImage'
 
   # Pods for StaffMen
 

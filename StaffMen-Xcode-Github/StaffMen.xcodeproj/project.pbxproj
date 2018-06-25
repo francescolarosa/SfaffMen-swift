@@ -18,6 +18,9 @@
 		4B0B93C420585E8700474101 /* ic_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0B93C220585E8700474101 /* ic_menu@3x.png */; };
 		4B0B93C520585E8700474101 /* GuillotineMenuTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B93C320585E8700474101 /* GuillotineMenuTransitionAnimation.swift */; };
 		4B138A2620DAFF8600771F47 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B138A2520DAFF8600771F47 /* UIViewController+Extensions.swift */; };
+		4B14970620E15017009808A8 /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14970320E15016009808A8 /* ProfileViewCell.swift */; };
+		4B14970720E15017009808A8 /* ModificationProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14970420E15016009808A8 /* ModificationProfileController.swift */; };
+		4B14970820E15017009808A8 /* PROFILEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14970520E15016009808A8 /* PROFILEViewController.swift */; };
 		4B2E5FE82084F7240006089D /* InstagramActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2E5FE72084F7230006089D /* InstagramActivityIndicator.swift */; };
 		4B42A67E20591BB800EBCB6B /* CustomTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42A67820591BB800EBCB6B /* CustomTransitionViewController.swift */; };
 		4B42A67F20591BB800EBCB6B /* SpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42A67920591BB800EBCB6B /* SpinerLayer.swift */; };
@@ -79,6 +82,9 @@
 		4B0B93C220585E8700474101 /* ic_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu@3x.png"; sourceTree = "<group>"; };
 		4B0B93C320585E8700474101 /* GuillotineMenuTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuillotineMenuTransitionAnimation.swift; sourceTree = "<group>"; };
 		4B138A2520DAFF8600771F47 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		4B14970320E15016009808A8 /* ProfileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
+		4B14970420E15016009808A8 /* ModificationProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModificationProfileController.swift; sourceTree = "<group>"; };
+		4B14970520E15016009808A8 /* PROFILEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PROFILEViewController.swift; sourceTree = "<group>"; };
 		4B2E5FE72084F7230006089D /* InstagramActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramActivityIndicator.swift; sourceTree = "<group>"; };
 		4B42A67820591BB800EBCB6B /* CustomTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitionViewController.swift; sourceTree = "<group>"; };
 		4B42A67920591BB800EBCB6B /* SpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinerLayer.swift; sourceTree = "<group>"; };
@@ -177,6 +183,7 @@
 		4B0B9392205844C500474101 /* StaffMen */ = {
 			isa = PBXGroup;
 			children = (
+				4B14970220E15016009808A8 /* ProfileNew */,
 				4B2E5FE72084F7230006089D /* InstagramActivityIndicator.swift */,
 				ADE366C620C18D5B00CDD83C /* Networking */,
 				4B7DBB20208518AC00E06822 /* ElasticTransition */,
@@ -212,6 +219,16 @@
 				4B0B93C320585E8700474101 /* GuillotineMenuTransitionAnimation.swift */,
 			);
 			path = GuillotineMenu;
+			sourceTree = "<group>";
+		};
+		4B14970220E15016009808A8 /* ProfileNew */ = {
+			isa = PBXGroup;
+			children = (
+				4B14970320E15016009808A8 /* ProfileViewCell.swift */,
+				4B14970420E15016009808A8 /* ModificationProfileController.swift */,
+				4B14970520E15016009808A8 /* PROFILEViewController.swift */,
+			);
+			path = ProfileNew;
 			sourceTree = "<group>";
 		};
 		4B42A67720591BB800EBCB6B /* TransitionButton */ = {
@@ -399,6 +416,7 @@
 				"${BUILT_PRODUCTS_DIR}/MotionAnimation/MotionAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 			);
@@ -413,6 +431,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 			);
@@ -480,8 +499,11 @@
 				4B9092D620D92FB1008B0646 /* MyeventViewController.swift in Sources */,
 				4B0B93C520585E8700474101 /* GuillotineMenuTransitionAnimation.swift in Sources */,
 				4B9092DA20D92FC0008B0646 /* SWRevealViewController.m in Sources */,
+				4B14970720E15017009808A8 /* ModificationProfileController.swift in Sources */,
+				4B14970620E15017009808A8 /* ProfileViewCell.swift in Sources */,
 				AD169A9320C0958800AF1DA5 /* ProfessionalData.swift in Sources */,
 				4B2E5FE82084F7240006089D /* InstagramActivityIndicator.swift in Sources */,
+				4B14970820E15017009808A8 /* PROFILEViewController.swift in Sources */,
 				4B92E87220691A9E00AE7BFB /* AppConfig.swift in Sources */,
 				AD6D016B20BD7C4F00A81B47 /* ProfessionalDataViewController.swift in Sources */,
 				AD6D016920BD7BEC00A81B47 /* PhysicalDataViewController.swift in Sources */,
