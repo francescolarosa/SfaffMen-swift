@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class EventViewController: UITableViewController {
     
@@ -20,12 +21,15 @@ class EventViewController: UITableViewController {
 
     var myTableViewDataSource = [NewInfo]()
     
-    let url = URL(string: AppConfig.proxy_server + "/api/events/json") //event index
+ 
+    
+    let url = URL(string:"\( AppConfig.proxy_server + "/api/events/json")") //event index
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadList()
+        
         
         // Add Refresh Control to Table View
         if #available(iOS 10.0, *) {
@@ -94,7 +98,7 @@ class EventViewController: UITableViewController {
                         {
                             if let myResults = jsonData["data"] as? [[String : Any]]
                             {
-                                //dump(myResults)
+                               // dump(myResults)
                                 for value in myResults
                                 {
                                     if let myTitle = value["title"]  as? String
@@ -140,14 +144,16 @@ class EventViewController: UITableViewController {
                                         myNews.id = myId
                                     }
                                     
+                                    
                                     //x img
-                                     if let myMultimedia = value["cover_photo"] as? [String : Any]
-                                     {
-                                       if let mySrc = myMultimedia["cover_photo"] as? String
+//                                    if let myMultimedia = value["data"] as? [String : Any]
+//                                    {
+                                        if let mySrc = value["event_photo"] as? String
                                         {
-                                     myNews.src = mySrc
-                                   }
-                               }
+                                            myNews.event_photo = mySrc
+                                            print(mySrc)
+                                        }
+                               //}
                                     self.myTableViewDataSource.append(myNews)
                                 }//end loop
                                 dump(self.myTableViewDataSource)
@@ -167,7 +173,7 @@ class EventViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)->CGFloat {
-        return 175.0;
+        return 175.0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -178,7 +184,7 @@ class EventViewController: UITableViewController {
        
         let myCell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath)
         
-        let myImageView = myCell.viewWithTag(11) as! UIImageView
+        var myImageView = myCell.viewWithTag(11) as! UIImageView
         let myTitleLabel = myCell.viewWithTag(12) as! UILabel
         let myLocation = myCell.viewWithTag(13) as! UILabel
         let DateLabelCell = myCell.viewWithTag(14) as! UILabel
@@ -190,11 +196,29 @@ class EventViewController: UITableViewController {
         DateLabelCell.text = myTableViewDataSource[indexPath.row].date
         numMembLabel.text = myTableViewDataSource[indexPath.row].num_members
         numMembConfLabel.text = myTableViewDataSource[indexPath.row].num_members_confirmed
-        
-//        let myURL = myTableViewDataSource[indexPath.row].src
-//        loadImage(url: myURL!, to: myImageView)
+        if let imageURLString = myTableViewDataSource[indexPath.row].event_photo,
+            let imageURL = URL(string: AppConfig.public_server +  imageURLString) {
+            myImageView.af_setImage(withURL: imageURL)
+        }
         return myCell
     }
+
+    ////ximg
+    func loadImage(url: String, to imageView: UIImageView)
+    {
+        let url = URL(string: url )
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            guard let data = data else
+            {
+                return
+            }
+            DispatchQueue.main.async
+                {
+                    imageView.image = UIImage(data: data)
+                }
+            }.resume()
+    }
+    
 //    //per passare da un viewcontroller a detailviewcontroller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? EventDetailViewController {
@@ -212,28 +236,12 @@ class EventViewController: UITableViewController {
         //endmenu
         }
 }
-//ximg
-   func loadImage(url: String, to imageView: UIImageView)
-   {
-        let url = URL(string: url )
-       URLSession.shared.dataTask(with: url!) { (data, response, error) in
-           guard let data = data else
-           {
-                return
-            }
-            DispatchQueue.main.async {
-                imageView.image = UIImage(data: data)
 
-            }
-    }.resume()
-    }
-    
     //menu slide
     @objc func handlePan(_ pan:UIPanGestureRecognizer){
         if pan.state == .began{
             transition.edge = .left
             transition.startInteractiveTransition(self, segueIdentifier: "menu", gestureRecognizer: pan)
-            //transition.startInteractiveTransition(self, segueIdentifier: "menu", gestureRecognizer: pan)
         }else{
             _ = transition.updateInteractiveTransition(gestureRecognizer: pan)
         }
@@ -247,7 +255,6 @@ class EventViewController: UITableViewController {
             //endmenu
         }
     }
-    
     /// star to: (x eliminare row e x muove row)
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let movedObjTemp = myTableViewDataSource[sourceIndexPath.item]
@@ -258,11 +265,9 @@ class EventViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete){
-//            print(indexPath.item)
         print(myTableViewDataSource[indexPath.item])
-//            print(myTableViewDataSource[indexPath].id)
             guard let idEvent = (myTableViewDataSource[indexPath.item].id),
-                let urlDestroy = URL(string: AppConfig.proxy_server + "/api/events/\(idEvent)/delete") else {
+                let urlDestroy = URL(string: AppConfig.proxy_server + "/api/events/\(idEvent)/deleteevent") else {
                 return
             }
             let taskDestroy = URLSession.shared.dataTask(with: urlDestroy) {

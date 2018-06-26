@@ -56,7 +56,6 @@
 		AD91991820C3FD1300887624 /* EditProfessionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD91991720C3FD1300887624 /* EditProfessionalViewController.swift */; };
 		ADE366C520C184ED00CDD83C /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE366C420C184ED00CDD83C /* EditProfileViewController.swift */; };
 		ADE366C820C18D7900CDD83C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE366C720C18D7900CDD83C /* APIClient.swift */; };
-		ADE366CA20C18F4000CDD83C /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE366C920C18F4000CDD83C /* EventViewModel.swift */; };
 		ADE366CC20C1BA8000CDD83C /* EditPhysicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE366CB20C1BA8000CDD83C /* EditPhysicalViewController.swift */; };
 		ADFAC60620D51C680069E3E8 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFAC60520D51C680069E3E8 /* DataStore.swift */; };
 		B270A3932087456400ED9D26 /* RootPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B270A3922087456400ED9D26 /* RootPageViewController.swift */; };
@@ -120,7 +119,6 @@
 		AD91991720C3FD1300887624 /* EditProfessionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfessionalViewController.swift; sourceTree = "<group>"; };
 		ADE366C420C184ED00CDD83C /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		ADE366C720C18D7900CDD83C /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		ADE366C920C18F4000CDD83C /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		ADE366CB20C1BA8000CDD83C /* EditPhysicalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhysicalViewController.swift; sourceTree = "<group>"; };
 		ADFAC60520D51C680069E3E8 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		B270A3922087456400ED9D26 /* RootPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPageViewController.swift; sourceTree = "<group>"; };
@@ -253,10 +251,9 @@
 			isa = PBXGroup;
 			children = (
 				4B9092D520D92FB0008B0646 /* MyeventViewController.swift */,
-				AD59BAE120A47A860046E352 /* Model.swift */,
 				AD59BAE320A47AE70046E352 /* EventViewController.swift */,
 				AD59BAE520A4BB9A0046E352 /* EventDetailViewController.swift */,
-				ADE366C920C18F4000CDD83C /* EventViewModel.swift */,
+				AD59BAE120A47A860046E352 /* Model.swift */,
 			);
 			path = EventTableView;
 			sourceTree = "<group>";
@@ -470,7 +467,6 @@
 			files = (
 				4B0B93AC2058452600474101 /* MenuViewController.swift in Sources */,
 				AD59BAE420A47AE70046E352 /* EventViewController.swift in Sources */,
-				ADE366CA20C18F4000CDD83C /* EventViewModel.swift in Sources */,
 				4B42A68020591BB800EBCB6B /* TransitionButton.swift in Sources */,
 				15BCD3062080C28800FE8BF5 /* CustomCategories.swift in Sources */,
 				ADE366CC20C1BA8000CDD83C /* EditPhysicalViewController.swift in Sources */,

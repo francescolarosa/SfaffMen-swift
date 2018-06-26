@@ -20,5 +20,7 @@ struct NewInfo {
     var endEvent: String?
     var description: String?
     var cost: String?
-    var src: String?
+    var event_photo: String?
 }
+
+
