@@ -299,7 +299,6 @@ class EventViewController: UITableViewController {
                         }
                     }
                     catch (let e) {
-                        print(e)
                     }
                 }
             }
