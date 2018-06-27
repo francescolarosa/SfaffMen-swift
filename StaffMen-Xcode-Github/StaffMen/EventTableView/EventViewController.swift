@@ -274,6 +274,7 @@ class EventViewController: UITableViewController {
                     
                     if let jsonData = JSON as? [String : Any]
                     {
+<<<<<<< HEAD
                         //                    if (jsonData["data"] as? [[String : Any]]) != nil
                         //                    {
                         //
@@ -292,6 +293,27 @@ class EventViewController: UITableViewController {
                         //  }
                         //  }
                         //}
+=======
+                        if let content = data
+                        {
+                            let myJson = try JSONSerialization.jsonObject(with: content, options: .allowFragments)
+                            //print(myJson)
+                            if let jsonData = myJson as? [String : Any]
+                            {
+                                if (jsonData["data"] as? [[String : Any]]) != nil
+                                {
+                                    print(jsonData)
+                                    self.myTableViewDataSource.remove(at : indexPath.item)
+                                    //self.myTableView.deleteRows(at: [indexPath], with: .automatic)
+                                    let indexPath = IndexPath(item: 0, section: 0)
+                                    self.tableView.deleteRows(at: [indexPath], with: .fade)
+                                    self.tableView.reloadData()
+                                }
+                            }
+                        }
+                    }
+                    catch (let e) {
+>>>>>>> e1221b0e37250fb984546a9000dec422b34d5d31
                     }
                     // var dic = NSDictionary()
                     //  dic = data
