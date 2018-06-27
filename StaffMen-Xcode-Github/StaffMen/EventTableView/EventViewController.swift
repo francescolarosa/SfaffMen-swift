@@ -252,20 +252,17 @@ class EventViewController: UITableViewController {
         if (editingStyle == .delete){
             // print(parameters)
             let idEvent = (myTableViewDataSource[indexPath.item].idEvent)
-            
             let parameters = [
                 //   "id": UserDefaults.standard.object(forKey: "userid")! ,
                 "id" : idEvent,
                 ] as [String : Any]
+            
             let url = "http://www.ns7records.com/staffapp/public/api/deleteevent"
             print(url)
             Alamofire.request(url, method:.post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { response in
                 switch response.result {
                 case .success:
                     print(response)
-                    let alert = UIAlertController(title: "Yeah!", message: "Evento cancellato con successo", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
                     
                     
                     let JSON = response.result.value as? [String : Any]
@@ -274,7 +271,6 @@ class EventViewController: UITableViewController {
                     
                     if let jsonData = JSON as? [String : Any]
                     {
-<<<<<<< HEAD
                         //                    if (jsonData["data"] as? [[String : Any]]) != nil
                         //                    {
                         //
@@ -288,32 +284,11 @@ class EventViewController: UITableViewController {
                         self.myTableViewDataSource.remove(at : indexPath.item)
                         //self.myTableView.deleteRows(at: [indexPath], with: .automatic)
                         let indexPath = IndexPath(item: 0, section: 0)
-                        self.myTableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+                        self.myTableView.deleteRows(at: [indexPath], with: .fade)
                         self.myTableView.reloadData()
                         //  }
                         //  }
                         //}
-=======
-                        if let content = data
-                        {
-                            let myJson = try JSONSerialization.jsonObject(with: content, options: .allowFragments)
-                            //print(myJson)
-                            if let jsonData = myJson as? [String : Any]
-                            {
-                                if (jsonData["data"] as? [[String : Any]]) != nil
-                                {
-                                    print(jsonData)
-                                    self.myTableViewDataSource.remove(at : indexPath.item)
-                                    //self.myTableView.deleteRows(at: [indexPath], with: .automatic)
-                                    let indexPath = IndexPath(item: 0, section: 0)
-                                    self.tableView.deleteRows(at: [indexPath], with: .fade)
-                                    self.tableView.reloadData()
-                                }
-                            }
-                        }
-                    }
-                    catch (let e) {
->>>>>>> e1221b0e37250fb984546a9000dec422b34d5d31
                     }
                     // var dic = NSDictionary()
                     //  dic = data
@@ -331,8 +306,6 @@ class EventViewController: UITableViewController {
                     //                    let swiftyJsonVar = JSON(response.result.value!)
                     //
                     //                    let strmsg = swiftyJsonVar ["msg"] as! String
-                    
-                    
                     
                 case .failure(let error):
                     print(error)

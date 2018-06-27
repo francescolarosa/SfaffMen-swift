@@ -39,7 +39,7 @@
 		4B92E87620691B3D00AE7BFB /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B92E87420691B3C00AE7BFB /* RegistrationViewController.swift */; };
 		4B92E87720691B3D00AE7BFB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B92E87520691B3D00AE7BFB /* LoginViewController.swift */; };
 		4B92E87920691B4D00AE7BFB /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B92E87820691B4C00AE7BFB /* Contents.json */; };
-		4B98127C20E3BE9F00CB4C7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B98127A20E3BE9F00CB4C7F /* Main.storyboard */; };
+		4BCCD14020E3EBD900432126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BCCD13F20E3EBD900432126 /* Main.storyboard */; };
 		4BF76A8620E3D5500030C63A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF76A8520E3D5500030C63A /* CoreLocation.framework */; };
 		4BF76A8A20E3D55F0030C63A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF76A8920E3D55F0030C63A /* MediaPlayer.framework */; };
 		4BF76A8E20E3D6E90030C63A /* PhysicalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF76A8D20E3D6E90030C63A /* PhysicalTableViewCell.swift */; };
@@ -103,7 +103,7 @@
 		4B92E87420691B3C00AE7BFB /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		4B92E87520691B3D00AE7BFB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4B92E87820691B4C00AE7BFB /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
-		4B98127B20E3BE9F00CB4C7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4BCCD13F20E3EBD900432126 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4BF76A8520E3D5500030C63A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4BF76A8720E3D5560030C63A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4BF76A8920E3D55F0030C63A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -210,8 +210,8 @@
 				AD59BAE020A479420046E352 /* EventTableView */,
 				4B92E87820691B4C00AE7BFB /* Contents.json */,
 				4B0B939A205844C500474101 /* Assets.xcassets */,
+				4BCCD13F20E3EBD900432126 /* Main.storyboard */,
 				4B0B939C205844C500474101 /* LaunchScreen.storyboard */,
-				4B98127A20E3BE9F00CB4C7F /* Main.storyboard */,
 				4B0B939F205844C500474101 /* Info.plist */,
 			);
 			path = StaffMen;
@@ -398,7 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B0B93C420585E8700474101 /* ic_menu@3x.png in Resources */,
-				4B98127C20E3BE9F00CB4C7F /* Main.storyboard in Resources */,
+				4BCCD14020E3EBD900432126 /* Main.storyboard in Resources */,
 				4B0B939E205844C500474101 /* LaunchScreen.storyboard in Resources */,
 				4B0B939B205844C500474101 /* Assets.xcassets in Resources */,
 				4B92E87920691B4D00AE7BFB /* Contents.json in Resources */,
@@ -567,14 +567,6 @@
 				4B0B939D205844C500474101 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		4B98127A20E3BE9F00CB4C7F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B98127B20E3BE9F00CB4C7F /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
