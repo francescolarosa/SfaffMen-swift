@@ -10,7 +10,7 @@ import Foundation
 
 struct NewInfo {
     var user_id: Int?
-    var id: Int!
+    var idEvent: Int!
     var date: String?
     var displayTitle: String?
     var location: String?

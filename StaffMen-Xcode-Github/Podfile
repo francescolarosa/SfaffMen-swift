@@ -20,6 +20,11 @@ target 'StaffMen' do
   	pod 'GoogleMaps'
 	pod "MotionAnimation", :git => 'https://github.com/LondonAppWorks/MotionAnimation.git'
 	pod 'SDWebImage'
+  pod 'HGPlaceholders'
+  pod 'PopupDialog', '~> 0.7'
+      pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+      pod 'SCLAlertView'
+      pod 'GMStepper'
 
   # Pods for StaffMen
 

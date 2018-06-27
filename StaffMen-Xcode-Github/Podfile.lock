@@ -1,78 +1,124 @@
 PODS:
-  - Alamofire (4.7.0)
-  - AlamofireImage (3.3.0):
+  - Alamofire (4.7.2)
+  - AlamofireImage (3.3.1):
     - Alamofire (~> 4.5)
-  - GoogleMaps (2.6.0):
-    - GoogleMaps/Maps (= 2.6.0)
-  - GoogleMaps/Base (2.6.0)
-  - GoogleMaps/Maps (2.6.0):
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - DynamicBlurView (2.0.2)
+  - GMStepper (2.1)
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
     - GoogleMaps/Base
-  - GooglePlacePicker (2.6.0):
-    - GoogleMaps (= 2.6.0)
-    - GooglePlaces (= 2.6.0)
-  - GooglePlaces (2.6.0):
-    - GoogleMaps/Base (= 2.6.0)
+  - GooglePlacePicker (2.7.0):
+    - GoogleMaps (= 2.7.0)
+    - GooglePlaces (= 2.7.0)
+  - GooglePlaces (2.7.0):
+    - GoogleMaps/Base (= 2.7.0)
+  - HGPlaceholders (0.3.0)
   - ImagePicker (3.0.0)
-  - IQKeyboardManagerSwift (5.0.8)
-  - Kingfisher (4.6.3)
+  - IQKeyboardManagerSwift (6.0.4)
+  - Kingfisher (4.8.0)
   - MaterialControls (1.2.2)
   - MotionAnimation (0.1.2)
   - ObjectMapper (3.2.0)
+  - PopupDialog (0.7.1):
+    - DynamicBlurView (~> 2.0)
   - ReachabilitySwift (4.1.0)
-  - SDWebImage (4.3.3):
-    - SDWebImage/Core (= 4.3.3)
-  - SDWebImage/Core (4.3.3)
-  - SwiftyJSON (4.0.0)
-  - TransitionButton (0.3.0)
+  - SCLAlertView (0.8)
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
+  - SwiftyJSON (4.1.0)
+  - TransitionButton (0.4.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - GMStepper
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - HGPlaceholders
   - ImagePicker
   - IQKeyboardManagerSwift
   - Kingfisher
   - MaterialControls
   - MotionAnimation (from `https://github.com/LondonAppWorks/MotionAnimation.git`)
   - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`)
+  - PopupDialog (~> 0.7)
   - ReachabilitySwift
+  - SCLAlertView
   - SDWebImage
   - SwiftyJSON
   - TransitionButton
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - DynamicBlurView
+    - GMStepper
+    - GoogleMaps
+    - GooglePlacePicker
+    - GooglePlaces
+    - HGPlaceholders
+    - ImagePicker
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - MaterialControls
+    - PopupDialog
+    - ReachabilitySwift
+    - SCLAlertView
+    - SDWebImage
+    - SwiftyJSON
+    - TransitionButton
+
 EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
   MotionAnimation:
     :git: https://github.com/LondonAppWorks/MotionAnimation.git
   ObjectMapper:
     :git: https://github.com/Hearst-DD/ObjectMapper.git
 
 CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
   MotionAnimation:
     :commit: 3c51ee7f5acb4ffe503c75c8745aca7f28b6852e
     :git: https://github.com/LondonAppWorks/MotionAnimation.git
   ObjectMapper:
-    :commit: 7de160dbc8a9a03ad4c39167e63cc2b7361e4cc5
+    :commit: ed1caa237b9742135996fefe3682b834bb394a6a
     :git: https://github.com/Hearst-DD/ObjectMapper.git
 
 SPEC CHECKSUMS:
-  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
-  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
-  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
-  GooglePlacePicker: e4488625effb006f59de49e14b7a603e463e4261
-  GooglePlaces: f6ddf33b75cef69e888907d9947c57198ed845f3
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  DynamicBlurView: aa6db4defc6e537eb86fc5e58dd3991666178399
+  GMStepper: 8994824040d57d952134e409b7724d05a1a41c18
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GooglePlacePicker: 59ea44db173c58486ad6123993e81feefcbce9c3
+  GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
+  HGPlaceholders: 2df01c51b04a30acd0b8c9c7161c7cdde4541109
   ImagePicker: 973953c25960fe04729a7082a56194321c6762d2
-  IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
-  Kingfisher: 98e6d5b5e807645743e8ed5ececd25d688d38452
+  IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   MaterialControls: 1c6b29e78d3a13d8dd6a67ed31b6d26eb5de8f72
   MotionAnimation: 0257eb90f766f6d58c70524f956faf8d56c5e7bf
   ObjectMapper: 5cccd2de6f253eda859df8116a5a554d9769e859
+  PopupDialog: 39598b7d41719f5c025b4b70e62728bae7734fef
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
-  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  TransitionButton: 0bf7e5ffe80030f9d10d57983a04acf2f511998a
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  TransitionButton: d271030914c84a00b54b4d983446944d2875e7ba
 
-PODFILE CHECKSUM: a55cd433f9c4a1352954f84d88013f6be672d064
+PODFILE CHECKSUM: 3d8c37242bd2d8cbeeade8344906134a4b58533f
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

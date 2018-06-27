@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class RegistrationViewController: UIViewController {
     
@@ -27,6 +28,7 @@ class RegistrationViewController: UIViewController {
         indicator.stopAnimating()
         //activityIndicator.hidesWhenStopped = true
         //activityIndicator.stopAnimating()
+        self.hideKeyboardWhenTappedAround()
         
     }
     
@@ -125,3 +127,4 @@ class RegistrationViewController: UIViewController {
     
     
 }
+

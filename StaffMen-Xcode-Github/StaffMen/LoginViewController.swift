@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 import TransitionButton
 
 class LoginViewController: UIViewController {
@@ -32,6 +33,7 @@ class LoginViewController: UIViewController {
         indicator.stopAnimating()
         //activityIndicator.hidesWhenStopped = true
         //activityIndicator.stopAnimating()
+        self.hideKeyboardWhenTappedAround()
         
     }
     
@@ -110,3 +112,13 @@ class LoginViewController: UIViewController {
     }
 }
 
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}

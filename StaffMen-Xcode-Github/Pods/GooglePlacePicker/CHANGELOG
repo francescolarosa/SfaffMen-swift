@@ -1,4 +1,9 @@
-Version 2.6.0 - February 2017
+Version 2.7.0 - April 2018
+==========================
+Note:
+  - Support for Xcode 8.0 has been dropped. The new minimum is Xcode 9.0.
+
+Version 2.6.0 - February 2018
 =============================
 Improvements:
   - Updated the default marker to match the new Google Maps marker.

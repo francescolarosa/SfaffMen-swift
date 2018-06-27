@@ -10,13 +10,15 @@
  import CoreData
  import GoogleMaps
  import GooglePlaces
+ import CoreLocation
+ import MediaPlayer
  
  @UIApplicationMain
  class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var userstatus: String!
-    
+    let locationManager: CLLocationManager = CLLocationManager()
     
     ///x la MAPPA
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -62,6 +64,7 @@
         
         return true
     }
+    
     func switchBack() {
         
         // switch back to view controller 1
@@ -173,4 +176,6 @@
     }
     
  }
+    
+ 
 
