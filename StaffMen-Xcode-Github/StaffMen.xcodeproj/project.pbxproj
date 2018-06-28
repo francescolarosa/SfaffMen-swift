@@ -24,6 +24,13 @@
 		4B42A67E20591BB800EBCB6B /* CustomTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42A67820591BB800EBCB6B /* CustomTransitionViewController.swift */; };
 		4B42A68120591BB800EBCB6B /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42A67B20591BB800EBCB6B /* FadeTransition.swift */; };
 		4B42A68220591BB800EBCB6B /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42A67C20591BB800EBCB6B /* CGRectExtension.swift */; };
+		4B4BD9B820E56BF200CD0960 /* Proxima Nova Alt Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B120E56BF200CD0960 /* Proxima Nova Alt Black.ttf */; };
+		4B4BD9B920E56BF200CD0960 /* Proxima Nova Alt Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B220E56BF200CD0960 /* Proxima Nova Alt Bold.ttf */; };
+		4B4BD9BA20E56BF200CD0960 /* Proxima Nova ScOsf Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B320E56BF200CD0960 /* Proxima Nova ScOsf Thin.ttf */; };
+		4B4BD9BB20E56BF200CD0960 /* Proxima Nova Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B420E56BF200CD0960 /* Proxima Nova Thin.ttf */; };
+		4B4BD9BC20E56BF200CD0960 /* Proxima Nova Alt Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B520E56BF200CD0960 /* Proxima Nova Alt Regular.ttf */; };
+		4B4BD9BD20E56BF200CD0960 /* Proxima Nova Alt Condensed Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B620E56BF200CD0960 /* Proxima Nova Alt Condensed Semibold.ttf */; };
+		4B4BD9BE20E56BF200CD0960 /* Proxima Nova Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B720E56BF200CD0960 /* Proxima Nova Semibold.ttf */; };
 		4B758EB620D2EF19009CD0B6 /* AwesomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */; };
 		4B7DBB27208518AC00E06822 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB21208518AC00E06822 /* Util.swift */; };
 		4B7DBB28208518AC00E06822 /* ElasticTransitionPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB22208518AC00E06822 /* ElasticTransitionPresentationController.swift */; };
@@ -88,6 +95,13 @@
 		4B42A67820591BB800EBCB6B /* CustomTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitionViewController.swift; sourceTree = "<group>"; };
 		4B42A67B20591BB800EBCB6B /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		4B42A67C20591BB800EBCB6B /* CGRectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
+		4B4BD9B120E56BF200CD0960 /* Proxima Nova Alt Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Black.ttf"; sourceTree = "<group>"; };
+		4B4BD9B220E56BF200CD0960 /* Proxima Nova Alt Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Bold.ttf"; sourceTree = "<group>"; };
+		4B4BD9B320E56BF200CD0960 /* Proxima Nova ScOsf Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova ScOsf Thin.ttf"; sourceTree = "<group>"; };
+		4B4BD9B420E56BF200CD0960 /* Proxima Nova Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.ttf"; sourceTree = "<group>"; };
+		4B4BD9B520E56BF200CD0960 /* Proxima Nova Alt Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Regular.ttf"; sourceTree = "<group>"; };
+		4B4BD9B620E56BF200CD0960 /* Proxima Nova Alt Condensed Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Condensed Semibold.ttf"; sourceTree = "<group>"; };
+		4B4BD9B720E56BF200CD0960 /* Proxima Nova Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Semibold.ttf"; sourceTree = "<group>"; };
 		4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeTextField.swift; sourceTree = "<group>"; };
 		4B7DBB21208518AC00E06822 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		4B7DBB22208518AC00E06822 /* ElasticTransitionPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransitionPresentationController.swift; sourceTree = "<group>"; };
@@ -197,6 +211,7 @@
 				15BCD3042080C24800FE8BF5 /* Extension */,
 				4B42A67720591BB800EBCB6B /* TransitionButton */,
 				4B0B93C120585E8700474101 /* GuillotineMenu */,
+				4B4BD9B020E56BF200CD0960 /* Fonts */,
 				4B0B9393205844C500474101 /* AppDelegate.swift */,
 				4B92E87520691B3D00AE7BFB /* LoginViewController.swift */,
 				B270A3922087456400ED9D26 /* RootPageViewController.swift */,
@@ -247,6 +262,20 @@
 				4B42A67C20591BB800EBCB6B /* CGRectExtension.swift */,
 			);
 			path = TransitionButton;
+			sourceTree = "<group>";
+		};
+		4B4BD9B020E56BF200CD0960 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4B4BD9B120E56BF200CD0960 /* Proxima Nova Alt Black.ttf */,
+				4B4BD9B220E56BF200CD0960 /* Proxima Nova Alt Bold.ttf */,
+				4B4BD9B320E56BF200CD0960 /* Proxima Nova ScOsf Thin.ttf */,
+				4B4BD9B420E56BF200CD0960 /* Proxima Nova Thin.ttf */,
+				4B4BD9B520E56BF200CD0960 /* Proxima Nova Alt Regular.ttf */,
+				4B4BD9B620E56BF200CD0960 /* Proxima Nova Alt Condensed Semibold.ttf */,
+				4B4BD9B720E56BF200CD0960 /* Proxima Nova Semibold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		4B7DBB20208518AC00E06822 /* ElasticTransition */ = {
@@ -400,11 +429,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4BD9B920E56BF200CD0960 /* Proxima Nova Alt Bold.ttf in Resources */,
+				4B4BD9B820E56BF200CD0960 /* Proxima Nova Alt Black.ttf in Resources */,
 				4B0B93C420585E8700474101 /* ic_menu@3x.png in Resources */,
+				4B4BD9BD20E56BF200CD0960 /* Proxima Nova Alt Condensed Semibold.ttf in Resources */,
+				4B4BD9BE20E56BF200CD0960 /* Proxima Nova Semibold.ttf in Resources */,
 				4BCCD14020E3EBD900432126 /* Main.storyboard in Resources */,
+				4B4BD9BB20E56BF200CD0960 /* Proxima Nova Thin.ttf in Resources */,
+				4B4BD9BA20E56BF200CD0960 /* Proxima Nova ScOsf Thin.ttf in Resources */,
 				4B0B939E205844C500474101 /* LaunchScreen.storyboard in Resources */,
 				4B0B939B205844C500474101 /* Assets.xcassets in Resources */,
 				4B92E87920691B4D00AE7BFB /* Contents.json in Resources */,
+				4B4BD9BC20E56BF200CD0960 /* Proxima Nova Alt Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
