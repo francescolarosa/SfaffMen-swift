@@ -62,7 +62,7 @@ class EventViewController: UITableViewController {
     
     @objc private func refreshTableData(_ sender: Any) {
         // Fetch Table Data
-        //myTableViewDataSource.removeAll()
+        myTableViewDataSource.removeAll()
         tableView.reloadData()
         loadList()
     }
@@ -88,7 +88,7 @@ class EventViewController: UITableViewController {
                     if let content = data
                     {
                         let myJson = try JSONSerialization.jsonObject(with: content, options: .mutableContainers)
-                        //print(myJson)
+                        print(myJson)
                         if let jsonData = myJson as? [String : Any]
                         {
                             if let myResults = jsonData["data"] as? [[String : Any]]
@@ -138,6 +138,7 @@ class EventViewController: UITableViewController {
                                     {
                                         myNews.idEvent = myId
                                     }
+                                    
                                     
                                     //x img
                                     //                                    if let myMultimedia = value["data"] as? [String : Any]
@@ -197,7 +198,7 @@ class EventViewController: UITableViewController {
         }
         return myCell
     }
- //per passare da un viewcontroller a detailviewcontroller
+    //per passare da un viewcontroller a detailviewcontroller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? EventDetailViewController {
             destination.model = myTableViewDataSource[(tableView.indexPathForSelectedRow?.row)!]
@@ -264,48 +265,24 @@ class EventViewController: UITableViewController {
                 case .success:
                     print(response)
                     
+                    let dic: NSDictionary =  response.result.value! as! NSDictionary
                     
-                    let JSON = response.result.value as? [String : Any]
+                    //  let JSON = response.result.value as? [String : Any]
                     // let data = JSON! ["data"] as! NSDictionary
                     
                     
-                    if let jsonData = JSON as? [String : Any]
+                    if let jsonData = dic as? [String : Any]
                     {
-                        //                    if (jsonData["data"] as? [[String : Any]]) != nil
-                        //                    {
-                        //
-                        // self.myTableViewDataSource.remove(at : indexPath.item)
-                        //self.myTableView.deleteRows(at: [indexPath], with: .automatic)
-                        // if let jsonData = jsonData as? [String : Any]
-                        // {
-                        //                            if (jsonData["data"] as? [[String : Any]]) != nil
-                        //                            {
+                        
+                        
+                        
                         print(jsonData)
                         self.myTableViewDataSource.remove(at : indexPath.item)
-                        //self.myTableView.deleteRows(at: [indexPath], with: .automatic)
-                        let indexPath = IndexPath(item: 0, section: 0)
-                        self.tableView.deleteRows(at: [indexPath], with: .fade)
-                        self.tableView.reloadData()
-                        //  }
-                        //  }
-                        //}
+                        
+                        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                        
+                        
                     }
-                    // var dic = NSDictionary()
-                    //  dic = data
-                    //  self.Data = JSON?.value(forKey: "data") as! NSDictionary
-                    //JSON! ["data"] as! NSDictionary
-                    //    self.Data = JSON?.value(forKey: "data") as! NSDictionary
-                    // print(data)
-                    //     self.dic.setValue((self.Data.value(forKey:"email") as! String), forKey: "email")
-                    // self.aryvaluedata.add(str)
-                    //   print(self.Data.value(forKey:"email") as! String)
-                    
-                    
-                    //
-                    //                if((response.result.value) != nil) {
-                    //                    let swiftyJsonVar = JSON(response.result.value!)
-                    //
-                    //                    let strmsg = swiftyJsonVar ["msg"] as! String
                     
                 case .failure(let error):
                     print(error)
@@ -317,10 +294,18 @@ class EventViewController: UITableViewController {
             
         }
     }
-    @IBAction func EditButtonTableView(_ sender: UIBarButtonItem) {
-        self.tableView.isEditing = !self.tableView.isEditing
-        sender.title = (self.tableView.isEditing) ? "Done" : "Edit"
-    }
+    
+    
+    
+    
+//    @IBAction func EditButtonTableView(_ sender: UIBarButtonItem) {
+//        self.myTableView.isEditing = !self.myTableView.isEditing
+//        sender.title = (self.myTableView.isEditing) ? "Done" : "Edit"
+//    }
+    //
+    //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventeditViewController") as! EventeditViewController
+    //        self.present(vc, animated: true, completion: nil)
+    
     /// end to: (x eliminare row e x muove row)
     
 }

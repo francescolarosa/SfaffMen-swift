@@ -1,9 +1,8 @@
 //
-//  MyeventViewController.swift
+//  EventeditViewController.swift
 //  StaffMen
 //
-//
-//  Created by Andrex on 15/06/18
+//  Created by Andrex on 27/06/2018.
 //  Copyright © 2018 Andrex. All rights reserved.
 //
 
@@ -18,19 +17,17 @@ import SwiftyJSON
 import GoogleMaps
 import Foundation
 
-class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDelegate,GMSAutocompleteViewControllerDelegate,MKMapViewDelegate ,CLLocationManagerDelegate {
+class EventeditViewController: UIViewController,GMSMapViewDelegate,GMSAutocompleteViewControllerDelegate,UITextFieldDelegate {
     
-    var locationmanager : CLLocationManager!
+    
     var resultsViewController: GMSAutocompleteResultsViewController?
     var searchController: UISearchController?
     var resultView: UITextView?
     
-    var annotation: MKAnnotation!
-    var selectedPin: MKPlacemark?
+    @IBOutlet  var Scrollview: UIScrollView!
     @IBOutlet weak var view_mapContainer: GMSMapView!
     
     var diclatlong : NSMutableDictionary!
-    @IBOutlet  var Scrollview: UIScrollView!
     @IBOutlet var txtserch : UITextField!
     @IBOutlet var txtmembertotal :UITextField!
     @IBOutlet var txtmembers_confirmed :UITextField!
@@ -41,7 +38,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
     @IBOutlet var txttitle : UITextField!
     @IBOutlet var txtdescription : UITextView!
     
-    
+    var idEvent: Int!
     let datePicker = UIDatePicker()
     let timepicker = UIDatePicker()
     @objc let tympicker = UIDatePicker()
@@ -50,14 +47,14 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // locationmanager.delegate = self
-        //  locationmanager.requestWhenInUseAuthorization()
-        // locationmanager.startUpdatingLocation()
-        // locationmanager.desiredAccuracy = kCLLocationAccuracyBest
+        Scrollview.isScrollEnabled = true
+        Scrollview.layer.cornerRadius = 20
+        //Scrollview.contentSize = CGSize(width: 375, height: 1200)
+        Scrollview.contentSize = CGSize(width: Scrollview.contentSize.width, height: 1770)
         
-        //txt field shadow
-        //To apply corner radius
         txtserch.layer.cornerRadius = txtserch.frame.size.height / 2
+        self.txtserch.delegate = self
+        
         
         //To apply Shadow
         //Text field map
@@ -70,19 +67,10 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         txtdescription.layer.shadowRadius = 3.0
         txtdescription.layer.shadowOffset = CGSize.zero // Use any CGSize
         txtdescription.layer.shadowColor = UIColor.gray.cgColor
-        ////
-        
         
         view_mapContainer.isMyLocationEnabled = true
         view_mapContainer.settings.myLocationButton = true
-        
-        Scrollview.isScrollEnabled = true
-        Scrollview.layer.cornerRadius = 20
-        //Scrollview.contentSize = CGSize(width: 375, height: 1200)
-        Scrollview.contentSize = CGSize(width: Scrollview.contentSize.width, height: 1770)
-        
-        self.txtserch.delegate = self
-        
+        self.getdata()
         resultsViewController = GMSAutocompleteResultsViewController()
         // resultsViewController?.delegate = self as! GMSAutocompleteResultsViewControllerDelegate
         
@@ -123,11 +111,8 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         
         tympicker.addTarget(self, action:#selector(tympickervaluechanged),
                             for:.valueChanged)
-        
-        // (self, action: Selector("datePickerChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         // Do any additional setup after loading the view.
     }
-    
     @objc func dismissPicker() {
         
         view.endEditing(true)
@@ -213,6 +198,117 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
     }
     
     
+    func getdata()  {
+        
+        
+        let parameters = [
+            //   "id": UserDefaults.standard.object(forKey: "userid")! ,
+            "id" :idEvent,
+            ] as [String : Any]
+        
+        let url = "http://www.ns7records.com/staffapp/public/api/getevent"
+        print(url)
+        Alamofire.request(url, method:.post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { response in
+            switch response.result {
+            case .success:
+                print(response)
+                
+                let dic: NSDictionary =  response.result.value! as! NSDictionary
+                
+                //  let JSON = response.result.value as? [String : Any]
+                // let data = JSON! ["data"] as! NSDictionary
+                
+                //  if  dic != nil {
+                
+                let data = dic.value(forKey: "data") as! NSArray
+                
+                let alldata = data[0] as! NSDictionary
+                print(data)
+                self.txtserch.text = alldata.value(forKey: "local")as? String
+                self.txtmembertotal.text = alldata.value(forKey: "num_members")as? String
+                self.txtmembers_confirmed.text = alldata.value(forKey: "num_members_confirmed")as? String
+                self.txtprize.text = alldata.value(forKey: "cost")as? String
+                self.txttitle.text = alldata.value(forKey: "title")as? String
+                self.txttime_start.text = alldata.value(forKey: "time_start")as? String
+                self.txttime_end.text = alldata.value(forKey: "time_end")as? String
+                self.txtevent_date.text = alldata.value(forKey: "date")as? String
+                self.txtdescription.text = alldata.value(forKey: "description")as? String
+                self.dismissViewController()
+                
+                
+            case .failure(let error):
+                print(error)
+                let alert = UIAlertController(title: "Aia", message: "Non puoi modificare questo evento!", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        
+        
+    }
+    
+    func searchPlace(txt: String) {
+        
+        view_mapContainer.clear()
+        
+        let mng = CLGeocoder()
+        mng.geocodeAddressString(txt) { (placemarks, error) in
+            
+            DispatchQueue.main.async {
+                
+                guard let places = placemarks, let location = places.first?.location else {
+                    
+                    return
+                }
+                
+                self.view_mapContainer.camera = GMSCameraPosition(target: location.coordinate, zoom: 13, bearing: 0, viewingAngle: 0)
+                
+                let marker = GMSMarker()
+                marker.appearAnimation = GMSMarkerAnimation(rawValue: 1)!
+                marker.position = location.coordinate
+                marker.title = txt
+                marker.snippet = txt
+                marker.map = self.view_mapContainer
+                
+            }
+        }
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        searchController?.isActive = false
+        // Do something with the selected place.
+        
+        print("Nome Luogo: \(place.name)")
+        print("Indirizzo: \(String(describing: place.formattedAddress))")
+        self.txtserch.text =   "" + place.formattedAddress!
+        
+        print("Attributi Luogo: \(String(describing: place.attributions))")
+        print("Coordinate luogo: \(place.coordinate)")
+        //Google Maps marker
+        self.view_mapContainer.camera = GMSCameraPosition(target: place.coordinate, zoom: 16, bearing: 0, viewingAngle: 0)
+        let marker = GMSMarker()
+        marker.appearAnimation = GMSMarkerAnimation(rawValue: 1)!
+        marker.position = place.coordinate
+        marker.title = "Il tuo evento"
+        //marker.snippet = txt
+        marker.map = self.view_mapContainer
+        ///
+        self.dismiss(animated: true, completion: nil)
+        //        diclatlong.setValue(place.coordinate, forKey: "coordinate")
+        
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        print("Errore: ", error.localizedDescription)
+        self.dismiss(animated: true, completion: nil)
+        
+        
+    }
+    
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        print("Screen evento chiusa")
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func btn_tap_submit(sender: UIButton) {
         
         
@@ -282,10 +378,11 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         else
         {
             
-            self.getdata()
+            self.submitdata()
             
         }
     }
+    
     
     @IBAction func btn_cancel(sender: UIButton) {
         
@@ -303,8 +400,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
     
     
     
-    
-    func getdata()
+    func submitdata()
     {
         let parameters = [
             "user_id": (UserDefaults.standard.object(forKey: "userstatus") as? String)!,
@@ -318,9 +414,10 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
             "cost":txtprize.text!,
             "status":"1",
             "title":txttitle.text!,
-            "description":txtdescription.text!
+            "description":txtdescription.text!,
+            "id":idEvent
             
-        ]
+            ] as [String : Any]
         
         print(parameters)
         
@@ -338,10 +435,10 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
                 //                    let strmsg = swiftyJsonVar ["msg"] as! String
                 
                 // let msg = (json as! NSDictionary).value(forKey: "msg") as! String
-                let alert = UIAlertController(title: "Yeah!", message: "Evento pubblicato correttamente!", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Yeah!", message: "Evento aggiornato correttamente!", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                self.dismissViewController()
+                //  self.resultsViewController()
                 
                 
             case .failure(let error):
@@ -353,72 +450,6 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         }
     }
     
-    func searchPlace(txt: String) {
-        
-        view_mapContainer.clear()
-        
-        let mng = CLGeocoder()
-        mng.geocodeAddressString(txt) { (placemarks, error) in
-            
-            DispatchQueue.main.async {
-                
-                guard let places = placemarks, let location = places.first?.location else {
-                    
-                    return
-                }
-                
-                self.view_mapContainer.camera = GMSCameraPosition(target: location.coordinate, zoom: 13, bearing: 0, viewingAngle: 0)
-                
-                let marker = GMSMarker()
-                marker.appearAnimation = GMSMarkerAnimation(rawValue: 1)!
-                marker.position = location.coordinate
-                marker.title = txt
-                marker.snippet = txt
-                marker.map = self.view_mapContainer
-                
-            }
-        }
-    }
-    
-    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        searchController?.isActive = false
-        // Do something with the selected place.
-        
-        print("Nome Luogo: \(place.name)")
-        print("Indirizzo: \(String(describing: place.formattedAddress))")
-        self.txtserch.text = place.name + "" + place.formattedAddress!
-        
-        print("Attributi Luogo: \(String(describing: place.attributions))")
-        print("Coordinate luogo: \(place.coordinate)")
-        //Google Maps marker
-        self.view_mapContainer.camera = GMSCameraPosition(target: place.coordinate, zoom: 16, bearing: 0, viewingAngle: 0)
-        let marker = GMSMarker()
-        marker.appearAnimation = GMSMarkerAnimation(rawValue: 1)!
-        marker.position = place.coordinate
-        marker.title = "Il tuo evento"
-        //marker.snippet = txt
-        marker.map = self.view_mapContainer
-        ///
-        self.dismiss(animated: true, completion: nil)
-        //        diclatlong.setValue(place.coordinate, forKey: "coordinate")
-        
-    }
-    
-    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        print("Errore: ", error.localizedDescription)
-        self.dismiss(animated: true, completion: nil)
-        
-        
-    }
-    
-    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-        print("Screen evento chiusa")
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    
-    
-    
     
     // Turn the network activity indicator on and off again.
     func didRequestAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
@@ -428,7 +459,6 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
     func didUpdateAutocompletePredictions(forResultsController resultsController: GMSAutocompleteResultsViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -445,27 +475,5 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
      // Pass the selected object to the new view controller.
      }
      */
-    
-}
-
-extension UIToolbar {
-    
-    func ToolbarPiker(mySelect : Selector) -> UIToolbar {
-        
-        let toolBar = UIToolbar()
-        
-        toolBar.barStyle = UIBarStyle.default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor.black
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Chiudi", style: UIBarButtonItemStyle.plain, target: self, action: mySelect)
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        
-        toolBar.setItems([ spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
-        return toolBar
-    }
     
 }

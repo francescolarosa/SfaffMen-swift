@@ -17,15 +17,7 @@ class MenuViewController: UIViewController, ElasticMenuTransitionDelegate {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var codeView2: UITextView!
-    @IBAction func btn_tap_Logout(_ sender: Any) {
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.switchViewControllers()
-        UserDefaults.standard.set("0", forKey: "userstatus")
-        
-        let LoginViewController = viewController(from: "LoginViewController")
-        present(LoginViewController, animated: true)
-    }
+    
     //x present
     func viewController(from storyboardID: String) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -37,6 +29,15 @@ class MenuViewController: UIViewController, ElasticMenuTransitionDelegate {
 //        let tm = transitioningDelegate as! ElasticTransition
     }
     
+    @IBAction func btn_tap_Logout(_ sender: Any) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.switchViewControllers()
+        UserDefaults.standard.set("0", forKey: "userstatus")
+        
+        let LoginViewController = viewController(from: "LoginViewController")
+        present(LoginViewController, animated: true)
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return UIStatusBarStyle.lightContent }
 }

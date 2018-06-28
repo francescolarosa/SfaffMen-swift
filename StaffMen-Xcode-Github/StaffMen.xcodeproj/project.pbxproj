@@ -40,6 +40,7 @@
 		4B92E87720691B3D00AE7BFB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B92E87520691B3D00AE7BFB /* LoginViewController.swift */; };
 		4B92E87920691B4D00AE7BFB /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B92E87820691B4C00AE7BFB /* Contents.json */; };
 		4BCCD14020E3EBD900432126 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BCCD13F20E3EBD900432126 /* Main.storyboard */; };
+		4BD7CA1F20E548F20007717E /* EventeditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD7CA1E20E548F20007717E /* EventeditViewController.swift */; };
 		4BF76A8620E3D5500030C63A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF76A8520E3D5500030C63A /* CoreLocation.framework */; };
 		4BF76A8A20E3D55F0030C63A /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BF76A8920E3D55F0030C63A /* MediaPlayer.framework */; };
 		4BF76A8E20E3D6E90030C63A /* PhysicalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF76A8D20E3D6E90030C63A /* PhysicalTableViewCell.swift */; };
@@ -104,6 +105,7 @@
 		4B92E87520691B3D00AE7BFB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4B92E87820691B4C00AE7BFB /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
 		4BCCD13F20E3EBD900432126 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4BD7CA1E20E548F20007717E /* EventeditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventeditViewController.swift; sourceTree = "<group>"; };
 		4BF76A8520E3D5500030C63A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4BF76A8720E3D5560030C63A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4BF76A8920E3D55F0030C63A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				4B9092D520D92FB0008B0646 /* MyeventViewController.swift */,
+				4BD7CA1E20E548F20007717E /* EventeditViewController.swift */,
 				AD59BAE320A47AE70046E352 /* EventViewController.swift */,
 				AD59BAE520A4BB9A0046E352 /* EventDetailViewController.swift */,
 				AD59BAE120A47A860046E352 /* Model.swift */,
@@ -530,6 +533,7 @@
 				4B7DBB2A208518AC00E06822 /* EdgePanTransition.swift in Sources */,
 				4B42A67E20591BB800EBCB6B /* CustomTransitionViewController.swift in Sources */,
 				AD5FDDC020A725340084D506 /* CustomMarkerView.swift in Sources */,
+				4BD7CA1F20E548F20007717E /* EventeditViewController.swift in Sources */,
 				AD58FA6D20CD261C00905FC9 /* MyProfileViewModel.swift in Sources */,
 				ADE366C520C184ED00CDD83C /* EditProfileViewController.swift in Sources */,
 				1EB2D64720C0577000904FE8 /* PhysicalData.swift in Sources */,
