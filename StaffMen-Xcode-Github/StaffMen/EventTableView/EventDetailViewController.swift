@@ -59,7 +59,6 @@ class EventDetailViewController: UIViewController {
         }
     }
     @IBAction func btn_editevent(_ sender: UIButton) {
-        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventeditViewController") as! EventeditViewController
         guard let model = model else {
             return
