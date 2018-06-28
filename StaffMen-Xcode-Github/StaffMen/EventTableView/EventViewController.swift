@@ -284,8 +284,8 @@ class EventViewController: UITableViewController {
                         self.myTableViewDataSource.remove(at : indexPath.item)
                         //self.myTableView.deleteRows(at: [indexPath], with: .automatic)
                         let indexPath = IndexPath(item: 0, section: 0)
-                        self.myTableView.deleteRows(at: [indexPath], with: .fade)
-                        self.myTableView.reloadData()
+                        self.tableView.deleteRows(at: [indexPath], with: .fade)
+                        self.tableView.reloadData()
                         //  }
                         //  }
                         //}
@@ -318,8 +318,8 @@ class EventViewController: UITableViewController {
         }
     }
     @IBAction func EditButtonTableView(_ sender: UIBarButtonItem) {
-        self.myTableView.isEditing = !self.myTableView.isEditing
-        sender.title = (self.myTableView.isEditing) ? "Done" : "Edit"
+        self.tableView.isEditing = !self.tableView.isEditing
+        sender.title = (self.tableView.isEditing) ? "Done" : "Edit"
     }
     /// end to: (x eliminare row e x muove row)
     
