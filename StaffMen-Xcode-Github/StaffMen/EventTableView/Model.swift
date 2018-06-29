@@ -9,6 +9,7 @@
 import Foundation
 
 struct NewInfo {
+    //Event Model
     var user_id: Int?
     var idEvent: Int!
     var date: String?
@@ -21,6 +22,12 @@ struct NewInfo {
     var description: String?
     var cost: String?
     var event_photo: String?
+    
+    //Message model
+    var message: String?
+    var created_at: String?
+    var updated_at: String?
+    var member: String?
 }
 
 

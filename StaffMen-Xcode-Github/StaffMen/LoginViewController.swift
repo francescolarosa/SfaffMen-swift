@@ -7,7 +7,7 @@
 
 import UIKit
 import Foundation
-import TransitionButton
+import SwiftVideoBackground
 
 class LoginViewController: UIViewController {
     
@@ -19,9 +19,24 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var indicator: InstagramActivityIndicator!
     var regVC: RegistrationViewController!
-    
+    //Video BG
+    @IBOutlet weak var videoBG: UIView!
+    let videoBackground1 = VideoBackground()
+    //
     override func viewDidLoad() {
-        super.viewDidLoad()       
+        super.viewDidLoad()
+        
+        //Load a local video
+        try? videoBackground1.play(view: view, videoName: "concert-video-bg", videoType: "mp4", isMuted: true, willLoopVideo: true)
+        
+        navigationController?.isNavigationBarHidden = true
+        
+        /* or from URL */
+        
+        //        let url = URL(string: "https://coolVids.com/coolVid.mp4")!
+        //        VideoBackground.shared.play(view: view, url: url)
+        
+        loginButton.layer.cornerRadius = 24
         
         emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail",
                                                                attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
@@ -84,7 +99,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    @IBAction func loginButton(_ sender: TransitionButton) {
+    @IBAction func loginButton(_ sender: UIButton) {
         //loginButton.startAnimation()
         if emailTextField.isNull {
             let alertController = UIAlertController(title: "Inserisci Email", message: "Per favore inserisci una email valida", preferredStyle: UIAlertControllerStyle.alert)

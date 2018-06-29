@@ -22,6 +22,7 @@
     
     ///x la MAPPA
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // Override point for customization after application launch.
         
         GMSServices.provideAPIKey("AIzaSyBWioD6hq21lqSMMo-o3Er8yuzqiBuWB_I")
@@ -65,12 +66,14 @@
         return true
     }
     
+    
     func switchBack() {
         
         // switch back to view controller 1
         //Flag = true
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let nav = storyboard.instantiateViewController(withIdentifier: "NavigationMyProfileViewController")
+        let nav = storyboard.instantiateViewController(withIdentifier: "EventViewList")
+        //"NavigationMyProfileViewController"
         
         self.window?.rootViewController = nav
     }

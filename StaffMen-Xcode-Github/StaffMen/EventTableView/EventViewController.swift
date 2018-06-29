@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import Foundation
 import Alamofire
+import SwiftyJSON
 
 class EventViewController: UITableViewController {
     
@@ -181,6 +183,7 @@ class EventViewController: UITableViewController {
         let myCell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath)
         
         let myImageView = myCell.viewWithTag(11) as! UIImageView
+        myCell.imageView?.layer.cornerRadius = myImageView.frame.height/2
         let myTitleLabel = myCell.viewWithTag(12) as! UILabel
         let myLocation = myCell.viewWithTag(13) as! UILabel
         let DateLabelCell = myCell.viewWithTag(14) as! UILabel

@@ -12,7 +12,6 @@
 		1EB2D64920C0592500904FE8 /* PhysicalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB2D64820C0592500904FE8 /* PhysicalDataCell.swift */; };
 		4B0B9394205844C500474101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B9393205844C500474101 /* AppDelegate.swift */; };
 		4B0B939B205844C500474101 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B0B939A205844C500474101 /* Assets.xcassets */; };
-		4B0B939E205844C500474101 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B0B939C205844C500474101 /* LaunchScreen.storyboard */; };
 		4B0B93AC2058452600474101 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B93AB2058452600474101 /* MenuViewController.swift */; };
 		4B0B93C420585E8700474101 /* ic_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B0B93C220585E8700474101 /* ic_menu@3x.png */; };
 		4B0B93C520585E8700474101 /* GuillotineMenuTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0B93C320585E8700474101 /* GuillotineMenuTransitionAnimation.swift */; };
@@ -25,12 +24,17 @@
 		4B42A68120591BB800EBCB6B /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42A67B20591BB800EBCB6B /* FadeTransition.swift */; };
 		4B42A68220591BB800EBCB6B /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B42A67C20591BB800EBCB6B /* CGRectExtension.swift */; };
 		4B4BD9B820E56BF200CD0960 /* Proxima Nova Alt Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B120E56BF200CD0960 /* Proxima Nova Alt Black.ttf */; };
-		4B4BD9B920E56BF200CD0960 /* Proxima Nova Alt Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B220E56BF200CD0960 /* Proxima Nova Alt Bold.ttf */; };
+		4B4BD9B920E56BF200CD0960 /* Proxima-Nova-Alt-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B220E56BF200CD0960 /* Proxima-Nova-Alt-bold.ttf */; };
 		4B4BD9BA20E56BF200CD0960 /* Proxima Nova ScOsf Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B320E56BF200CD0960 /* Proxima Nova ScOsf Thin.ttf */; };
-		4B4BD9BB20E56BF200CD0960 /* Proxima Nova Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B420E56BF200CD0960 /* Proxima Nova Thin.ttf */; };
-		4B4BD9BC20E56BF200CD0960 /* Proxima Nova Alt Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B520E56BF200CD0960 /* Proxima Nova Alt Regular.ttf */; };
+		4B4BD9BB20E56BF200CD0960 /* Proxima-Nova-reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B420E56BF200CD0960 /* Proxima-Nova-reg.ttf */; };
+		4B4BD9BC20E56BF200CD0960 /* Proxima-Nova-bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B520E56BF200CD0960 /* Proxima-Nova-bd.ttf */; };
 		4B4BD9BD20E56BF200CD0960 /* Proxima Nova Alt Condensed Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B620E56BF200CD0960 /* Proxima Nova Alt Condensed Semibold.ttf */; };
 		4B4BD9BE20E56BF200CD0960 /* Proxima Nova Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9B720E56BF200CD0960 /* Proxima Nova Semibold.ttf */; };
+		4B4BD9C320E591F100CD0960 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4BD9C120E591F000CD0960 /* Constants.swift */; };
+		4B4BD9C420E591F100CD0960 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4BD9C220E591F000CD0960 /* Extensions.swift */; };
+		4B4BD9CA20E5B60100CD0960 /* concert-video-bg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9C920E5B60000CD0960 /* concert-video-bg.mp4 */; };
+		4B4BD9CC20E5B76F00CD0960 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9CB20E5B76F00CD0960 /* SplashScreen.storyboard */; };
+		4B4BD9CE20E5D38B00CD0960 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4BD9CD20E5D38B00CD0960 /* MessagesViewController.swift */; };
 		4B758EB620D2EF19009CD0B6 /* AwesomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */; };
 		4B7DBB27208518AC00E06822 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB21208518AC00E06822 /* Util.swift */; };
 		4B7DBB28208518AC00E06822 /* ElasticTransitionPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB22208518AC00E06822 /* ElasticTransitionPresentationController.swift */; };
@@ -82,7 +86,6 @@
 		4B0B9390205844C500474101 /* StaffMen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StaffMen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B0B9393205844C500474101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B0B939A205844C500474101 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4B0B939D205844C500474101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B0B939F205844C500474101 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B0B93AB2058452600474101 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4B0B93C220585E8700474101 /* ic_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_menu@3x.png"; sourceTree = "<group>"; };
@@ -96,12 +99,17 @@
 		4B42A67B20591BB800EBCB6B /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		4B42A67C20591BB800EBCB6B /* CGRectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
 		4B4BD9B120E56BF200CD0960 /* Proxima Nova Alt Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Black.ttf"; sourceTree = "<group>"; };
-		4B4BD9B220E56BF200CD0960 /* Proxima Nova Alt Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Bold.ttf"; sourceTree = "<group>"; };
+		4B4BD9B220E56BF200CD0960 /* Proxima-Nova-Alt-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima-Nova-Alt-bold.ttf"; sourceTree = "<group>"; };
 		4B4BD9B320E56BF200CD0960 /* Proxima Nova ScOsf Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova ScOsf Thin.ttf"; sourceTree = "<group>"; };
-		4B4BD9B420E56BF200CD0960 /* Proxima Nova Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.ttf"; sourceTree = "<group>"; };
-		4B4BD9B520E56BF200CD0960 /* Proxima Nova Alt Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Regular.ttf"; sourceTree = "<group>"; };
+		4B4BD9B420E56BF200CD0960 /* Proxima-Nova-reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima-Nova-reg.ttf"; sourceTree = "<group>"; };
+		4B4BD9B520E56BF200CD0960 /* Proxima-Nova-bd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima-Nova-bd.ttf"; sourceTree = "<group>"; };
 		4B4BD9B620E56BF200CD0960 /* Proxima Nova Alt Condensed Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Alt Condensed Semibold.ttf"; sourceTree = "<group>"; };
 		4B4BD9B720E56BF200CD0960 /* Proxima Nova Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Semibold.ttf"; sourceTree = "<group>"; };
+		4B4BD9C120E591F000CD0960 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4B4BD9C220E591F000CD0960 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4B4BD9C920E5B60000CD0960 /* concert-video-bg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "concert-video-bg.mp4"; sourceTree = "<group>"; };
+		4B4BD9CB20E5B76F00CD0960 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		4B4BD9CD20E5D38B00CD0960 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeTextField.swift; sourceTree = "<group>"; };
 		4B7DBB21208518AC00E06822 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		4B7DBB22208518AC00E06822 /* ElasticTransitionPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransitionPresentationController.swift; sourceTree = "<group>"; };
@@ -212,6 +220,8 @@
 				4B42A67720591BB800EBCB6B /* TransitionButton */,
 				4B0B93C120585E8700474101 /* GuillotineMenu */,
 				4B4BD9B020E56BF200CD0960 /* Fonts */,
+				4B4BD9C020E591F000CD0960 /* AppTheme */,
+				4B4BD9C820E5B60000CD0960 /* BGVideos */,
 				4B0B9393205844C500474101 /* AppDelegate.swift */,
 				4B92E87520691B3D00AE7BFB /* LoginViewController.swift */,
 				B270A3922087456400ED9D26 /* RootPageViewController.swift */,
@@ -228,7 +238,7 @@
 				4B92E87820691B4C00AE7BFB /* Contents.json */,
 				4B0B939A205844C500474101 /* Assets.xcassets */,
 				4BCCD13F20E3EBD900432126 /* Main.storyboard */,
-				4B0B939C205844C500474101 /* LaunchScreen.storyboard */,
+				4B4BD9CB20E5B76F00CD0960 /* SplashScreen.storyboard */,
 				4B0B939F205844C500474101 /* Info.plist */,
 			);
 			path = StaffMen;
@@ -268,14 +278,31 @@
 			isa = PBXGroup;
 			children = (
 				4B4BD9B120E56BF200CD0960 /* Proxima Nova Alt Black.ttf */,
-				4B4BD9B220E56BF200CD0960 /* Proxima Nova Alt Bold.ttf */,
+				4B4BD9B220E56BF200CD0960 /* Proxima-Nova-Alt-bold.ttf */,
 				4B4BD9B320E56BF200CD0960 /* Proxima Nova ScOsf Thin.ttf */,
-				4B4BD9B420E56BF200CD0960 /* Proxima Nova Thin.ttf */,
-				4B4BD9B520E56BF200CD0960 /* Proxima Nova Alt Regular.ttf */,
+				4B4BD9B420E56BF200CD0960 /* Proxima-Nova-reg.ttf */,
+				4B4BD9B520E56BF200CD0960 /* Proxima-Nova-bd.ttf */,
 				4B4BD9B620E56BF200CD0960 /* Proxima Nova Alt Condensed Semibold.ttf */,
 				4B4BD9B720E56BF200CD0960 /* Proxima Nova Semibold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4B4BD9C020E591F000CD0960 /* AppTheme */ = {
+			isa = PBXGroup;
+			children = (
+				4B4BD9C120E591F000CD0960 /* Constants.swift */,
+				4B4BD9C220E591F000CD0960 /* Extensions.swift */,
+			);
+			path = AppTheme;
+			sourceTree = "<group>";
+		};
+		4B4BD9C820E5B60000CD0960 /* BGVideos */ = {
+			isa = PBXGroup;
+			children = (
+				4B4BD9C920E5B60000CD0960 /* concert-video-bg.mp4 */,
+			);
+			path = BGVideos;
 			sourceTree = "<group>";
 		};
 		4B7DBB20208518AC00E06822 /* ElasticTransition */ = {
@@ -314,6 +341,7 @@
 				4BD7CA1E20E548F20007717E /* EventeditViewController.swift */,
 				AD59BAE320A47AE70046E352 /* EventViewController.swift */,
 				AD59BAE520A4BB9A0046E352 /* EventDetailViewController.swift */,
+				4B4BD9CD20E5D38B00CD0960 /* MessagesViewController.swift */,
 				AD59BAE120A47A860046E352 /* Model.swift */,
 			);
 			path = EventTableView;
@@ -429,18 +457,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B4BD9B920E56BF200CD0960 /* Proxima Nova Alt Bold.ttf in Resources */,
+				4B4BD9B920E56BF200CD0960 /* Proxima-Nova-Alt-bold.ttf in Resources */,
 				4B4BD9B820E56BF200CD0960 /* Proxima Nova Alt Black.ttf in Resources */,
 				4B0B93C420585E8700474101 /* ic_menu@3x.png in Resources */,
+				4B4BD9CA20E5B60100CD0960 /* concert-video-bg.mp4 in Resources */,
 				4B4BD9BD20E56BF200CD0960 /* Proxima Nova Alt Condensed Semibold.ttf in Resources */,
 				4B4BD9BE20E56BF200CD0960 /* Proxima Nova Semibold.ttf in Resources */,
 				4BCCD14020E3EBD900432126 /* Main.storyboard in Resources */,
-				4B4BD9BB20E56BF200CD0960 /* Proxima Nova Thin.ttf in Resources */,
+				4B4BD9BB20E56BF200CD0960 /* Proxima-Nova-reg.ttf in Resources */,
+				4B4BD9CC20E5B76F00CD0960 /* SplashScreen.storyboard in Resources */,
 				4B4BD9BA20E56BF200CD0960 /* Proxima Nova ScOsf Thin.ttf in Resources */,
-				4B0B939E205844C500474101 /* LaunchScreen.storyboard in Resources */,
 				4B0B939B205844C500474101 /* Assets.xcassets in Resources */,
 				4B92E87920691B4D00AE7BFB /* Contents.json in Resources */,
-				4B4BD9BC20E56BF200CD0960 /* Proxima Nova Alt Regular.ttf in Resources */,
+				4B4BD9BC20E56BF200CD0960 /* Proxima-Nova-bd.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,20 +485,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-StaffMen/Pods-StaffMen-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
-				"${BUILT_PRODUCTS_DIR}/GMStepper/GMStepper.framework",
-				"${BUILT_PRODUCTS_DIR}/HGPlaceholders/HGPlaceholders.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialControls/MaterialControls.framework",
 				"${BUILT_PRODUCTS_DIR}/MotionAnimation/MotionAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftVideoBackground/SwiftVideoBackground.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 			);
@@ -477,20 +501,15 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GMStepper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGPlaceholders.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialControls.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftVideoBackground.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 			);
@@ -548,6 +567,7 @@
 			files = (
 				4B0B93AC2058452600474101 /* MenuViewController.swift in Sources */,
 				AD59BAE420A47AE70046E352 /* EventViewController.swift in Sources */,
+				4B4BD9CE20E5D38B00CD0960 /* MessagesViewController.swift in Sources */,
 				15BCD3062080C28800FE8BF5 /* CustomCategories.swift in Sources */,
 				ADE366CC20C1BA8000CDD83C /* EditPhysicalViewController.swift in Sources */,
 				AD169A9520C095EE00AF1DA5 /* ProfessionalDataCell.swift in Sources */,
@@ -571,11 +591,13 @@
 				AD5FDDC020A725340084D506 /* CustomMarkerView.swift in Sources */,
 				4BD7CA1F20E548F20007717E /* EventeditViewController.swift in Sources */,
 				AD58FA6D20CD261C00905FC9 /* MyProfileViewModel.swift in Sources */,
+				4B4BD9C320E591F100CD0960 /* Constants.swift in Sources */,
 				ADE366C520C184ED00CDD83C /* EditProfileViewController.swift in Sources */,
 				1EB2D64720C0577000904FE8 /* PhysicalData.swift in Sources */,
 				4B7DBB2C208518AC00E06822 /* ElasticTransition.swift in Sources */,
 				4B758EB620D2EF19009CD0B6 /* AwesomeTextField.swift in Sources */,
 				AD5FDDC420A725F10084D506 /* DetailsVC.swift in Sources */,
+				4B4BD9C420E591F100CD0960 /* Extensions.swift in Sources */,
 				4B92E87720691B3D00AE7BFB /* LoginViewController.swift in Sources */,
 				4B0B9394205844C500474101 /* AppDelegate.swift in Sources */,
 				4B42A68220591BB800EBCB6B /* CGRectExtension.swift in Sources */,
@@ -599,17 +621,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4B0B939C205844C500474101 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B0B939D205844C500474101 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4B0B93A0205844C500474101 /* Debug */ = {
@@ -728,6 +739,7 @@
 			baseConfigurationReference = 7A78D8C4B457A34AEB6C467A /* Pods-StaffMen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHBQXZSZBW;
@@ -745,8 +757,8 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/TransitionButton\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
 					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
 					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
@@ -770,6 +782,7 @@
 			baseConfigurationReference = 0BB89AF2878D1874FEA20D3E /* Pods-StaffMen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHBQXZSZBW;
@@ -787,8 +800,8 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Protobuf\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/ReachabilitySwift\"",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/TransitionButton\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
 					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
 					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",

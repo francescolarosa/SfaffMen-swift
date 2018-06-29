@@ -50,7 +50,7 @@ class EventeditViewController: UIViewController,GMSMapViewDelegate,GMSAutocomple
         Scrollview.isScrollEnabled = true
         Scrollview.layer.cornerRadius = 20
         //Scrollview.contentSize = CGSize(width: 375, height: 1200)
-        Scrollview.contentSize = CGSize(width: Scrollview.contentSize.width, height: 1770)
+        Scrollview.contentSize = CGSize(width: Scrollview.contentSize.width, height: 1430)
         
         txtserch.layer.cornerRadius = txtserch.frame.size.height / 2
         self.txtserch.delegate = self
@@ -116,6 +116,7 @@ class EventeditViewController: UIViewController,GMSMapViewDelegate,GMSAutocomple
     @objc func dismissPicker() {
         
         view.endEditing(true)
+    
     }
     
     @IBAction func returnToEvent(_ sender: UIButton) {
@@ -133,6 +134,7 @@ class EventeditViewController: UIViewController,GMSMapViewDelegate,GMSAutocomple
             vc.dismiss(animated: true, completion: nil)
         }
     }
+    
     
     @objc func datePickerChanged(datePicker:UIDatePicker) {
         print("time picker cambiato per evento")
@@ -233,12 +235,11 @@ class EventeditViewController: UIViewController,GMSMapViewDelegate,GMSAutocomple
                 self.txttime_end.text = alldata.value(forKey: "time_end")as? String
                 self.txtevent_date.text = alldata.value(forKey: "date")as? String
                 self.txtdescription.text = alldata.value(forKey: "description")as? String
-                self.dismissViewController()
                 
                 
             case .failure(let error):
                 print(error)
-                let alert = UIAlertController(title: "Aia", message: "Non puoi modificare questo evento!", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Aia", message: "Non puoi cancellare questo evento!", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.destructive, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
@@ -309,7 +310,7 @@ class EventeditViewController: UIViewController,GMSMapViewDelegate,GMSAutocomple
         print("Screen evento chiusa")
         self.dismiss(animated: true, completion: nil)
     }
-    @IBAction func btn_tap_submit(sender: UIButton) {
+    @IBAction func btn_tap_submit(_ sender: UIButton) {
         
         
         if (txtevent_date.text != nil)
@@ -426,7 +427,7 @@ class EventeditViewController: UIViewController,GMSMapViewDelegate,GMSAutocomple
             switch response.result {
             case .success:
                 print(response)
-                
+                self.dismissViewController()
                 // let json = response.result.value
                 //
                 //                if((response.result.value) != nil) {

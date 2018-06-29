@@ -46,7 +46,6 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
         experienceTextLabel.placeholder = "Do you have any experience?"
     }
     
- 
     let citys = ["Milano", "Cinisello", "Bucinasco","Rozzano"]
     let works = ["Steward", "Promoter", "Modello","Driver"]
     let experience = ["Senza esperienza", "Poca esperienza", "Molta esperienza"]

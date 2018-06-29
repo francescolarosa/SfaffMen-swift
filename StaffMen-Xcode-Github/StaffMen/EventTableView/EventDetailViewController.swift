@@ -9,6 +9,8 @@
 import UIKit
 import AlamofireImage
 import Foundation
+import SwiftyJSON
+import Alamofire
 
 class EventDetailViewController: UIViewController {
     
@@ -28,6 +30,8 @@ class EventDetailViewController: UIViewController {
     
     @IBOutlet  var Scrollview: UIScrollView!
     
+     var idEvent: Int!
+    
     var model:NewInfo?
     
     override func viewDidLoad() {
@@ -37,11 +41,18 @@ class EventDetailViewController: UIViewController {
             return
         }
         
+        //To apply Shadow
+        //Image View
+        srcImageStory.layer.shadowOpacity = 1
+        srcImageStory.layer.shadowRadius = 3.0
+        srcImageStory.layer.shadowOffset = CGSize.zero // Use any CGSize
+        srcImageStory.layer.shadowColor = UIColor.gray.cgColor
+        //
         //Scroll view delegate
         Scrollview.isScrollEnabled = true
         Scrollview.layer.cornerRadius = 20
         //Scrollview.contentSize = CGSize(width: 375, height: 1200)
-        Scrollview.contentSize = CGSize(width: Scrollview.contentSize.width, height: 590)
+        Scrollview.contentSize = CGSize(width: Scrollview.contentSize.width, height: 520)
         //
         
         //navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backAction))
@@ -58,6 +69,8 @@ class EventDetailViewController: UIViewController {
             srcImageStory.af_setImage(withURL: imageURL)
         }
     }
+    
+    
     @IBAction func btn_editevent(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "EventeditViewController") as! EventeditViewController
         guard let model = model else {
@@ -67,4 +80,45 @@ class EventDetailViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
         
     }
+    
+    @IBAction func btn_tap_Join (_ sender: UIButton) {
+        
+        self.getdata()
+        
+    }
+    
+    func getdata()
+    {
+        let parameters = [
+            "user_id": (UserDefaults.standard.object(forKey: "userstatus") as? String)!,
+            "job_id": "1",
+            "id": idEvent,
+            
+            ] as [String : Any]
+        
+        print(parameters)
+        
+        let url =  AppConfig.proxy_server + "/api/joinevent"
+        Alamofire.request(url, method:.post, parameters:parameters,encoding: JSONEncoding.default).responseString { response in
+            switch response.result {
+            case .success:
+                print(response)
+                let alert = UIAlertController(title: "Pronto?", message: "Hai chiesto di unirti all'evento", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                // let json = response.result.value
+                //
+                //                if((response.result.value) != nil) {
+                //                    let swiftyJsonVar = JSON(response.result.value!)
+                //
+                //                    let strmsg = swiftyJsonVar ["msg"] as! String
+                
+                // let msg = (json as! NSDictionary).value(forKey: "msg") as! String
+
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+            
 }

@@ -4,10 +4,9 @@
 target 'StaffMen' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-	pod 'TransitionButton'
 	pod 'IQKeyboardManagerSwift'
   	pod 'Alamofire'
-    	pod 'AlamofireImage'
+    pod 'AlamofireImage'
   	pod 'SwiftyJSON'
   	pod 'MaterialControls'
 	pod 'ObjectMapper', :git => 'https://github.com/Hearst-DD/ObjectMapper.git'
@@ -20,11 +19,8 @@ target 'StaffMen' do
   	pod 'GoogleMaps'
 	pod "MotionAnimation", :git => 'https://github.com/LondonAppWorks/MotionAnimation.git'
 	pod 'SDWebImage'
-  pod 'HGPlaceholders'
-  pod 'PopupDialog', '~> 0.7'
-      pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-      pod 'SCLAlertView'
-      pod 'GMStepper'
+  	pod 'SwiftVideoBackground', '~> 3.0'
+  	pod 'TransitionButton'
 
   # Pods for StaffMen
 

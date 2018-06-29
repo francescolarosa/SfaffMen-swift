@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import SwiftVideoBackground
 
 class RegistrationViewController: UIViewController {
     
@@ -20,9 +21,25 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var indicator: InstagramActivityIndicator!
     var logVC: LoginViewController!
+    //Video BG
+    @IBOutlet weak var videoBG: UIView!
+    let videoBackground1 = VideoBackground()
+    //
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Load a local video
+        try? videoBackground1.play(view: view, videoName: "concert-video-bg", videoType: "mp4", isMuted: true, willLoopVideo: true)
+        
+        navigationController?.isNavigationBarHidden = true
+        
+        /* or from URL */
+        
+        //        let url = URL(string: "https://coolVids.com/coolVid.mp4")!
+        //        VideoBackground.shared.play(view: view, url: url)
+        
+        registerButton.layer.cornerRadius = 20
         
         indicator.hidesWhenStopped = true
         indicator.stopAnimating()

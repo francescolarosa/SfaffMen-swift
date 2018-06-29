@@ -79,7 +79,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         Scrollview.isScrollEnabled = true
         Scrollview.layer.cornerRadius = 20
         //Scrollview.contentSize = CGSize(width: 375, height: 1200)
-        Scrollview.contentSize = CGSize(width: Scrollview.contentSize.width, height: 1770)
+        Scrollview.contentSize = CGSize(width: Scrollview.contentSize.width, height: 1430)
         
         self.txtserch.delegate = self
         
@@ -213,8 +213,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
     }
     
     
-    @IBAction func btn_tap_submit(sender: UIButton) {
-        
+    @IBAction func btn_tap_submit(_ sender: UIButton) {
         
         if (txtevent_date.text != nil)
         {
@@ -329,7 +328,7 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
             switch response.result {
             case .success:
                 print(response)
-                
+                self.dismissViewController()
                 // let json = response.result.value
                 //
                 //                if((response.result.value) != nil) {
