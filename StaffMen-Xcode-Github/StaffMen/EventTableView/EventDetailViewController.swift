@@ -12,7 +12,9 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-class EventDetailViewController: UIViewController {
+class EventDetailViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    
+    
     
     @IBOutlet weak var TitleProva: UILabel!
     
@@ -30,9 +32,14 @@ class EventDetailViewController: UIViewController {
     
     @IBOutlet  var Scrollview: UIScrollView!
     
-     var idEvent: Int!
+    @IBOutlet  var txtmsg: UITextField!
+    
+    //var idEvent: Int!
+    var idevent : Int?
     
     var model:NewInfo?
+    var arymsgdata = NSArray()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +59,7 @@ class EventDetailViewController: UIViewController {
         Scrollview.isScrollEnabled = true
         Scrollview.layer.cornerRadius = 20
         //Scrollview.contentSize = CGSize(width: 375, height: 1200)
-        Scrollview.contentSize = CGSize(width: Scrollview.contentSize.width, height: 520)
+        Scrollview.contentSize = CGSize(width: Scrollview.contentSize.width, height: 1200)
         //
         
         //navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backAction))
@@ -63,11 +70,22 @@ class EventDetailViewController: UIViewController {
         StartEventLabel.text = model.startEvent
         EndEventLabel.text = model.endEvent
         descLabel.text = model.description
+        idevent = model.idEvent
+        
         
         
         if let eventPhoto = model.event_photo, let imageURL = URL(string: AppConfig.public_server + eventPhoto) {
             srcImageStory.af_setImage(withURL: imageURL)
         }
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arymsgdata.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let myCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        return myCell
     }
     
     
@@ -87,12 +105,86 @@ class EventDetailViewController: UIViewController {
         
     }
     
+    @IBAction func btn_tap_sendmsg (_ sender: UIButton) {
+        
+        self.sendmsg()
+        
+    }
+    
+    func sendmsg()
+    {
+        
+        let parameters = [
+            "user_id":(UserDefaults.standard.object(forKey: "userstatus") as? String)!,
+            "event_id":idevent!,
+            "message":txtmsg.text!
+            
+            ] as [String : Any]
+        
+        print(parameters)
+        
+        let url =  AppConfig.proxy_server + "/api/getmessage"
+        Alamofire.request(url, method:.post, parameters:parameters,encoding: JSONEncoding.default).responseString { response in
+            switch response.result {
+            case .success:
+                print(response)
+                
+                //                if let data = response.result.value{
+                //                    print(response.result.value!)
+                //
+                //                    let dic: NSDictionary =  response.result.value! as! NSDictionary
+                //
+                //                    self.arymsgdata = dic.value(forKey: "data") as! NSArray
+                //
+                
+                
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+    }
+    
+    func getmsg()
+    {
+        
+        let parameters = [
+            "user_id":(UserDefaults.standard.object(forKey: "userstatus") as? String)!,
+            "id": idevent!,
+            
+            ] as [String : Any]
+        
+        print(parameters)
+        
+        let url =  AppConfig.proxy_server + "/api/getmessage"
+        Alamofire.request(url, method:.post, parameters:parameters,encoding: JSONEncoding.default).responseString { response in
+            switch response.result {
+            case .success:
+                print(response)
+                
+                if let data = response.result.value{
+                    print(response.result.value!)
+                    
+                    
+                    let dic: NSDictionary =  response.result.value! as! NSDictionary
+                    
+                    self.arymsgdata = dic.value(forKey: "data") as! NSArray
+                    
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     func getdata()
     {
+        
         let parameters = [
-            "user_id": (UserDefaults.standard.object(forKey: "userstatus") as? String)!,
-            "job_id": "1",
-            "id": idEvent,
+            "user_id":(UserDefaults.standard.object(forKey: "userstatus") as? String)!,
+            "id": idevent!,
             
             ] as [String : Any]
         
@@ -103,7 +195,9 @@ class EventDetailViewController: UIViewController {
             switch response.result {
             case .success:
                 print(response)
-                let alert = UIAlertController(title: "Pronto?", message: "Hai chiesto di unirti all'evento", preferredStyle: UIAlertControllerStyle.alert)
+                
+                
+                let alert = UIAlertController(title: "Swoosh!", message: "La tua richiesta è stata inviata", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 // let json = response.result.value
@@ -114,11 +208,11 @@ class EventDetailViewController: UIViewController {
                 //                    let strmsg = swiftyJsonVar ["msg"] as! String
                 
                 // let msg = (json as! NSDictionary).value(forKey: "msg") as! String
-
+                
             case .failure(let error):
                 print(error)
             }
         }
     }
-            
+    
 }

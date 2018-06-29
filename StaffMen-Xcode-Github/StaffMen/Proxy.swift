@@ -79,7 +79,7 @@ class Proxy {
                 
                 DispatchQueue.main.async {
                     
-                     //-- Process the JSON response
+                    //-- Process the JSON response
                     if let json = try? JSON(data: data!) {
                         
                         print(json)
@@ -91,15 +91,15 @@ class Proxy {
                         }
                         
                     }
-
+                    
                     //let json = try? JSON(data: data! as Data)
                     
                     // -- Pass JSON to callbacks
-//                    if json["status"].boolValue {
-//                        resolve!(json)
-//                    } else {
-//                        reject!(json)
-//                    }
+                    //                    if json["status"].boolValue {
+                    //                        resolve!(json)
+                    //                    } else {
+                    //                        reject!(json)
+                    //                    }
                 }
             }
         }

@@ -24,7 +24,10 @@
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // Override point for customization after application launch.
-        
+        //Navbar plain
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        ///
         GMSServices.provideAPIKey("AIzaSyBWioD6hq21lqSMMo-o3Er8yuzqiBuWB_I")
         GMSPlacesClient.provideAPIKey("AIzaSyBWioD6hq21lqSMMo-o3Er8yuzqiBuWB_I")
         

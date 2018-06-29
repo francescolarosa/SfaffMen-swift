@@ -38,8 +38,12 @@ class MyProfileViewController: CustomTransitionViewController, UIImagePickerCont
         // customization
         transition.sticky = true
         transition.showShadow = true
-        transition.panThreshold = 0.3
-        transition.transformType = .translateMid
+        transition.radiusFactor = 0.8
+        transition.stiffness = 0.3
+        transition.containerColor = UIColor.white
+        transition.panThreshold = 0.8
+        transition.transformType = .rotate
+        //
         
         // menu// gesture recognizer
         lgr.addTarget(self, action: #selector(MyProfileViewController.handlePan(_:)))

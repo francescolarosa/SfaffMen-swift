@@ -28,6 +28,11 @@ class EventViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Navbar plain
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        ///
+        
         loadList()
         
         // Add Refresh Control to Table View
@@ -36,6 +41,8 @@ class EventViewController: UITableViewController {
         } else {
             tableView.addSubview(rc)
         }
+        
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         // Configure Refresh Control
         rc.addTarget(self, action: #selector(refreshTableData(_:)), for: .valueChanged)
@@ -49,9 +56,12 @@ class EventViewController: UITableViewController {
         // customization
         transition.sticky = true
         transition.showShadow = true
-        transition.panThreshold = 0.3
-        transition.transformType = .translateMid
-        
+        transition.radiusFactor = 0.8
+        transition.stiffness = 0.3
+        transition.containerColor = UIColor.white
+        transition.panThreshold = 0.8
+        transition.transformType = .rotate
+        //
         // menu// gesture recognizer
         lgr.addTarget(self, action: #selector(MyProfileViewController.handlePan(_:)))
         rgr.addTarget(self, action: #selector(MyProfileViewController.handleRightPan(_:)))
@@ -169,7 +179,6 @@ class EventViewController: UITableViewController {
         task.resume()
     }
     
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath)->CGFloat {
         return 150
     }
@@ -183,7 +192,7 @@ class EventViewController: UITableViewController {
         let myCell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath)
         
         let myImageView = myCell.viewWithTag(11) as! UIImageView
-        myCell.imageView?.layer.cornerRadius = myImageView.frame.height/2
+        myImageView.layer.cornerRadius = 10;
         let myTitleLabel = myCell.viewWithTag(12) as! UILabel
         let myLocation = myCell.viewWithTag(13) as! UILabel
         let DateLabelCell = myCell.viewWithTag(14) as! UILabel
@@ -199,6 +208,9 @@ class EventViewController: UITableViewController {
             let imageURL = URL(string: AppConfig.public_server +  imageURLString) {
             myImageView.af_setImage(withURL: imageURL)
         }
+        //Cell Bg
+        myCell.backgroundView = UIImageView(image: UIImage())
+        
         return myCell
     }
     //per passare da un viewcontroller a detailviewcontroller
@@ -313,14 +325,14 @@ class EventViewController: UITableViewController {
     
 }
 
-// MARK: -
-// MARK: UITableView Delegate
-
-extension ViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-}
+//// MARK: -
+//// MARK: UITableView Delegate
+//
+//extension UIViewController: UITableViewDelegate {
+//
+//    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
+//
+//}
 

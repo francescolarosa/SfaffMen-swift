@@ -9,7 +9,9 @@ import UIKit
 import Foundation
 import SwiftVideoBackground
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
+    
+    
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,12 +20,18 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var errorsLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var tipo_di_profilo: UITextField!
+    
+    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var indicator: InstagramActivityIndicator!
     var logVC: LoginViewController!
     //Video BG
     @IBOutlet weak var videoBG: UIView!
     let videoBackground1 = VideoBackground()
+    var arraypicker = [String]()
+    var picker: UIPickerView! = nil
+    
     //
     
     override func viewDidLoad() {
@@ -47,7 +55,71 @@ class RegistrationViewController: UIViewController {
         //activityIndicator.stopAnimating()
         self.hideKeyboardWhenTappedAround()
         
+        
+        picker = UIPickerView(frame:CGRect(x: self.tipo_di_profilo.frame.origin.x, y: self.tipo_di_profilo.frame.origin.x + self.tipo_di_profilo.frame.size.height, width: self.tipo_di_profilo.frame.size.width, height: 216))
+        //UIPickerView(frame: CGRect(x:self.tipo_di_profilo.frame.origin.x ,y: self.tipo_di_profilo.frame.origin.x + self.tipo_di_profilo.frame.size.height, view.frame.width , height:300,width:self.tipo_di_profilo.frame.size.width))
+        picker.backgroundColor = .white
+        
+        picker.showsSelectionIndicator = true
+        picker.delegate = self
+        picker.dataSource = self
+        //  self.myPickerView.backgroundColor = UIColor.white
+        tipo_di_profilo.inputView = picker
+        arraypicker = ["Steward","Organizzatore"];
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneClick))
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        tipo_di_profilo.inputAccessoryView = toolBar
+        
+        
+        
+        
     }
+    @objc func doneClick() {
+        tipo_di_profilo.resignFirstResponder()
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return arraypicker.count
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return arraypicker[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.tipo_di_profilo.text = arraypicker[row]
+        //        if self.txtsex.text == "male"
+        //        {
+        //            strsex = "0"
+        //        }
+        //        else
+        //        {
+        //            strsex = "1"
+        //        }
+    }
+    
+    //    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
+    //    {
+    //        if textField == self.tipo_di_profilo
+    //        {
+    //            self.picker.isHidden = false
+    //
+    //        }
+    //
+    //        return true
+    //    }
     
     @IBAction func returnToLogin(_ sender: UIButton) {
         
@@ -140,8 +212,5 @@ class RegistrationViewController: UIViewController {
         }
         
     }
-    
-    
-    
 }
 

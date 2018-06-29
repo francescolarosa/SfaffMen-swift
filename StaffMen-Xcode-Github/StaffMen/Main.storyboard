@@ -39,17 +39,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOz-GY-H5s">
-                                <rect key="frame" x="52" y="261" width="176" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="24"/>
-                                <state key="normal" title="Mappa Eventi"/>
-                                <connections>
-                                    <segue destination="oeE-At-oBU" kind="show" id="0oy-u8-c20"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIa-Tg-9NZ">
-                                <rect key="frame" x="52" y="53" width="187" height="42"/>
+                                <rect key="frame" x="52" y="71" width="187" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="24"/>
                                 <state key="normal" title="Il mio Profilo"/>
@@ -67,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rpM-Lm-Mqu">
-                                <rect key="frame" x="99" y="103" width="92" height="37"/>
+                                <rect key="frame" x="99" y="114" width="92" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="16"/>
                                 <state key="normal" title="Log Out"/>
@@ -76,11 +67,11 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profilo" translatesAutoresizingMaskIntoConstraints="NO" id="dbE-br-vj1">
-                                <rect key="frame" x="2" y="49" width="50" height="50"/>
+                                <rect key="frame" x="2" y="67" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="log-out" translatesAutoresizingMaskIntoConstraints="NO" id="fZZ-jJ-8qF">
-                                <rect key="frame" x="57" y="101" width="40" height="40"/>
+                                <rect key="frame" x="57" y="112" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eventi" translatesAutoresizingMaskIntoConstraints="NO" id="vbe-Cj-OZg">
@@ -91,8 +82,12 @@
                                 <rect key="frame" x="5" y="263" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line-hd" translatesAutoresizingMaskIntoConstraints="NO" id="BDW-Cq-2y4">
+                                <rect key="frame" x="10" y="161" width="271" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyp-uF-gZU">
-                                <rect key="frame" x="57" y="345" width="176" height="48"/>
+                                <rect key="frame" x="52" y="261" width="176" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="24"/>
                                 <state key="normal" title="Messaggi"/>
@@ -150,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fGJ-dR-VIf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2929" y="-1267"/>
+            <point key="canvasLocation" x="-2105" y="-667"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Mov-QL-duF">
@@ -280,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9z-1z-Rgn" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3550" y="-1964"/>
+            <point key="canvasLocation" x="-3362" y="-1409"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="n9h-2t-pXI">
@@ -294,17 +289,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ub-t6-nbe">
-                                <rect key="frame" x="79" y="70" width="207" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.2196078431372549" green="0.75686274509803919" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.2196078431372549" green="0.75686274509803919" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3s7-t3-8pi" customClass="InstagramActivityIndicator" customModule="StaffMen" customModuleProvider="target">
-                                <rect key="frame" x="137" y="484" width="101" height="83"/>
+                                <rect key="frame" x="137" y="512" width="101" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -328,7 +314,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ePE-Vh-4rT" customClass="AwesomeTextField" customModule="StaffMen" customModuleProvider="target">
-                                <rect key="frame" x="82" y="114" width="210" height="60"/>
+                                <rect key="frame" x="82" y="96" width="210" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -352,7 +338,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTI-yO-8hP" customClass="AwesomeTextField" customModule="StaffMen" customModuleProvider="target">
-                                <rect key="frame" x="82" y="182" width="210" height="60"/>
+                                <rect key="frame" x="82" y="171" width="210" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -376,7 +362,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Conferma Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O0w-vT-8G8" customClass="AwesomeTextField" customModule="StaffMen" customModuleProvider="target">
-                                <rect key="frame" x="82" y="250" width="210" height="60"/>
+                                <rect key="frame" x="82" y="244" width="210" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -399,8 +385,51 @@
                                     <outlet property="delegate" destination="51o-IK-xuu" id="SzP-Ra-G4i"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxD-Gb-r93">
+                                <rect key="frame" x="43" y="589" width="288" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Hai già un account?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnToLogin:" destination="67v-5b-FRu" eventType="touchUpInside" id="g3T-EL-ZCk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2J8-mB-0HB">
+                                <rect key="frame" x="69" y="454" width="237" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Registrati"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="51o-IK-xuu" eventType="touchUpInside" id="Dp5-DC-yM4"/>
+                                    <action selector="registerButton:" destination="67v-5b-FRu" eventType="touchUpInside" id="zyD-qY-IOO"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Steward" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ilq-FG-vlc" customClass="AwesomeTextField" customModule="StaffMen" customModuleProvider="target">
+                                <rect key="frame" x="82" y="380" width="210" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="underLineColor">
+                                        <color key="value" red="0.32813793540000002" green="0.68995728550000002" blue="0.29854272189999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderTextColor">
+                                        <color key="value" red="0.97398738689999997" green="0.97451443869999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="underLineWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="underLineAlpha">
+                                        <real key="value" value="0.45000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome Completo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zO3-SR-1lk" customClass="AwesomeTextField" customModule="StaffMen" customModuleProvider="target">
-                                <rect key="frame" x="82" y="318" width="210" height="60"/>
+                                <rect key="frame" x="82" y="312" width="210" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -423,53 +452,32 @@
                                     <outlet property="delegate" destination="51o-IK-xuu" id="Ppw-DS-GtD"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxD-Gb-r93">
-                                <rect key="frame" x="43" y="589" width="288" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Hai già un account?">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="returnToLogin:" destination="67v-5b-FRu" eventType="touchUpInside" id="g3T-EL-ZCk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2J8-mB-0HB">
-                                <rect key="frame" x="69" y="409" width="237" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Registrati"/>
-                                <connections>
-                                    <action selector="loginButton:" destination="51o-IK-xuu" eventType="touchUpInside" id="Dp5-DC-yM4"/>
-                                    <action selector="registerButton:" destination="67v-5b-FRu" eventType="touchUpInside" id="zyD-qY-IOO"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cW0-bA-qtq"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="ePE-Vh-4rT" id="8Rx-jK-iqD"/>
-                        <outlet property="errorsLabel" destination="7Ub-t6-nbe" id="hAI-nF-tN1"/>
                         <outlet property="indicator" destination="3s7-t3-8pi" id="1TF-Ss-A8i"/>
                         <outlet property="loginButton" destination="DxD-Gb-r93" id="zho-4Q-fXr"/>
                         <outlet property="nameTextField" destination="zO3-SR-1lk" id="Yyr-g2-gnJ"/>
                         <outlet property="passwordConfirmTextField" destination="O0w-vT-8G8" id="hLF-k9-YMR"/>
                         <outlet property="passwordTextField" destination="CTI-yO-8hP" id="wQ7-aC-Drd"/>
                         <outlet property="registerButton" destination="2J8-mB-0HB" id="hqx-0s-2y5"/>
+                        <outlet property="tipo_di_profilo" destination="ilq-FG-vlc" id="6q0-60-r7M"/>
+                        <outlet property="videoBG" destination="o75-eD-PQL" id="UO3-db-lhm"/>
                         <segue destination="tTI-Ak-rah" kind="show" identifier="mainSegue" id="th0-J9-YxY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQj-nX-JZz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2775" y="-2319"/>
+            <point key="canvasLocation" x="-2655" y="-1964"/>
         </scene>
         <!--Eventi-->
         <scene sceneID="1yb-4D-xYL">
             <objects>
                 <tableViewController id="cru-gK-sys" customClass="EventViewController" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Sz-bJ-lRZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Sz-bJ-lRZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -478,72 +486,77 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="159"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6P8-Db-J3P" id="Z4d-sI-CeT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="158.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="159"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="line-cell" translatesAutoresizingMaskIntoConstraints="NO" id="cWB-NM-HvP">
+                                            <rect key="frame" x="11" y="146" width="353" height="2"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="steward-accettati" translatesAutoresizingMaskIntoConstraints="NO" id="NSJ-VM-7hc">
-                                            <rect key="frame" x="166" y="86" width="60" height="60"/>
+                                            <rect key="frame" x="198" y="78" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="posti-rimasti" translatesAutoresizingMaskIntoConstraints="NO" id="mkk-9Y-LZs">
-                                            <rect key="frame" x="285" y="86" width="60" height="60"/>
+                                            <rect key="frame" x="293" y="78" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="12" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUT-g0-lxW">
-                                            <rect key="frame" x="147" y="4" width="220" height="39"/>
+                                            <rect key="frame" x="148" y="15" width="216" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="19"/>
                                             <color key="textColor" red="0.31764705882352939" green="0.72941176470588232" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="13" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjt-Jr-lph">
-                                            <rect key="frame" x="146" y="39" width="221" height="33"/>
+                                            <rect key="frame" x="148" y="39" width="216" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="ProximaNovaT-Thin" family="Proxima Nova" pointSize="17"/>
                                             <color key="textColor" red="0.47444277520652933" green="0.47914022842639592" blue="0.47914022842639592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="14" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="08/10/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhH-Tv-htR">
-                                            <rect key="frame" x="146" y="74" width="213" height="21"/>
+                                            <rect key="frame" x="148" y="69" width="216" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                             <color key="textColor" red="0.20099613846172984" green="0.20298619923857864" blue="0.20298619923857864" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="16" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9N-Vx-1rh">
-                                            <rect key="frame" x="169" y="100" width="55" height="32"/>
+                                            <rect key="frame" x="201" y="92" width="55" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                             <color key="textColor" red="0.2009961385" green="0.20298619919999999" blue="0.20298619919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVO-w0-rNi">
-                                            <rect key="frame" x="288" y="100" width="54" height="32"/>
+                                            <rect key="frame" x="296" y="92" width="54" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="15"/>
                                             <color key="textColor" red="0.2009961385" green="0.20298619919999999" blue="0.20298619919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Steward Accettati" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocb-YM-opw">
-                                            <rect key="frame" x="146" y="124" width="101" height="32"/>
+                                            <rect key="frame" x="178" y="121" width="101" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="11"/>
                                             <color key="textColor" red="0.2009961385" green="0.20298619919999999" blue="0.20298619919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Posti Rimasti" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwJ-30-nt4">
-                                            <rect key="frame" x="265" y="124" width="101" height="32"/>
+                                            <rect key="frame" x="287" y="121" width="71" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="ProximaNovaA-Regular" family="Proxima Nova Alt" pointSize="11"/>
                                             <color key="textColor" red="0.2009961385" green="0.20298619919999999" blue="0.20298619919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="11" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="missing-image" translatesAutoresizingMaskIntoConstraints="NO" id="fMb-86-PzA">
-                                            <rect key="frame" x="5" y="28" width="138" height="102"/>
+                                            <rect key="frame" x="11" y="31" width="133" height="96"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="ymK-hq-nKJ" kind="show" id="H5R-3v-2Rm"/>
                                 </connections>
@@ -556,6 +569,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Eventi" id="jVu-WP-bUX">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="B0E-cJ-jot">
+                            <color key="tintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <segue destination="EsR-6D-xTe" kind="show" id="GMu-9I-dK9"/>
                             </connections>
@@ -567,14 +581,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IIN-CN-hWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1026" y="-667"/>
+            <point key="canvasLocation" x="1024.8" y="-667.01649175412297"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="SxN-0O-QXG">
             <objects>
                 <viewController id="ymK-hq-nKJ" customClass="EventDetailViewController" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kQu-SK-Q1T">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="986"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="missing-image" translatesAutoresizingMaskIntoConstraints="NO" id="e2v-Zm-sKA">
@@ -582,7 +596,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y25-pA-F47">
-                                <rect key="frame" x="0.0" y="212" width="375" height="438"/>
+                                <rect key="frame" x="0.0" y="212" width="375" height="754"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wmC-Od-B3j">
@@ -713,20 +727,98 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFu-0a-Pu4">
-                                        <rect key="frame" x="123" y="400" width="128" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Chiedi di Unirti">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Messaggi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyv-xT-9iw">
+                                        <rect key="frame" x="16" y="446" width="109" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="22"/>
+                                        <color key="textColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPa-hn-lNh">
+                                        <rect key="frame" x="312" y="496" width="47" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="17"/>
+                                        <state key="normal" title="Invia">
                                             <color key="titleColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="btn_tap_Join:" destination="ymK-hq-nKJ" eventType="touchUpInside" id="AXg-CC-1Xm"/>
+                                            <action selector="btn_tap_sendmsg:" destination="ymK-hq-nKJ" eventType="touchUpInside" id="wST-OY-zku"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WWE-pk-SkR">
+                                        <rect key="frame" x="16" y="533" width="343" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="112" id="3oM-Ze-d2m" customClass="MSGTableViewCell" customModule="StaffMen" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="343" height="112"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3oM-Ze-d2m" id="pGc-Wz-Gw5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="111.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GWg-hA-g3y">
+                                                            <rect key="frame" x="20" y="20" width="50" height="50"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Testo messaggio" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfP-Sg-Sne">
+                                                            <rect key="frame" x="86" y="52" width="231" height="48"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smu-fx-0ci">
+                                                            <rect key="frame" x="86" y="20" width="80" height="15"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ora" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scQ-f3-NUu">
+                                                            <rect key="frame" x="237" y="20" width="80" height="15"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="lbldescription" destination="ZfP-Sg-Sne" id="7OP-3h-Phv"/>
+                                                    <outlet property="lblname" destination="smu-fx-0ci" id="RpS-en-ueu"/>
+                                                    <outlet property="lbltime" destination="scQ-f3-NUu" id="Lnt-sN-iz4"/>
+                                                    <outlet property="profileimgvw" destination="GWg-hA-g3y" id="X7p-ib-bny"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="ymK-hq-nKJ" id="nEc-NF-8Dt"/>
+                                            <outlet property="delegate" destination="ymK-hq-nKJ" id="TyV-cr-Q8V"/>
+                                        </connections>
+                                    </tableView>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mTy-Y4-4EV">
+                                        <rect key="frame" x="16" y="496" width="289" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6A-sg-ncu">
+                                        <rect key="frame" x="95" y="396" width="185" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Chiedi di Unirti" backgroundImage="button-gradient">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btn_tap_Join:" destination="ymK-hq-nKJ" eventType="touchUpInside" id="DNp-Zs-ueS"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                        <color key="tintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="Lhy-uY-43V"/>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="zhi-OR-EvH">
@@ -734,13 +826,17 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hJP-UU-wIH">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Modifica"/>
+                                <state key="normal" title="Modifica">
+                                    <color key="titleColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="btn_editevent:" destination="ymK-hq-nKJ" eventType="touchUpInside" id="GXR-EI-Kuy"/>
                                 </connections>
                             </button>
+                            <color key="tintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </barButtonItem>
                     </navigationItem>
+                    <size key="freeformSize" width="375" height="1050"/>
                     <connections>
                         <outlet property="DateDetailLabel" destination="fEt-qR-v8T" id="j0y-EI-huo"/>
                         <outlet property="EndEventLabel" destination="2UN-15-Ikf" id="jKd-JU-HOg"/>
@@ -750,60 +846,12 @@
                         <outlet property="descLabel" destination="B1F-OO-XHc" id="8Ar-lG-Fon"/>
                         <outlet property="openingDateLabel" destination="0ND-hA-B0k" id="ofB-Bk-aeQ"/>
                         <outlet property="srcImageStory" destination="e2v-Zm-sKA" id="hPX-VJ-2Em"/>
+                        <outlet property="txtmsg" destination="mTy-Y4-4EV" id="ISL-gp-Lc6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3v-Cp-uvD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845.5999999999999" y="-667.01649175412297"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="2jf-bv-8F3">
-            <objects>
-                <viewController id="wjw-GD-CBm" customClass="ViewController" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wKA-DJ-Vgn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="JUj-2Y-8cB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="DxU-Yw-J5z"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v4Y-DX-P8a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3049" y="-592"/>
-        </scene>
-        <!--DetailsVC-->
-        <scene sceneID="np9-by-AQa">
-            <objects>
-                <viewController id="oXp-3M-hTz" customClass="DetailsVC" customModule="StaffMen" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pGM-gP-clL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="KWn-8P-9o3"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sdA-n2-S9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2121" y="-632"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="BV8-xI-UKq">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oeE-At-oBU" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FBl-zW-XDT">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wjw-GD-CBm" kind="relationship" relationship="rootViewController" id="Pj4-RO-WCW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eOU-iX-PxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3953" y="-592"/>
+            <point key="canvasLocation" x="1845.5999999999999" y="-667.4662668665668"/>
         </scene>
         <!--Profilo-->
         <scene sceneID="iFS-wK-gl5">
@@ -825,32 +873,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LZH-fk-lks">
                                 <rect key="frame" x="34" y="200" width="306" height="190"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvS-D4-YsP">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HvS-D4-YsP">
                                         <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profilo Completato" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fG4-Nm-gsM">
-                                                <rect key="frame" x="8" y="14.5" width="141.5" height="21"/>
-                                                <fontDescription key="fontDescription" name="ProximaNovaT-Thin" family="Proxima Nova" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dt-vy-vo1">
-                                                <rect key="frame" x="258" y="14" width="40" height="21.5"/>
-                                                <fontDescription key="fontDescription" name="ProximaNovaT-Thin" family="Proxima Nova" pointSize="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cristina M." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ub3-o7-ytx">
+                                                <rect key="frame" x="113" y="15" width="81" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="5dt-vy-vo1" secondAttribute="trailing" constant="8" id="59R-Lc-zEd"/>
-                                            <constraint firstItem="5dt-vy-vo1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HvS-D4-YsP" secondAttribute="leading" constant="20" symbolic="YES" id="5kO-1O-63I"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fG4-Nm-gsM" secondAttribute="trailing" constant="20" symbolic="YES" id="Q1r-CQ-BgX"/>
-                                            <constraint firstAttribute="height" constant="50" id="a4A-EI-uqf"/>
-                                            <constraint firstItem="fG4-Nm-gsM" firstAttribute="leading" secondItem="HvS-D4-YsP" secondAttribute="leading" constant="8" id="cBC-z5-OK0"/>
-                                            <constraint firstItem="fG4-Nm-gsM" firstAttribute="centerY" secondItem="HvS-D4-YsP" secondAttribute="centerY" id="gzG-hS-SEI"/>
-                                            <constraint firstItem="5dt-vy-vo1" firstAttribute="centerY" secondItem="fG4-Nm-gsM" secondAttribute="centerY" id="zWb-xL-gdW"/>
-                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efi-uj-1Tx">
                                         <rect key="frame" x="0.0" y="60" width="306" height="130"/>
@@ -858,15 +892,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Lw-3a-1qP">
                                                 <rect key="frame" x="0.0" y="0.0" width="306" height="33"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cristina M." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ub3-o7-ytx">
-                                                        <rect key="frame" x="8" y="6" width="81" height="21"/>
-                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGx-UR-a1D">
-                                                        <rect key="frame" x="244" y="0.0" width="54" height="30"/>
+                                                        <rect key="frame" x="126" y="1" width="54" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="16"/>
                                                         <state key="normal" title="Logout">
                                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -877,9 +906,6 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="Ub3-o7-ytx" firstAttribute="leading" secondItem="5Lw-3a-1qP" secondAttribute="leading" constant="8" id="8FB-V5-JV1"/>
-                                                    <constraint firstItem="Ub3-o7-ytx" firstAttribute="centerY" secondItem="5Lw-3a-1qP" secondAttribute="centerY" id="OID-nX-Jit"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ub3-o7-ytx" secondAttribute="trailing" constant="20" symbolic="YES" id="cg7-tR-E5w"/>
                                                     <constraint firstAttribute="height" constant="33" id="m1Z-6U-SEo"/>
                                                 </constraints>
                                             </view>
@@ -952,7 +978,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profilo" id="LGl-xw-E6Z" colorLabel="IBBuiltInLabel-Green">
                         <barButtonItem key="rightBarButtonItem" title="Modifica" id="SCS-FX-R0L">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="didEditButton:" destination="tTI-Ak-rah" id="QNO-nF-fl3"/>
                             </connections>
@@ -979,10 +1005,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="QRn-cw-K2Q">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="20"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="21"/>
+                            <color key="textColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1193,6 +1219,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="qv7-QA-2p3" firstAttribute="trailing" secondItem="RSX-rS-akX" secondAttribute="trailing" id="QXC-vj-eig"/>
                             <constraint firstItem="qv7-QA-2p3" firstAttribute="bottom" secondItem="RSX-rS-akX" secondAttribute="bottom" id="TMT-Mo-grr"/>
@@ -1204,7 +1231,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Modifica Profilo" id="WYR-Ax-QgM">
                         <barButtonItem key="rightBarButtonItem" title="Salva" id="ZrL-hb-EN3">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="didSaveButton:" destination="4oa-d6-JkB" id="QZE-Tj-97a"/>
                             </connections>
@@ -1430,13 +1457,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALTEZZA (CM)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmC-Fa-BY0">
-                                                    <rect key="frame" x="15" y="13.5" width="111.5" height="17"/>
+                                                    <rect key="frame" x="15" y="13.5" width="103" height="17"/>
                                                     <fontDescription key="fontDescription" name="ProximaNovaT-Thin" family="Proxima Nova" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="175" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBX-pk-eEu">
-                                                    <rect key="frame" x="331.5" y="12" width="28.5" height="20"/>
+                                                    <rect key="frame" x="334" y="11.5" width="26" height="21"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="17"/>
                                                     <color key="textColor" red="0.32156862745098042" green="0.73333333333333328" blue="0.46274509803921571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1561,10 +1588,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="kRZ-Yh-HZU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="20"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1760,12 +1788,12 @@
                                 </connections>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0Rc-lV-s8g"/>
                     </view>
                     <navigationItem key="navigationItem" title="Crea Nuovo Evento" id="xe8-PW-NUq">
                         <barButtonItem key="leftBarButtonItem" title="Chiudi" id="XLr-Zn-dfE">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="returnToEvent:" destination="p5L-As-twy" id="YD7-7n-fYy"/>
                             </connections>
@@ -1799,10 +1827,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ZoR-eW-bJp">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="20"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="21"/>
+                            <color key="textColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1823,10 +1852,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="OCy-6b-vaE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="20"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="21"/>
+                            <color key="textColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="17"/>
@@ -1850,7 +1880,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Idq-ij-XmT">
-                                <rect key="frame" x="12" y="77" width="351" height="1089"/>
+                                <rect key="frame" x="12" y="84" width="351" height="1089"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-C8-mai" customClass="GMSMapView">
@@ -2033,16 +2063,17 @@
                                 <color key="backgroundColor" red="0.94968301060000004" green="0.96460801360000004" blue="0.96906894450000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ud-eB-qkM">
-                                <rect key="frame" x="0.0" y="25" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="ProximaNovaA-Bold" family="Proxima Nova Alt" pointSize="20"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Modifica Evento" id="jMQ-Bw-Ihw">
                                         <barButtonItem key="leftBarButtonItem" title="Chiudi" id="nYy-89-OvO">
+                                            <color key="tintColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="returnToEvent:" destination="nfS-i3-kIL" id="76y-UL-jQb"/>
                                             </connections>
@@ -2051,7 +2082,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.3811238052" green="0.68308100770000002" blue="0.37281240049999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ytz-40-KaZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Modifica Evento" id="FIj-RR-b9P">
@@ -2172,9 +2203,12 @@
     </scenes>
     <resources>
         <image name="StaffLogoBig" width="1204" height="1584"/>
+        <image name="button-gradient" width="375" height="44"/>
         <image name="calendar" width="512" height="512"/>
         <image name="clock_time_5025" width="512" height="512"/>
         <image name="eventi" width="100" height="100"/>
+        <image name="line-cell" width="281" height="3"/>
+        <image name="line-hd" width="281" height="1"/>
         <image name="location" width="872" height="1090"/>
         <image name="log-out" width="100" height="100"/>
         <image name="mappa" width="400" height="400"/>
@@ -2185,10 +2219,9 @@
         <image name="steward-accettati" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NB1-JK-Rsx"/>
         <segue reference="3ct-dp-ye2"/>
         <segue reference="th0-J9-YxY"/>
-        <segue reference="YGC-VG-nCj"/>
+        <segue reference="isA-5z-Y5y"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

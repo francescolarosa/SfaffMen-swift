@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class MenuViewController: UIViewController, ElasticMenuTransitionDelegate {
     
@@ -26,6 +27,7 @@ class MenuViewController: UIViewController, ElasticMenuTransitionDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 //        let tm = transitioningDelegate as! ElasticTransition
     }
     

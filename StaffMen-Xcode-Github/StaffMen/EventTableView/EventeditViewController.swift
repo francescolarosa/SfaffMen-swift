@@ -156,7 +156,6 @@ class EventeditViewController: UIViewController,GMSMapViewDelegate,GMSAutocomple
         let strDate = dateFormatter.string(from: datePicker.date)
         
         txtevent_date.text = strDate
-        //datePicker.removeFromSuperview() // if you want to remove time picker
         
         
     }

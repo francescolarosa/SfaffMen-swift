@@ -36,6 +36,7 @@
 		4B4BD9CC20E5B76F00CD0960 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4BD9CB20E5B76F00CD0960 /* SplashScreen.storyboard */; };
 		4B4BD9CE20E5D38B00CD0960 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4BD9CD20E5D38B00CD0960 /* MessagesViewController.swift */; };
 		4B758EB620D2EF19009CD0B6 /* AwesomeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */; };
+		4B7BF43720E6A27800A104E6 /* MSGTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7BF43620E6A27800A104E6 /* MSGTableViewCell.swift */; };
 		4B7DBB27208518AC00E06822 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB21208518AC00E06822 /* Util.swift */; };
 		4B7DBB28208518AC00E06822 /* ElasticTransitionPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB22208518AC00E06822 /* ElasticTransitionPresentationController.swift */; };
 		4B7DBB29208518AC00E06822 /* ElasticModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DBB23208518AC00E06822 /* ElasticModalViewController.swift */; };
@@ -61,10 +62,6 @@
 		AD59BAE220A47A860046E352 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59BAE120A47A860046E352 /* Model.swift */; };
 		AD59BAE420A47AE70046E352 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59BAE320A47AE70046E352 /* EventViewController.swift */; };
 		AD59BAE620A4BB9A0046E352 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59BAE520A4BB9A0046E352 /* EventDetailViewController.swift */; };
-		AD5FDDBE20A724DF0084D506 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5FDDBD20A724DF0084D506 /* MapViewController.swift */; };
-		AD5FDDC020A725340084D506 /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5FDDBF20A725340084D506 /* CustomMarkerView.swift */; };
-		AD5FDDC220A725970084D506 /* RestaurantPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5FDDC120A725970084D506 /* RestaurantPreviewView.swift */; };
-		AD5FDDC420A725F10084D506 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5FDDC320A725F10084D506 /* DetailsVC.swift */; };
 		AD6D016720BD7B5200A81B47 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D016620BD7B5200A81B47 /* MyProfileViewController.swift */; };
 		AD6D016920BD7BEC00A81B47 /* PhysicalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D016820BD7BEC00A81B47 /* PhysicalDataViewController.swift */; };
 		AD6D016B20BD7C4F00A81B47 /* ProfessionalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D016A20BD7C4F00A81B47 /* ProfessionalDataViewController.swift */; };
@@ -111,6 +108,7 @@
 		4B4BD9CB20E5B76F00CD0960 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		4B4BD9CD20E5D38B00CD0960 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AwesomeTextField.swift; sourceTree = "<group>"; };
+		4B7BF43620E6A27800A104E6 /* MSGTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSGTableViewCell.swift; sourceTree = "<group>"; };
 		4B7DBB21208518AC00E06822 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		4B7DBB22208518AC00E06822 /* ElasticTransitionPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransitionPresentationController.swift; sourceTree = "<group>"; };
 		4B7DBB23208518AC00E06822 /* ElasticModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticModalViewController.swift; sourceTree = "<group>"; };
@@ -140,10 +138,6 @@
 		AD59BAE120A47A860046E352 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AD59BAE320A47AE70046E352 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		AD59BAE520A4BB9A0046E352 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
-		AD5FDDBD20A724DF0084D506 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		AD5FDDBF20A725340084D506 /* CustomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
-		AD5FDDC120A725970084D506 /* RestaurantPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantPreviewView.swift; sourceTree = "<group>"; };
-		AD5FDDC320A725F10084D506 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		AD6D016620BD7B5200A81B47 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		AD6D016820BD7BEC00A81B47 /* PhysicalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalDataViewController.swift; sourceTree = "<group>"; };
 		AD6D016A20BD7C4F00A81B47 /* ProfessionalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionalDataViewController.swift; sourceTree = "<group>"; };
@@ -233,7 +227,6 @@
 				4B758EB520D2EF19009CD0B6 /* AwesomeTextField.swift */,
 				4B9092D720D92FC0008B0646 /* swreveal */,
 				AD6D015B20BD77BE00A81B47 /* MyProfile */,
-				AD5FDDBA20A7247A0084D506 /* mapEvents */,
 				AD59BAE020A479420046E352 /* EventTableView */,
 				4B92E87820691B4C00AE7BFB /* Contents.json */,
 				4B0B939A205844C500474101 /* Assets.xcassets */,
@@ -341,21 +334,11 @@
 				4BD7CA1E20E548F20007717E /* EventeditViewController.swift */,
 				AD59BAE320A47AE70046E352 /* EventViewController.swift */,
 				AD59BAE520A4BB9A0046E352 /* EventDetailViewController.swift */,
+				4B7BF43620E6A27800A104E6 /* MSGTableViewCell.swift */,
 				4B4BD9CD20E5D38B00CD0960 /* MessagesViewController.swift */,
 				AD59BAE120A47A860046E352 /* Model.swift */,
 			);
 			path = EventTableView;
-			sourceTree = "<group>";
-		};
-		AD5FDDBA20A7247A0084D506 /* mapEvents */ = {
-			isa = PBXGroup;
-			children = (
-				AD5FDDBD20A724DF0084D506 /* MapViewController.swift */,
-				AD5FDDBF20A725340084D506 /* CustomMarkerView.swift */,
-				AD5FDDC120A725970084D506 /* RestaurantPreviewView.swift */,
-				AD5FDDC320A725F10084D506 /* DetailsVC.swift */,
-			);
-			path = mapEvents;
 			sourceTree = "<group>";
 		};
 		AD6D015B20BD77BE00A81B47 /* MyProfile */ = {
@@ -585,10 +568,8 @@
 				AD6D016B20BD7C4F00A81B47 /* ProfessionalDataViewController.swift in Sources */,
 				AD6D016920BD7BEC00A81B47 /* PhysicalDataViewController.swift in Sources */,
 				4B7DBB28208518AC00E06822 /* ElasticTransitionPresentationController.swift in Sources */,
-				AD5FDDC220A725970084D506 /* RestaurantPreviewView.swift in Sources */,
 				4B7DBB2A208518AC00E06822 /* EdgePanTransition.swift in Sources */,
 				4B42A67E20591BB800EBCB6B /* CustomTransitionViewController.swift in Sources */,
-				AD5FDDC020A725340084D506 /* CustomMarkerView.swift in Sources */,
 				4BD7CA1F20E548F20007717E /* EventeditViewController.swift in Sources */,
 				AD58FA6D20CD261C00905FC9 /* MyProfileViewModel.swift in Sources */,
 				4B4BD9C320E591F100CD0960 /* Constants.swift in Sources */,
@@ -596,7 +577,6 @@
 				1EB2D64720C0577000904FE8 /* PhysicalData.swift in Sources */,
 				4B7DBB2C208518AC00E06822 /* ElasticTransition.swift in Sources */,
 				4B758EB620D2EF19009CD0B6 /* AwesomeTextField.swift in Sources */,
-				AD5FDDC420A725F10084D506 /* DetailsVC.swift in Sources */,
 				4B4BD9C420E591F100CD0960 /* Extensions.swift in Sources */,
 				4B92E87720691B3D00AE7BFB /* LoginViewController.swift in Sources */,
 				4B0B9394205844C500474101 /* AppDelegate.swift in Sources */,
@@ -607,7 +587,7 @@
 				4BF76A8E20E3D6E90030C63A /* PhysicalTableViewCell.swift in Sources */,
 				4B7DBB29208518AC00E06822 /* ElasticModalViewController.swift in Sources */,
 				4B42A68120591BB800EBCB6B /* FadeTransition.swift in Sources */,
-				AD5FDDBE20A724DF0084D506 /* MapViewController.swift in Sources */,
+				4B7BF43720E6A27800A104E6 /* MSGTableViewCell.swift in Sources */,
 				AD6D016720BD7B5200A81B47 /* MyProfileViewController.swift in Sources */,
 				4B7DBB2B208518AC00E06822 /* ElasticShapeLayer.swift in Sources */,
 				B270A3932087456400ED9D26 /* RootPageViewController.swift in Sources */,
