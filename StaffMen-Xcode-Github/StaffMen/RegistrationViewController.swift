@@ -69,17 +69,13 @@ class RegistrationViewController: UIViewController,UIPickerViewDataSource,UIPick
         
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
-        toolBar.isTranslucent = true
         toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
         toolBar.sizeToFit()
         
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneClick))
+        let doneButton = UIBarButtonItem(title: "Chiudi", style: .plain, target: self, action: #selector(self.doneClick))
         toolBar.setItems([doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         tipo_di_profilo.inputAccessoryView = toolBar
-        
-        
         
         
     }

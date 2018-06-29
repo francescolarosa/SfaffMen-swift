@@ -264,6 +264,11 @@ class EventViewController: UITableViewController {
         myTableViewDataSource.insert(movedObjTemp, at:  destinationIndexPath.item)
         
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete){
             // print(parameters)
