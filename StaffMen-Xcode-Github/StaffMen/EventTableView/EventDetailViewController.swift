@@ -47,7 +47,7 @@ class EventDetailViewController: UIViewController,UITableViewDataSource,UITableV
         guard let model = model else {
             return
         }
-        
+        self.hideKeyboardWhenTappedAround()
         //To apply Shadow
         //Image View
         srcImageStory.layer.shadowOpacity = 1

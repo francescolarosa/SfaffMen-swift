@@ -55,6 +55,7 @@ class EventeditViewController: UIViewController,GMSMapViewDelegate,GMSAutocomple
         txtserch.layer.cornerRadius = txtserch.frame.size.height / 2
         self.txtserch.delegate = self
         
+        self.hideKeyboardWhenTappedAround()
         
         //To apply Shadow
         //Text field map

@@ -18,6 +18,8 @@ class EditProfessionalViewController: UIViewController, UIPickerViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
+        
         //let userProfile = DataStore.shared.userProfile
           let dataStore = DataStore.shared.userProfile
         

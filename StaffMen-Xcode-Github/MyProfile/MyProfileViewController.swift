@@ -31,7 +31,7 @@ class MyProfileViewController: CustomTransitionViewController, UIImagePickerCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
         //image picker
         imageView.backgroundColor = UIColor.lightGray
         // MENU Core

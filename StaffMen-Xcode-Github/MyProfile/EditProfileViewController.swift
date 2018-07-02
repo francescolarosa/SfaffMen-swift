@@ -27,6 +27,7 @@ class EditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
         createDatePicker()
         
         if let userProfile = DataStore.shared.userProfile {

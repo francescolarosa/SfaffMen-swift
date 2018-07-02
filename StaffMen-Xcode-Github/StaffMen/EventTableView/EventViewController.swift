@@ -17,7 +17,11 @@ class EventViewController: UITableViewController {
     @objc let lgr = UIScreenEdgePanGestureRecognizer()
     @objc let rgr = UIScreenEdgePanGestureRecognizer()
     
+    let activityView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    
     let rc = UIRefreshControl()
+    
+    let fadeView:UIView = UIView()
     
     @IBOutlet weak var myTableView: UITableView!
     
@@ -32,9 +36,12 @@ class EventViewController: UITableViewController {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         ///
-        
+        // Loading view
+        self.showActivityIndicator()
+        ///
+        //Load tableview data
         loadList()
-        
+        ///
         // Add Refresh Control to Table View
         if #available(iOS 10.0, *) {
             tableView.refreshControl = rc
@@ -72,11 +79,38 @@ class EventViewController: UITableViewController {
         
     }
     
+    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat) -> CGRect {
+        return CGRect(x: x, y: y, width: width, height: height)
+    }
+    
     @objc private func refreshTableData(_ sender: Any) {
         // Fetch Table Data
         myTableViewDataSource.removeAll()
         tableView.reloadData()
         loadList()
+    }
+    
+    func showActivityIndicator() {
+        
+        ///Loading view on table view
+        //let fadeView:UIView = UIView()
+        fadeView.frame = CGRectMake(0, 0, 80, 80)
+        fadeView.center = self.view.center
+        fadeView.backgroundColor = UIColor.darkGray
+        fadeView.alpha = 0.4
+        fadeView.layer.cornerRadius = 10
+        self.view.addSubview(fadeView)
+        self.view.addSubview(activityView)
+        activityView.hidesWhenStopped = true
+        activityView.center = self.view.center
+        activityView.startAnimating()
+        /////
+        
+    }
+    
+    func hideActivityIndicator() {
+        activityView.stopAnimating()
+        fadeView.removeFromSuperview()
     }
     
     func loadList(){
@@ -167,6 +201,7 @@ class EventViewController: UITableViewController {
                                     {
                                         self.tableView.reloadData()
                                         self.rc.endRefreshing()
+                                        self.hideActivityIndicator()
                                 }
                             }
                         }
@@ -290,18 +325,13 @@ class EventViewController: UITableViewController {
                     //  let JSON = response.result.value as? [String : Any]
                     // let data = JSON! ["data"] as! NSDictionary
                     
-                    
                     if let jsonData = dic as? [String : Any]
                     {
-                        
-                        
-                        
+                    
                         print(jsonData)
                         self.myTableViewDataSource.remove(at : indexPath.item)
-                        
                         self.tableView.deleteRows(at: [indexPath], with: .automatic)
-                        
-                        
+                       
                     }
                     
                 case .failure(let error):

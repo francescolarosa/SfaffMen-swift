@@ -55,6 +55,8 @@ class MyeventViewController: UIViewController,GMSMapViewDelegate,UITextFieldDele
         // locationmanager.startUpdatingLocation()
         // locationmanager.desiredAccuracy = kCLLocationAccuracyBest
         
+        self.hideKeyboardWhenTappedAround()
+        
         //txt field shadow
         //To apply corner radius
         txtserch.layer.cornerRadius = txtserch.frame.size.height / 2

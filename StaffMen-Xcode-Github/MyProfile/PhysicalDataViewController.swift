@@ -14,6 +14,7 @@ class PhysicalDataViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
     
     func refresh() {

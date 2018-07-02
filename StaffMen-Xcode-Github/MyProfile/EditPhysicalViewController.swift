@@ -19,6 +19,8 @@ class EditPhysicalViewController: UIViewController, UIPickerViewDelegate, UIPick
      override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.hideKeyboardWhenTappedAround()
+        
         let userProfile = DataStore.shared.userProfile
         
         pickerView1.delegate = self
